@@ -156,8 +156,17 @@ textarea:focus-visible {
   }
 }
 
-.site-main {
+/* .site-main {
   padding-top: 80px;
+} */
+.site-main {
+  padding-top: 6rem;
+}
+
+@media (max-width: 1024px) {
+  .site-main {
+    padding-top: 5rem;
+  }
 }
 
 /* account for sticky header */
