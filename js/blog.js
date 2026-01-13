@@ -234,12 +234,14 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
 
-        blogModal.classList.remove('invisible', 'opacity-0');
+        blogModal.classList.remove('invisible', 'opacity-0', 'pointer-events-none');
+        blogModal.classList.add('pointer-events-auto');
         document.body.style.overflow = 'hidden';
     }
 
     window.closeBlogModal = function () {
-        blogModal.classList.add('invisible', 'opacity-0');
+        blogModal.classList.add('invisible', 'opacity-0', 'pointer-events-none');
+        blogModal.classList.remove('pointer-events-auto');
         document.body.style.overflow = '';
     };
 
