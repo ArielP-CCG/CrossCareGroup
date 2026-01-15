@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Allied Health | Cross Care Group</title>
+    <title>Complex Care | Cross Care Group</title>
     <meta name="description"
-        content="Occupational Therapy that supports safe, functional independence at home—aligned to goals and environment.">
+        content="Support for people with complex clinical needs to live safely and confidently at home—coordinating Community Care and Allied Health around one clear plan.">
 
-    <link rel="canonical" href="/services/allied-health/index.html">
+    <link rel="canonical" href="/services/complex_care.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
@@ -28,14 +28,21 @@
             }
         }
     </script>
+    <style>
+        @media (max-width: 1023px) {
+            .site-header.is-scrolled {
+                background: #003B5C !important;
+            }
+        }
+    </style>
 </head>
 
-<body id="allied-health">
+<body id="complex-care">
     <a class="skip-link" href="#main">Skip to main content</a>
 
     <!-- Navigation Bar -->
     <header id="site-header"
-        class="fixed top-0 left-0 w-full bg-[#003B5C] lg:bg-white z-[1000] border-b border-white/10 lg:border-navy/5 transition-all duration-500 ease-in-out h-24 lg:h-32">
+        class="site-header fixed top-0 left-0 w-full bg-[#003B5C] lg:bg-white z-[1000] border-b border-white/10 lg:border-navy/5 transition-all duration-500 ease-in-out h-24 lg:h-32">
         <div class="max-w-[1500px] mx-auto px-6 h-full flex items-center justify-between transition-all duration-500">
             <!-- Brand -->
             <a href="../index.html"
@@ -88,12 +95,6 @@
                         <a href="./complex_care.html"
                             class="block px-6 py-3 text-[14px] font-semibold text-ccg-navy/80 hover:text-white hover:bg-ccg-gold transition-all">Complex
                             Care</a>
-                        <!-- <a href="./hospital_in_the_home.html"
-                            class="block px-6 py-3 text-[14px] font-semibold text-ccg-navy/80 hover:text-white hover:bg-ccg-gold transition-all">Hospital
-                            in the Home</a> -->
-                        <!-- <a href="./rehab_in_the_home.html"
-                            class="block px-6 py-3 text-[14px] font-semibold text-ccg-navy/80 hover:text-white hover:bg-ccg-gold transition-all">Rehab
-                            in the Home</a> -->
                     </div>
                 </div>
                 <a href="../why-cross-care/index.html"
@@ -189,7 +190,7 @@
         <!-- Mobile Menu Overlay -->
         <div id="mobile-menu"
             class="fixed inset-0 bg-[#003B5C] z-[999] opacity-0 invisible translate-x-full transition-all duration-300 lg:hidden text-center md:text-left">
-            <!-- Fixed Back Button Overlay (Transparent background to allow in-line alignment) -->
+            <!-- Fixed Back Button Overlay -->
             <div class="fixed top-0 left-0 w-full z-[1001] px-6 h-20 flex items-center pointer-events-none">
                 <button id="mobile-menu-back"
                     class="p-2 text-white hover:text-ccg-gold transition-colors pointer-events-auto"
@@ -228,7 +229,8 @@
                             class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Hospital
                             to Home</a>
                         <a href="./complex_care.html"
-                            class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Complex Care</a>
+                            class="text-xl font-bold text-white hover:text-ccg-gold transition-colors font-black">Complex
+                            Care</a>
                     </div>
                     <div class="flex flex-col gap-y-3 pt-8">
                         <span class="text-xs font-black uppercase tracking-widest text-white/40">Resources</span>
@@ -310,7 +312,6 @@
         }
 
         mobileMenuToggle.addEventListener('click', toggleMenu);
-
         const mobileMenuBack = document.getElementById('mobile-menu-back');
         mobileMenuBack?.addEventListener('click', toggleMenu);
 
@@ -338,9 +339,10 @@
 
     <main id="main" class="site-main">
         <!-- Hero Section -->
-        <section class="hero relative overflow-hidden !pt-12 lg:!pt-16 !pb-8 lg:!pb-20">
+        <section class="hero relative overflow-hidden !pt-12 lg:!pt-16 lg:!pb-20">
             <div class="bg-layer bg-dot-pattern opacity-10"></div>
-            <div class="glow-orb orb--1 !opacity-[0.15] !-top-1/4 !-right-1/4 !bg-ccg-teal scale-150"></div>
+            <div class="glow-orb orb--1 !opacity-[0.15] !-top-1/4 !-right-1/4 !bg-ccg-gold scale-150"></div>
+            <div class="glow-orb orb--2 !opacity-[0.1] !bottom-0 !-left-1/4 !bg-ccg-teal scale-125"></div>
 
             <div class="container relative z-10">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -349,67 +351,49 @@
                             aria-label="Breadcrumb">
                             <a href="../index.html#service" class="hover:text-ccg-gold transition-colors">Services</a>
                             <span class="w-1 h-1 bg-ccg-navy/20 rounded-full"></span>
-                            <span class="text-ccg-navy/80">Allied Health</span>
+                            <span class="text-ccg-navy/80">Complex Care</span>
                         </nav>
 
                         <div class="inline-flex items-center gap-2 bg-[#F0F7F9] px-4 py-2 rounded-full mb-6">
                             <span class="w-3 h-3 bg-ccg-gold rounded-full"></span>
-                            <span class="text-ccg-navy font-bold text-sm">Clinical Excellence</span>
+                            <span class="text-ccg-navy font-bold text-sm">Empowering Independence</span>
                         </div>
 
-                        <h1 class="hero-heading !text-5xl md:!text-7xl !mb-8">Allied <span
-                                class="text-ccg-gold">Health</span></h1>
+                        <h1 class="hero-heading !text-5xl md:!text-7xl !mb-8">Complex <span
+                                class="text-ccg-gold">Care</span></h1>
                         <p
                             class="lead !text-ccg-navy/70 !mb-12 text-lg text-slate-500 font-medium leading-relaxed max-w-2xl mx-auto">
-                            Occupational Therapy that supports safe, functional
-                            independence at home—aligned to your goals and environment.</p>
+                            Support for people with complex clinical needs to live
+                            safely and confidently at home—coordinating Community Care and Allied Health around one
+                            clear plan.</p>
 
                         <div class="button-row justify-center lg:justify-start">
                             <a class="btn btn-primary px-10 py-5" href="../get-support/index.html">Get Support</a>
                             <a class="btn btn-secondary px-10 py-5" href="../make-a-referral/index.html">Make a
                                 Referral</a>
                         </div>
-
-                        <div class="mt-12 space-y-4">
-                            <div class="flex items-center gap-4 text-ccg-navy font-bold text-sm tracking-wide">
-                                <svg class="w-5 h-5 text-ccg-gold" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                                        d="M5 13l4 4L19 7" />
-                                </svg>
-                                Occupational Therapy Focused
-                            </div>
-                            <div class="flex items-center gap-4 text-ccg-navy font-bold text-sm tracking-wide">
-                                <svg class="w-5 h-5 text-ccg-gold" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                                        d="M5 13l4 4L19 7" />
-                                </svg>
-                                Home-Based Assessments
-                            </div>
-                        </div>
                     </div>
 
                     <div class="relative hidden lg:block" data-reveal>
                         <div class="blob-mask aspect-square relative z-10 overflow-hidden shadow-2xl rounded-[4rem]">
-                            <img src="../images/allied-health-featured.png"
-                                alt="Occupational therapist working with a client at home"
+                            <img src="../images/complex-care-featured.png"
+                                alt="Nurse providing complex clinical care to a child"
                                 class="w-full h-full object-cover">
                         </div>
                         <div
-                            class="absolute -bottom-10 -right-10 bg-white p-8 rounded-[2rem] shadow-premium z-20 hidden md:block border border-slate-50">
+                            class="absolute -bottom-10 -left-10 bg-white p-8 rounded-[2rem] shadow-premium z-20 hidden md:block border border-slate-50">
                             <div class="flex items-center gap-4">
                                 <div class="w-12 h-12 bg-ccg-gold/10 rounded-xl flex items-center justify-center">
                                     <svg class="w-6 h-6 text-ccg-gold" fill="none" stroke="currentColor"
                                         viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M9 20l-5.447-2.724A2 2 0 013 15.485V5.515a2 2 0 011.553-1.944L9 2l5.447 2.724A2 2 0 0116 6.669v9.954a2 2 0 01-1.553 1.944L9 20z" />
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                     </svg>
                                 </div>
                                 <div>
                                     <p class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-0.5">
-                                        Focus</p>
-                                    <p class="text-ccg-navy font-bold">Functional Independence</p>
+                                        Clinical Focus</p>
+                                    <p class="text-ccg-navy font-bold">Complex Health Support</p>
                                 </div>
                             </div>
                         </div>
@@ -424,15 +408,14 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
                     <div data-reveal>
                         <div class="section-header !text-left !mb-10">
-                            <span class="section-kicker !text-ccg-gold">Service Overview</span>
-                            <h2 class="section-title !text-4xl md:!text-5xl !leading-[1.1]">Practical strategies for
-                                real environments.
-                            </h2>
+                            <span class="section-kicker !text-ccg-gold">Clinical Services</span>
+                            <h2 class="section-title !text-4xl md:!text-5xl !leading-[1.1]">Expert coordination for
+                                complex health needs.</h2>
                             <div class="section-accent !ml-0 !bg-ccg-gold"></div>
                         </div>
-                        <p class="text-xl text-slate-500 leading-relaxed font-medium mb-12">Allied Health supports
-                            independence by turning goals into practical strategies that work in your real home
-                            environment.</p>
+                        <p class="text-xl text-slate-500 leading-relaxed font-medium mb-12">Complex Care provides the
+                            highest level of clinical support for participants who require intensive coordination
+                            between clinical services, community support, and hospital care.</p>
 
                         <div class="space-y-6">
                             <div class="flex gap-5">
@@ -444,8 +427,7 @@
                                             d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
-                                <p class="text-ccg-navy/80 font-medium">Assessment and recommendations that fit your
-                                    home</p>
+                                <p class="text-ccg-navy/80 font-medium">Care coordination led by Registered Nurses</p>
                             </div>
                             <div class="flex gap-5">
                                 <div
@@ -456,55 +438,52 @@
                                             d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
-                                <p class="text-ccg-navy/80 font-medium">Goal-focused therapy and practical strategies
-                                </p>
-                            </div>
-                            <div class="flex gap-5">
-                                <div
-                                    class="w-6 h-6 rounded-full bg-ccg-gold/10 flex items-center justify-center shrink-0 mt-1">
-                                    <svg class="w-3.5 h-3.5 text-ccg-gold" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                                            d="M5 13l4 4L19 7" />
-                                    </svg>
-                                </div>
-                                <p class="text-ccg-navy/80 font-medium">Integrated planning with Community Care</p>
+                                <p class="text-ccg-navy/80 font-medium">Integration with GPs, specialists and hospital
+                                    teams</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="bg-white rounded-[3rem] p-10 md:p-12 shadow-premium border border-ccg-gold/20"
-                        data-reveal>
-                        <h3 class="text-2xl font-black text-ccg-navy mb-8">Service at a Glance</h3>
-                        <div class="space-y-8">
-                            <div class="flex flex-col gap-1">
-                                <span class="text-[10px] font-black uppercase tracking-[0.2em] text-ccg-gold">Delivered
-                                    By</span>
-                                <p class="text-ccg-navy font-bold">Qualified Occupational Therapists (OT).</p>
+                    <div class="lg:sticky lg:top-32" data-reveal>
+                        <div
+                            class="bg-white rounded-[3rem] p-10 shadow-premium border border-slate-50 relative overflow-hidden group hover:border-ccg-gold/30 transition-all duration-700">
+                            <h3 class="text-2xl font-black text-ccg-navy mb-8 flex items-center gap-3">
+                                <span class="w-10 h-10 bg-ccg-gold/10 rounded-xl flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-ccg-gold" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.033A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                    </svg>
+                                </span>
+                                At a Glance
+                            </h3>
+                            <div class="space-y-8">
+                                <div class="flex items-start gap-4">
+                                    <div class="text-ccg-gold font-black text-2xl pt-1">01</div>
+                                    <div>
+                                        <h4 class="font-bold text-ccg-navy mb-1 text-[17px]">Clinical Leadership</h4>
+                                        <p class="text-sm text-slate-500 font-medium">Care plans overseen by clinical
+                                            experts to manage high-needs health conditions.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div class="text-ccg-gold font-black text-2xl pt-1">02</div>
+                                    <div>
+                                        <h4 class="font-bold text-ccg-navy mb-1 text-[17px]">Safe Transitions</h4>
+                                        <p class="text-sm text-slate-500 font-medium">Supporting safe discharge from
+                                            hospital or management of deteriorating health at home.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="w-full h-px bg-slate-100"></div>
-                            <div class="flex flex-col gap-1">
-                                <span class="text-[10px] font-black uppercase tracking-[0.2em] text-ccg-gold">Key
-                                    Outputs</span>
-                                <p class="text-ccg-navy font-bold">Assessment, recommendations, and progress review.</p>
-                            </div>
-                            <div class="w-full h-px bg-slate-100"></div>
-                            <div class="flex flex-col gap-1">
-                                <span
-                                    class="text-[10px] font-black uppercase tracking-[0.2em] text-ccg-gold">Synergy</span>
-                                <p class="text-ccg-navy font-bold">Works alongside Community Care pathways.</p>
-                            </div>
-                            <div class="w-full h-px bg-slate-100"></div>
-                            <div class="flex flex-col gap-1">
-                                <span
-                                    class="text-[10px] font-black uppercase tracking-[0.2em] text-ccg-gold">Locations</span>
-                                <p class="text-ccg-navy font-bold">Queensland, New South Wales & Tasmania.</p>
-                            </div>
-                        </div>
-                        <div class="mt-12 flex flex-col md:flex-row gap-4">
-                            <a href="../get-support/index.html" class="btn btn-primary w-full py-4">Start Intake</a>
-                            <a href="../contact/index.html" class="btn btn-secondary w-full py-4 border-slate-200">Ask a
-                                Question</a>
+                            <a href="../get-support/index.html"
+                                class="mt-10 w-full bg-ccg-navy text-white text-center py-5 rounded-2xl font-black hover:bg-ccg-gold transition-all flex items-center justify-center gap-2 group/btn">
+                                Explore Service Fit
+                                <svg class="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -513,15 +492,11 @@
 
         <!-- Who It's For -->
         <section class="section !pt-20 !pb-20 bg-slate-50/50 relative overflow-hidden" id="who-its-for">
-            <!-- Premium Blurry Background Accents -->
             <div
                 class="absolute -top-24 -right-24 w-[500px] h-[500px] bg-ccg-gold/15 rounded-full blur-[120px] opacity-60">
             </div>
             <div
                 class="absolute -bottom-24 -left-24 w-[500px] h-[500px] bg-ccg-navy/10 rounded-full blur-[120px] opacity-60">
-            </div>
-            <div
-                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/40 rounded-full blur-[160px]">
             </div>
             <div class="container">
                 <div class="section-header" data-reveal>
@@ -530,48 +505,32 @@
                     <div class="section-accent"></div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 max-w-6xl mx-auto">
-                    <!-- Column 1 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 max-w-7xl mx-auto">
+                    <!-- Hospitals & Referrers -->
                     <div class="group h-full" data-reveal>
                         <div
-                            class="h-full bg-white/95 backdrop-blur-sm rounded-[3.5rem] p-12 border-2 border-white shadow-[0_32px_64px_-16px_rgba(0,59,92,0.1),-16px_16px_40px_-12px_rgba(0,59,92,0.15)] hover:shadow-[0_64px_100px_-20px_rgba(0,59,92,0.18),-20px_20px_60px_-12px_rgba(0,59,92,0.2)] hover:border-ccg-gold/30 transition-all duration-700 hover:-translate-y-3 relative overflow-hidden group">
-                            <!-- Premium Glow Effect -->
-                            <div
-                                class="absolute -inset-24 bg-[radial-gradient(circle_at_50%_50%,rgba(255,171,64,0.08),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
-                            </div>
-
-                            <!-- Internal Gold Accent -->
-                            <div
-                                class="absolute top-0 right-0 w-40 h-40 bg-ccg-gold/5 rounded-full -mr-20 -mt-20 transition-transform group-hover:scale-150 duration-700 blur-2xl">
-                            </div>
+                            class="h-full bg-white/95 backdrop-blur-sm rounded-[3.5rem] p-12 border-2 border-white shadow-premium hover:border-ccg-gold/30 transition-all duration-700 hover:-translate-y-3 relative overflow-hidden group">
                             <div class="relative z-10">
                                 <div
-                                    class="w-16 h-16 bg-ccg-gold/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-ccg-gold group-hover:text-white transition-all duration-500 shadow-sm">
+                                    class="w-16 h-16 bg-ccg-gold/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-ccg-gold group-hover:text-white transition-all duration-500">
                                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                                     </svg>
                                 </div>
-                                <h3 class="text-2xl font-black text-ccg-navy mb-6">Clients & families</h3>
-                                <p class="text-slate-500 leading-relaxed mb-8">When you want to improve day-to-day
-                                    function, confidence and safety at home.</p>
+                                <h3 class="text-2xl font-black text-ccg-navy mb-6">Hospitals & Referrers</h3>
+                                <p class="text-slate-500 leading-relaxed mb-8">When you need predictable activation,
+                                    clear inclusion criteria and escalation pathways—so discharge plans hold at home.
+                                </p>
                                 <ul class="space-y-4">
                                     <li class="flex items-start gap-3">
                                         <span class="w-1.5 h-1.5 bg-ccg-gold rounded-full mt-2.5"></span>
-                                        <span class="text-ccg-navy/80 font-bold text-sm">Building independence with
-                                            daily
-                                            tasks</span>
+                                        <span class="text-ccg-navy/80 font-bold text-sm">Clear intake and handover
+                                            priorities</span>
                                     </li>
                                     <li class="flex items-start gap-3">
                                         <span class="w-1.5 h-1.5 bg-ccg-gold rounded-full mt-2.5"></span>
-                                        <span class="text-ccg-navy/80 font-bold text-sm">Understanding risks and
-                                            practical
-                                            changes</span>
-                                    </li>
-                                    <li class="flex items-start gap-3">
-                                        <span class="w-1.5 h-1.5 bg-ccg-gold rounded-full mt-2.5"></span>
-                                        <span class="text-ccg-navy/80 font-bold text-sm">Support after health or
-                                            function
+                                        <span class="text-ccg-navy/80 font-bold text-sm">Escalation when risk
                                             changes</span>
                                     </li>
                                 </ul>
@@ -579,46 +538,62 @@
                         </div>
                     </div>
 
-                    <!-- Column 2 -->
+                    <!-- Clients & Families -->
                     <div class="group h-full" data-reveal>
                         <div
-                            class="h-full bg-white/95 backdrop-blur-sm rounded-[3.5rem] p-12 border-2 border-white shadow-[0_32px_64px_-16px_rgba(0,59,92,0.1),-16px_16px_40px_-12px_rgba(0,59,92,0.15)] hover:shadow-[0_64px_100px_-20px_rgba(0,59,92,0.18),-20px_20px_60px_-12px_rgba(0,59,92,0.2)] hover:border-ccg-gold/30 transition-all duration-700 hover:-translate-y-3 relative overflow-hidden group">
-                            <!-- Premium Glow Effect -->
-                            <div
-                                class="absolute -inset-24 bg-[radial-gradient(circle_at_50%_50%,rgba(255,171,64,0.08),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
-                            </div>
-
-                            <!-- Internal Gold Accent -->
-                            <div
-                                class="absolute top-0 right-0 w-40 h-40 bg-ccg-gold/5 rounded-full -mr-20 -mt-20 transition-transform group-hover:scale-150 duration-700 blur-2xl">
-                            </div>
+                            class="h-full bg-white/95 backdrop-blur-sm rounded-[3.5rem] p-12 border-2 border-white shadow-premium hover:border-ccg-gold/30 transition-all duration-700 hover:-translate-y-3 relative overflow-hidden group">
                             <div class="relative z-10">
                                 <div
-                                    class="w-16 h-16 bg-ccg-gold/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-ccg-gold group-hover:text-white transition-all duration-500 shadow-sm">
+                                    class="w-16 h-16 bg-ccg-gold/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-ccg-gold group-hover:text-white transition-all duration-500">
                                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                     </svg>
                                 </div>
-                                <h3 class="text-2xl font-black text-ccg-navy mb-6">Hospitals & referrers</h3>
-                                <p class="text-slate-500 leading-relaxed mb-8">When you need home-based assessment and
-                                    clear recommendations for safe discharge.</p>
+                                <h3 class="text-2xl font-black text-ccg-navy mb-6">Clients & Families</h3>
+                                <p class="text-slate-500 leading-relaxed mb-8">When care needs become more complex and
+                                    you want a clear plan, a coordinated team, and practical support at home.</p>
                                 <ul class="space-y-4">
                                     <li class="flex items-start gap-3">
                                         <span class="w-1.5 h-1.5 bg-ccg-gold rounded-full mt-2.5"></span>
-                                        <span class="text-ccg-navy/80 font-bold text-sm">Specialist Functional Capacity
-                                            Assessments</span>
+                                        <span class="text-ccg-navy/80 font-bold text-sm">Support after a hospital
+                                            stay</span>
                                     </li>
                                     <li class="flex items-start gap-3">
                                         <span class="w-1.5 h-1.5 bg-ccg-gold rounded-full mt-2.5"></span>
-                                        <span class="text-ccg-navy/80 font-bold text-sm">Detailed safe discharge
-                                            reporting</span>
+                                        <span class="text-ccg-navy/80 font-bold text-sm">Coordinated team
+                                            approach</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Funders & Insurers -->
+                    <div class="group h-full" data-reveal>
+                        <div
+                            class="h-full bg-white/95 backdrop-blur-sm rounded-[3.5rem] p-12 border-2 border-white shadow-premium hover:border-ccg-gold/30 transition-all duration-700 hover:-translate-y-3 relative overflow-hidden group">
+                            <div class="relative z-10">
+                                <div
+                                    class="w-16 h-16 bg-ccg-gold/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-ccg-gold group-hover:text-white transition-all duration-500">
+                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.033A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-2xl font-black text-ccg-navy mb-6">Funders & Insurers</h3>
+                                <p class="text-slate-500 leading-relaxed mb-8">When you need transparency, risk control
+                                    and an evidence-based approach—without hype.</p>
+                                <ul class="space-y-4">
+                                    <li class="flex items-start gap-3">
+                                        <span class="w-1.5 h-1.5 bg-ccg-gold rounded-full mt-2.5"></span>
+                                        <span class="text-ccg-navy/80 font-bold text-sm">Clear scope and cohort
+                                            definitions</span>
                                     </li>
                                     <li class="flex items-start gap-3">
                                         <span class="w-1.5 h-1.5 bg-ccg-gold rounded-full mt-2.5"></span>
-                                        <span class="text-ccg-navy/80 font-bold text-sm">Comprehensive home and
-                                            equipment
-                                            needs</span>
+                                        <span class="text-ccg-navy/80 font-bold text-sm">Disciplined
+                                            documentation</span>
                                     </li>
                                 </ul>
                             </div>
@@ -632,116 +607,116 @@
         <section class="section !pt-20 !pb-20 bg-[#F8FAFB]" id="whats-included">
             <div class="container">
                 <div class="section-header" data-reveal>
-                    <span class="section-kicker">Core Services</span>
+                    <span class="section-kicker">Core Programs</span>
                     <h2 class="section-title">What's included</h2>
                     <div class="section-accent"></div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
-                    <!-- Item 1 -->
+                    <!-- Program 1 -->
                     <div class="bg-white rounded-[2.5rem] p-10 border border-slate-200/60 shadow-md hover:shadow-xl transition-all duration-500"
                         data-reveal>
-                        <h4 class="text-xl font-black text-ccg-navy mb-4">Functional Assessment</h4>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-6">In-depth assessment within your actual
-                            home environment, focusing on daily living.</p>
+                        <h4 class="text-xl font-black text-ccg-navy mb-4">Hospital-to-Home</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">Structured post-discharge support that
+                            helps clients transition safely from hospital to home.</p>
                         <ul class="space-y-3">
                             <li class="flex items-center gap-3 text-xs font-bold text-ccg-navy/70">
                                 <span class="w-1.5 h-1.5 bg-ccg-teal rounded-full"></span>
-                                Real-world context
+                                Short-term structured support
                             </li>
                             <li class="flex items-center gap-3 text-xs font-bold text-ccg-navy/70">
                                 <span class="w-1.5 h-1.5 bg-ccg-teal rounded-full"></span>
-                                Clear functional baseline
+                                Clear activation and handovers
                             </li>
                         </ul>
                     </div>
 
-                    <!-- Item 2 -->
+                    <!-- Program 2 -->
                     <div class="bg-white rounded-[2.5rem] p-10 border border-slate-200/60 shadow-md hover:shadow-xl transition-all duration-500"
                         data-reveal>
-                        <h4 class="text-xl font-black text-ccg-navy mb-4">Goal Setting</h4>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-6">Aligning therapy to what matters most to
-                            you through practical milestones.</p>
+                        <h4 class="text-xl font-black text-ccg-navy mb-4">Hospital-in-the-Home</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">Protocolled hospital-substitute care at
+                            home, under defined criteria and escalation pathways.</p>
                         <ul class="space-y-3">
                             <li class="flex items-center gap-3 text-xs font-bold text-ccg-navy/70">
                                 <span class="w-1.5 h-1.5 bg-ccg-teal rounded-full"></span>
-                                Individualised outcomes
+                                Defined clinical criteria
                             </li>
                             <li class="flex items-center gap-3 text-xs font-bold text-ccg-navy/70">
                                 <span class="w-1.5 h-1.5 bg-ccg-teal rounded-full"></span>
-                                Progress milestones
+                                Clear escalation lines
                             </li>
                         </ul>
                     </div>
 
-                    <!-- Item 3 -->
+                    <!-- Program 3 -->
                     <div class="bg-white rounded-[2.5rem] p-10 border border-slate-200/60 shadow-md hover:shadow-xl transition-all duration-500"
                         data-reveal>
-                        <h4 class="text-xl font-black text-ccg-navy mb-4">Home Safety Review</h4>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-6">Identify and overcome environmental
-                            barriers and risks at home.</p>
+                        <h4 class="text-xl font-black text-ccg-navy mb-4">Rehab-in-the-Home</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">Structured in-home rehabilitation that
+                            supports functional recovery in the client’s own environment.</p>
                         <ul class="space-y-3">
                             <li class="flex items-center gap-3 text-xs font-bold text-ccg-navy/70">
                                 <span class="w-1.5 h-1.5 bg-ccg-teal rounded-full"></span>
-                                Risk identification
+                                Goal-focused milestones
                             </li>
                             <li class="flex items-center gap-3 text-xs font-bold text-ccg-navy/70">
                                 <span class="w-1.5 h-1.5 bg-ccg-teal rounded-full"></span>
-                                Environmental modifications
+                                Real-life rehab context
                             </li>
                         </ul>
                     </div>
 
-                    <!-- Item 4 -->
+                    <!-- Program 4 -->
                     <div class="bg-white rounded-[2.5rem] p-10 border border-slate-200/60 shadow-md hover:shadow-xl transition-all duration-500"
                         data-reveal>
-                        <h4 class="text-xl font-black text-ccg-navy mb-4">Equipment</h4>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-6">Professional advice on equipment to
-                            support daily function and safety.</p>
+                        <h4 class="text-xl font-black text-ccg-navy mb-4">Clinical Governance</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">Prioritising safety and clear escalation
+                            pathways when health needs change or risk increases.</p>
                         <ul class="space-y-3">
                             <li class="flex items-center gap-3 text-xs font-bold text-ccg-navy/70">
                                 <span class="w-1.5 h-1.5 bg-ccg-teal rounded-full"></span>
-                                Expert prescription
+                                Clinically governed pathways
                             </li>
                             <li class="flex items-center gap-3 text-xs font-bold text-ccg-navy/70">
                                 <span class="w-1.5 h-1.5 bg-ccg-teal rounded-full"></span>
-                                Usage training
+                                Credentialed professionals
                             </li>
                         </ul>
                     </div>
 
-                    <!-- Item 5 -->
+                    <!-- Program 5 -->
                     <div class="bg-white rounded-[2.5rem] p-10 border border-slate-200/60 shadow-md hover:shadow-xl transition-all duration-500"
                         data-reveal>
-                        <h4 class="text-xl font-black text-ccg-navy mb-4">Collaboration</h4>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-6">Working with your care team and family to
-                            ensure follow-through.</p>
+                        <h4 class="text-xl font-black text-ccg-navy mb-4">Care Coordination</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">One coordinated plan so clients, families
+                            and referrers can follow what’s happening.</p>
                         <ul class="space-y-3">
                             <li class="flex items-center gap-3 text-xs font-bold text-ccg-navy/70">
                                 <span class="w-1.5 h-1.5 bg-ccg-teal rounded-full"></span>
-                                Care team handover
+                                Consent-based updates
                             </li>
                             <li class="flex items-center gap-3 text-xs font-bold text-ccg-navy/70">
                                 <span class="w-1.5 h-1.5 bg-ccg-teal rounded-full"></span>
-                                Family guidance
+                                Clear responsibilities
                             </li>
                         </ul>
                     </div>
 
-                    <!-- Item 6 -->
+                    <!-- Program 6 -->
                     <div class="bg-white rounded-[2.5rem] p-10 border border-slate-200/60 shadow-md hover:shadow-xl transition-all duration-500"
                         data-reveal>
-                        <h4 class="text-xl font-black text-ccg-navy mb-4">Review & Adjust</h4>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-6">Ongoing refinement of strategies for
-                            sustainable, long-term change.</p>
+                        <h4 class="text-xl font-black text-ccg-navy mb-4">Outcome Evaluation</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">We review progress and safety, then
+                            adjust the plan and ensure the next step is clear.</p>
                         <ul class="space-y-3">
                             <li class="flex items-center gap-3 text-xs font-bold text-ccg-navy/70">
                                 <span class="w-1.5 h-1.5 bg-ccg-teal rounded-full"></span>
-                                Sustainability check
+                                Regular progress reviews
                             </li>
                             <li class="flex items-center gap-3 text-xs font-bold text-ccg-navy/70">
                                 <span class="w-1.5 h-1.5 bg-ccg-teal rounded-full"></span>
-                                Strategy updates
+                                Goal-focused checks
                             </li>
                         </ul>
                     </div>
@@ -752,10 +727,10 @@
         <!-- How It Works -->
         <section class="section !pt-20 !pb-20" id="how-it-works">
             <div class="container">
-                <div class="section-header" data-reveal>
+                <div class="section-header text-center" data-reveal>
                     <span class="section-kicker">Clinical Method</span>
                     <h2 class="section-title">How it works</h2>
-                    <div class="section-accent"></div>
+                    <div class="section-accent mx-auto"></div>
                 </div>
 
                 <div class="flex flex-wrap justify-center gap-x-6 gap-y-12 mt-20 max-w-[1400px] mx-auto">
@@ -772,7 +747,7 @@
                                 </svg>
                             </div>
                             <h4>Intake</h4>
-                            <p>Confirming the reason for referral and target outcomes.</p>
+                            <p>We confirm the referral reason, priorities, and any urgent safety considerations.</p>
                         </div>
                     </div>
 
@@ -789,7 +764,7 @@
                                 </svg>
                             </div>
                             <h4>Assessment</h4>
-                            <p>An OT reviews function and environment for risks.</p>
+                            <p>An clinical assessment of needs and home context to triage the right pathway.</p>
                         </div>
                     </div>
 
@@ -802,11 +777,11 @@
                                 <svg class="w-6 h-6 text-ccg-teal" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                                 </svg>
                             </div>
-                            <h4>Recommendations</h4>
-                            <p>Clear, practical strategies aligned to your goals.</p>
+                            <h4>Assignment</h4>
+                            <p>We match the right clinical team and confirm escalation pathways.</p>
                         </div>
                     </div>
 
@@ -819,219 +794,166 @@
                                 <svg class="w-6 h-6 text-ccg-gold" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.033A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                                 </svg>
                             </div>
-                            <h4>Follow-up</h4>
-                            <p>Reviewing progress and adjusting for sustainability.</p>
+                            <h4>Delivery</h4>
+                            <p>We support the agreed plan and escalate if risk changes or needs shift.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="process-step-premium md:-translate-y-4" data-reveal>
+                        <div class="process-card-inner border-teal">
+                            <div class="wave-accent wave-teal"></div>
+                            <div class="step-badge bg-ccg-teal">5</div>
+                            <div class="step-icon">
+                                <svg class="w-6 h-6 text-ccg-teal" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <h4>Evaluation</h4>
+                            <p>Reviewing what’s working, adjusting the plan, and ensuring the next step is clear.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Accessing Care -->
-        <section class="section !pt-20 !pb-20 bg-[#F8FAFB]" id="funding">
-            <div class="container">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+        <!-- Eligibility Section (Dark Theme) -->
+        <section class="section !pt-32 !pb-32 bg-ccg-navy relative overflow-hidden" id="eligibility">
+            <div class="glow-orb orb--1 !opacity-[0.1] !top-0 !right-0 !bg-ccg-gold scale-150"></div>
+            <div class="container relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <div data-reveal>
-                        <div class="section-header !text-left !mb-10">
-                            <span class="section-kicker">Referral Pathways</span>
-                            <h2 class="section-title !text-4xl md:!text-5xl !leading-[1.1]">Funding and eligibility.
-                            </h2>
-                            <div class="section-accent !ml-0"></div>
-                        </div>
-                        <p class="text-xl text-slate-500 leading-relaxed font-medium mb-10">We confirm the best funding
-                            pathway during our initial intake process based on your referral source.</p>
+                        <span class="section-kicker !text-ccg-gold">Access & Funding</span>
+                        <h2 class="section-title !text-white">Eligibility & Access</h2>
+                        <div class="section-accent !ml-0 !bg-ccg-gold"></div>
+                        <p class="text-white/70 text-lg mb-10">Complex Care programs are typically accessed through
+                            hospital discharge or clinical referral pathways. We’ll confirm the right fit during intake.
+                        </p>
 
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                                <p class="text-ccg-navy font-bold text-sm mb-2">NDIS Participants</p>
-                                <p class="text-slate-400 text-xs leading-loose">Individualised OT support within plan
-                                    parameters.</p>
-                            </div>
-                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                                <p class="text-ccg-navy font-bold text-sm mb-2">Self-Funded</p>
-                                <p class="text-slate-400 text-xs leading-loose">Professional assessment for private
-                                    clients.</p>
-                            </div>
-                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                                <p class="text-ccg-navy font-bold text-sm mb-2">Insurers</p>
-                                <p class="text-slate-400 text-xs leading-loose">Reporting for TAC, WorkCover and other
-                                    schemes.</p>
-                            </div>
-                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                                <p class="text-ccg-navy font-bold text-sm mb-2">Hospital Liaison</p>
-                                <p class="text-slate-400 text-xs leading-loose">Supporting safe discharge through home
-                                    review.</p>
-                            </div>
-                        </div>
+                        <ul class="space-y-6">
+                            <li class="flex items-center gap-4 text-white font-bold">
+                                <span
+                                    class="w-6 h-6 rounded-full bg-ccg-gold flex items-center justify-center shrink-0">
+                                    <svg class="w-4 h-4 text-ccg-navy" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </span>
+                                Hospital discharge and referrer pathways
+                            </li>
+                            <li class="flex items-center gap-4 text-white font-bold">
+                                <span
+                                    class="w-6 h-6 rounded-full bg-ccg-gold flex items-center justify-center shrink-0">
+                                    <svg class="w-4 h-4 text-ccg-navy" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </span>
+                                Insurer referrals (where applicable)
+                            </li>
+                            <li class="flex items-center gap-4 text-white font-bold">
+                                <span
+                                    class="w-6 h-6 rounded-full bg-ccg-gold flex items-center justify-center shrink-0">
+                                    <svg class="w-4 h-4 text-ccg-navy" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </span>
+                                Private & Self-Funded pathways
+                            </li>
+                        </ul>
                     </div>
-
-                    <div class="bg-ccg-navy rounded-[3rem] p-12 md:p-16 text-white relative overflow-hidden"
+                    <div class="bg-white/5 backdrop-blur-md rounded-[3rem] p-10 lg:p-14 border border-white/10"
                         data-reveal>
-                        <div class="relative z-10">
-                            <h3 class="text-3xl font-black mb-8">What to have ready</h3>
-                            <ul class="space-y-6">
-                                <li class="flex items-start gap-4">
-                                    <div
-                                        class="w-6 h-6 rounded-full bg-ccg-gold/20 flex items-center justify-center shrink-0 mt-1">
-                                        <svg class="w-3 h-3 text-ccg-gold" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd"
-                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <p class="font-bold">Functional Goals</p>
-                                        <p class="text-white/50 text-xs mt-1">Tasks you want to perform independently.
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-4">
-                                    <div
-                                        class="w-6 h-6 rounded-full bg-ccg-gold/20 flex items-center justify-center shrink-0 mt-1">
-                                        <svg class="w-3 h-3 text-ccg-gold" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd"
-                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <p class="font-bold">Home Access Info</p>
-                                        <p class="text-white/50 text-xs mt-1">Details about your current living
-                                            environment.</p>
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-4">
-                                    <div
-                                        class="w-6 h-6 rounded-full bg-ccg-gold/20 flex items-center justify-center shrink-0 mt-1">
-                                        <svg class="w-3 h-3 text-ccg-gold" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd"
-                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <p class="font-bold">Medical History</p>
-                                        <p class="lead !text-white/80 !mb-12" data-reveal>We are currently providing
-                                            services across QLD, NSW, SA, WA and TAS.</p>
-                                    </div>
-                                </li>
-                            </ul>
+                        <h3 class="text-2xl font-black text-white mb-8">What to have ready</h3>
+                        <div class="space-y-6 text-white/80">
+                            <p class="flex gap-4">
+                                <span class="text-ccg-gold font-black">01</span>
+                                Referral reasons and target goals
+                            </p>
+                            <p class="flex gap-4">
+                                <span class="text-ccg-gold font-black">02</span>
+                                Key contacts (GP, Hospital team, Family)
+                            </p>
+                            <p class="flex gap-4">
+                                <span class="text-ccg-gold font-black">03</span>
+                                Relevant clinical notes or discharge paperwork
+                            </p>
                         </div>
-                        <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+                        <a href="../make-a-referral/index.html" class="btn btn-primary w-full mt-12 py-5">Start a
+                            Referral</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- FAQs -->
-        <section class="section !pt-20 !pb-20" id="faqs">
-            <div class="container max-w-4xl">
-                <div class="section-header" data-reveal>
-                    <span class="section-kicker">Common Questions</span>
-                    <h2 class="section-title">Allied Health FAQs</h2>
-                    <div class="section-accent"></div>
-                </div>
-
-                <div class="mt-16 space-y-4">
-                    <details
-                        class="group bg-slate-50 rounded-3xl p-8 border border-slate-200 open:bg-white open:shadow-xl transition-all duration-500"
-                        data-reveal>
-                        <summary class="flex items-center justify-between cursor-pointer list-none">
-                            <h4 class="text-lg font-black text-ccg-navy">What happens in an OT assessment?</h4>
-                            <span
-                                class="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center group-open:rotate-180 transition-transform shadow-sm">
-                                <svg class="w-4 h-4 text-ccg-navy" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                                        d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </span>
-                        </summary>
-                        <div class="mt-6 text-slate-500 leading-relaxed">
-                            <p>An Occupational Therapist looks at your physical function and your home environment
-                                together. They identify specific barriers and clinical opportunities to help you live
-                                more safely and independently, providing a clear roadmap of practical recommendations.
-                            </p>
-                        </div>
-                    </details>
-
-                    <details
-                        class="group bg-slate-50 rounded-3xl p-8 border border-slate-200 open:bg-white open:shadow-xl transition-all duration-500"
-                        data-reveal>
-                        <summary class="flex items-center justify-between cursor-pointer list-none">
-                            <h4 class="text-lg font-black text-ccg-navy">Can OT work with my existing supports?</h4>
-                            <span
-                                class="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center group-open:rotate-180 transition-transform shadow-sm">
-                                <svg class="w-4 h-4 text-ccg-navy" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                                        d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </span>
-                        </summary>
-                        <div class="mt-6 text-slate-500 leading-relaxed">
-                            <p>Absolutely. With your consent, we coordinate our clinical recommendations with your
-                                Community Care team, family members, and medical referrers. This ensures everyone is
-                                working toward the same set of functional goals.</p>
-                        </div>
-                    </details>
-
-                    <details
-                        class="group bg-slate-50 rounded-3xl p-8 border border-slate-200 open:bg-white open:shadow-xl transition-all duration-500"
-                        data-reveal>
-                        <summary class="flex items-center justify-between cursor-pointer list-none">
-                            <h4 class="text-lg font-black text-ccg-navy">Do you offer other allied health disciplines?
-                            </h4>
-                            <span
-                                class="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center group-open:rotate-180 transition-transform shadow-sm">
-                                <svg class="w-4 h-4 text-ccg-navy" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                                        d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </span>
-                        </summary>
-                        <div class="mt-6 text-slate-500 leading-relaxed">
-                            <p>Currently, our Allied Health services focus primarily on Occupational Therapy, as this is
-                                critical for the hospital-to-home transition. We may add additional disciplines over
-                                time as our clinical services continue to expand.</p>
-                        </div>
-                    </details>
-                </div>
-            </div>
-        </section>
-
-        <!-- Final CTA -->
-        <section class="section relative overflow-hidden py-32">
-            <div class="absolute inset-0 bg-ccg-navy"></div>
-            <div class="bg-layer bg-dot-pattern opacity-10"></div>
-
-            <div class="container relative z-10">
-                <div class="max-w-3xl mx-auto" data-reveal>
-                    <h2 class="text-5xl md:text-6xl font-black text-white mb-8">Take the <span
-                            class="text-ccg-gold">next step. </span></h2>
-                    <p class="text-white/60 text-xl leading-relaxed mb-12">Start with Get Support and we’ll guide you to
-                        the right allied health pathway for your goals.</p>
-
-                    <div class="flex flex-col sm:flex-row justify-center gap-6">
-                        <a href="../get-support/index.html"
-                            class="bg-ccg-gold text-white px-12 py-5 rounded-2xl font-black text-[15px] uppercase tracking-[0.2em] shadow-xl shadow-ccg-gold/20 hover:scale-105 transition-all">Start
-                            Intake</a>
-                        <a href="../make-a-referral/index.html"
-                            class="bg-white/10 text-white px-12 py-5 rounded-2xl font-black text-[15px] uppercase tracking-[0.2em] border border-white/20 hover:bg-white/20 transition-all">Make
-                            a Referral</a>
+        <section class="section !pb-32" id="faqs">
+            <div class="container">
+                <div class="max-w-4xl mx-auto">
+                    <div class="section-header text-center" data-reveal>
+                        <span class="section-kicker">Common Questions</span>
+                        <h2 class="section-title">Complex Care FAQs</h2>
+                        <div class="section-accent mx-auto"></div>
                     </div>
 
-                    <p class="mt-12 text-white/30 text-[10px] font-bold uppercase tracking-widest">Urgent or
-                        Life-Threatening? Please call 000 immediately.</p>
+                    <div class="space-y-4 mt-16">
+                        <details
+                            class="group bg-white rounded-3xl border border-slate-200 overflow-hidden transition-all duration-300 open:border-ccg-gold/30 open:shadow-xl"
+                            data-reveal>
+                            <summary class="flex items-center justify-between p-8 cursor-pointer list-none">
+                                <span class="text-lg font-bold text-ccg-navy pr-8">Are these programs available
+                                    now?</span>
+                                <span
+                                    class="relative h-5 w-5 shrink-0 transition-transform duration-300 group-open:rotate-180">
+                                    <svg class="h-5 w-5 text-ccg-gold" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </span>
+                            </summary>
+                            <div class="px-8 pb-8 text-slate-500 font-medium leading-relaxed">
+                                Complex Care programs are being built and scaled using a safety-first gate model.
+                                Availability may vary by location and readiness. If you tell us what you’re trying to
+                                organise, we’ll confirm the most appropriate next step.
+                            </div>
+                        </details>
+
+                        <details
+                            class="group bg-white rounded-3xl border border-slate-200 overflow-hidden transition-all duration-300 open:border-ccg-gold/30 open:shadow-xl"
+                            data-reveal>
+                            <summary class="flex items-center justify-between p-8 cursor-pointer list-none">
+                                <span class="text-lg font-bold text-ccg-navy pr-8">How do you manage escalation?</span>
+                                <span
+                                    class="relative h-5 w-5 shrink-0 transition-transform duration-300 group-open:rotate-180">
+                                    <svg class="h-5 w-5 text-ccg-gold" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </span>
+                            </summary>
+                            <div class="px-8 pb-8 text-slate-500 font-medium leading-relaxed">
+                                We use clinically governed escalation pathways and clear communication. If a situation
+                                is urgent or life-threatening, always call 000.
+                            </div>
+                        </details>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Site Footer -->
     <footer class="bg-ccg-navy pt-32 pb-16 text-white relative overflow-hidden">
         <!-- Footer background accent -->
         <div class="absolute top-0 right-0 w-1/2 h-full bg-white/[0.02] -skew-x-12 translate-x-1/4"></div>
@@ -1138,6 +1060,7 @@
             </div>
         </div>
     </footer>
+
     <script src="../js/script.js" defer></script>
     <script src="../js/app.js" defer></script>
     <script src="../js/forms.js" defer></script>
