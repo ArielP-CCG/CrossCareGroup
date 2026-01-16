@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <h4 class="text-2xl md:text-3xl font-black mb-4">Ready to start your journey?</h4>
                                 <p class="text-white/60 font-medium">Speak with our intake team about your specific support needs.</p>
                             </div>
-                            <a href="../get-support/index.html" class="bg-ccg-gold text-ccg-navy px-8 py-4 rounded-full font-black text-sm uppercase tracking-widest hover:bg-white transition-all whitespace-nowrap">
+                            <a href="../get-support/" class="bg-ccg-gold text-ccg-navy px-8 py-4 rounded-full font-black text-sm uppercase tracking-widest hover:bg-white transition-all whitespace-nowrap">
                                 Request Support
                             </a>
                         </div>
