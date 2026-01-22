@@ -26,7 +26,9 @@
   <url><loc>https://crosscaregroup.com.au/resources/easy-read/</loc><priority>0.5</priority></url>
   
   <!-- Compliance & Policies -->
-  <url><loc>https://crosscaregroup.com.au/system/</loc><priority>0.3</priority></url>
+  <url><loc>https://crosscaregroup.com.au/legal/privacy-policy/</loc><priority>0.3</priority></url>
+  <url><loc>https://crosscaregroup.com.au/legal/terms-of-use/</loc><priority>0.3</priority></url>
   <url><loc>https://crosscaregroup.com.au/accessibility/</loc><priority>0.3</priority></url>
   <url><loc>https://crosscaregroup.com.au/rights-feedback-complaints/</loc><priority>0.3</priority></url>
+  <url><loc>https://crosscaregroup.com.au/sitemap/</loc><priority>0.2</priority></url>
 </urlset>

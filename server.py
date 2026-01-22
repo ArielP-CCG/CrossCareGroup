@@ -76,7 +76,7 @@ def serve_error_page(handler, code):
     handler.send_header('Content-type', 'text/html')
     handler.end_headers()
     
-    file_path = os.path.join("system", f"{code}.html")
+    file_path = os.path.join("", f"{code}.html")
     if os.path.exists(file_path):
         with open(file_path, "rb") as f:
             handler.wfile.write(f.read())
