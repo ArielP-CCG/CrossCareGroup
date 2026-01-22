@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Service Temporarily Unavailable | Cross Care Group</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ccg-navy': '#003B5C',
+                        'ccg-gold': '#FFAB40',
+                        'ccg-teal': '#0096A1',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px -12px rgba(0, 59, 92, 0.1);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(0, 59, 92, 0.08), transparent),
+                radial-gradient(circle at bottom left, rgba(255, 171, 64, 0.08), transparent);
+        }
+    </style>
+</head>
+
+<body class="bg-white min-h-screen flex items-center justify-center p-6 hero-gradient overflow-hidden">
+    <div class="max-w-xl w-full text-center relative z-10">
+        <div class="mb-12">
+            <a href="/">
+                <img src="../images/logo.png" alt="Cross Care Group" class="h-16 lg:h-20 mx-auto drop-shadow-sm">
+            </a>
+        </div>
+
+        <div class="glass-card p-12 rounded-[3.5rem] relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-ccg-navy via-ccg-teal to-ccg-gold"></div>
+
+            <div class="mb-8">
+                <span class="inline-flex items-center justify-center w-20 h-20 bg-ccg-navy/5 rounded-3xl mb-6">
+                    <svg class="w-10 h-10 text-ccg-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                </span>
+                <h1 class="text-7xl font-black text-ccg-navy mb-2 tracking-tighter">503</h1>
+                <h2 class="text-2xl font-bold text-slate-800 uppercase tracking-widest text-sm mb-6">Service Unavailable
+                </h2>
+            </div>
+
+            <p class="text-slate-500 text-lg leading-relaxed mb-10 font-medium">
+                We're currently performing essential maintenance to improve our clinical systems. We'll be back shortly.
+            </p>
+
+            <div class="flex flex-col gap-4">
+                <a href="/"
+                    class="bg-ccg-navy text-white px-10 py-5 rounded-full font-black text-lg hover:bg-ccg-gold transition-all duration-300 shadow-xl shadow-navy/20">
+                    Return to Homepage
+                </a>
+            </div>
+        </div>
+
+        <p class="mt-12 text-[10px] font-black uppercase tracking-[0.4em] text-ccg-navy/30">
+            Quality • Governance • Integrity
+        </p>
+    </div>
+</body>
+
+</html>

@@ -4,14 +4,14 @@ import urllib.parse
 import urllib.request
 import json
 import os
-import base64
+import time
 from datetime import datetime
 
 # --- CONFIGURATION ---
 # Load .env file manually to avoid external dependencies
 if os.path.exists(".env"):
     print("Loading .env file...")
-    with open(".env") as f:
+    with open(".env", "r", encoding="utf-8") as f:
         for line in f:
             line = line.strip()
             if "=" in line and not line.startswith("#"):
@@ -22,23 +22,33 @@ if os.path.exists(".env"):
                     continue
 
 PORT = int(os.environ.get("PORT", 8000))
-ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "ccg-admin-2025")
 
-# Graph API / OAuth Config
-TENANT_ID = os.environ.get("TENANT_ID")
-CLIENT_ID = os.environ.get("CLIENT_ID")
-CLIENT_SECRET = os.environ.get("CLIENT_SECRET")
-SCOPE = os.environ.get("SCOPE", "https://graph.microsoft.com/.default")
-GRANT_TYPE = os.environ.get("GRANT_TYPE", "client_credentials")
+# Power Automate / Logic App Config (Cleaned Env)
+ENDPOINTS = {
+    "submit-support": os.environ.get("DEV_API_REQUEST_SUPPORT"),
+    "submit-contact": os.environ.get("DEV_API_REQUEST_ENQUIRY"),
+    "submit-eoi": os.environ.get("DEV_API_REQUEST_EOI"),
+    "make-a-referral": os.environ.get("DEV_API_REQUEST_REFERRAL"),
+    "submit-feedback": os.environ.get("DEV_API_REQUEST_FAC"),
+    "submit-complaint": os.environ.get("DEV_API_REQUEST_FAC")
+}
 
-SITE_ID = os.environ.get("SITE_ID")
-LIST_REQUEST_ID = os.environ.get("LIST_REQUEST_ID")
-LIST_ENQUIRY_ID = os.environ.get("LIST_ENQUIRY_ID")
-LIST_EOI_ID = os.environ.get("LIST_EOI_ID")
-LIST_FEEDBACK_COMPLAINT_ID = os.environ.get("LIST_FEEDBACK_COMPLAINT_ID")
-LIST_REFERRAL_ID = os.environ.get("LIST_REFERRAL_ID")
-DRIVE_ID = os.environ.get("DRIVE_ID")
-FOLDER_NAME = os.environ.get("FOLDER_NAME")
+# --- RATE LIMITING ---
+rate_limit_store = {} # {ip: [timestamps]}
+
+def is_rate_limited(ip):
+    now = time.time()
+    if ip not in rate_limit_store:
+        rate_limit_store[ip] = []
+    
+    # Clean up old timestamps (older than 60s)
+    rate_limit_store[ip] = [t for t in rate_limit_store[ip] if now - t < 60]
+    
+    if len(rate_limit_store[ip]) >= 10: # Increased to 10 requests per minute for flexibility
+        return True
+    
+    rate_limit_store[ip].append(now)
+    return False
 
 # --- LOGGING UTILITY ---
 def log_event(message):
@@ -53,8 +63,6 @@ def log_event(message):
         filename = f"logs/CCG-{date_str}.log"
         
         log_entry = f"[{timestamp}] {message}\n"
-        
-        # Print to console as well
         print(message)
         
         with open(filename, "a", encoding="utf-8") as f:
@@ -62,230 +70,153 @@ def log_event(message):
     except Exception as e:
         print(f"FAILED TO LOG: {e}")
 
-def get_access_token():
-    log_event("Requesting fresh access token from Microsoft...")
-    if not TENANT_ID or not CLIENT_ID or not CLIENT_SECRET:
-        log_event("Error: Missing OAuth2 credentials (TENANT_ID, CLIENT_ID, or CLIENT_SECRET)")
-        return None
-
-    url = f"https://login.microsoftonline.com/{TENANT_ID}/oauth2/v2.0/token"
-    body = {
-        'client_id': CLIENT_ID,
-        'scope': SCOPE,
-        'client_secret': CLIENT_SECRET,
-        'grant_type': GRANT_TYPE
-    }
+def serve_error_page(handler, code):
+    """Serves a custom HTML error page if it exists, otherwise sends a plain error."""
+    handler.send_response(code)
+    handler.send_header('Content-type', 'text/html')
+    handler.end_headers()
     
-    try:
-        log_event(f"--- DEBUG: MICROSOFT TOKEN REQUEST ---")
-        log_event(f"URI: {url}")
-        log_event(f"Body: {body}")
-        log_event(f"-----------------------------------------")
-        data = urllib.parse.urlencode(body).encode('utf-8')
-        req = urllib.request.Request(url, data=data, method='POST')
-        
-        with urllib.request.urlopen(req) as response:
-            res = json.loads(response.read().decode('utf-8'))
-            log_event("Token acquired successfully.")
-            return f"Bearer {res['access_token']}"
-    except Exception as e:
-        log_event(f"Token Acquisition Error: {e}")
-        return None
+    file_path = os.path.join("system", f"{code}.html")
+    if os.path.exists(file_path):
+        with open(file_path, "rb") as f:
+            handler.wfile.write(f.read())
+    else:
+        # Fallback to plain text if HTML doesn't exist
+        messages = {
+            400: b"400 Bad Request",
+            403: b"403 Forbidden",
+            500: b"500 Internal Server Error",
+            502: b"502 Bad Gateway",
+            503: b"503 Service Unavailable"
+        }
+        handler.wfile.write(messages.get(code, b"Error"))
 
 class CCGHandler(http.server.SimpleHTTPRequestHandler):
     def end_headers(self):
+        # Production Security Headers
         self.send_header('Access-Control-Allow-Origin', '*')
-        self.send_header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS')
-        self.send_header('Access-Control-Allow-Headers', 'Content-Type, Authorization')
+        self.send_header('X-Frame-Options', 'DENY')
+        self.send_header('X-Content-Type-Options', 'nosniff')
+        self.send_header('Content-Security-Policy', "default-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com https://cdn.tailwindcss.com; img-src 'self' data:;")
+        self.send_header('Strict-Transport-Security', 'max-age=31536000; includeSubDomains')
+        self.send_header('Referrer-Policy', 'strict-origin-when-cross-origin')
         http.server.SimpleHTTPRequestHandler.end_headers(self)
 
-    def do_OPTIONS(self):
-        self.send_response(200)
-        self.end_headers()
-
     def do_POST(self):
-        log_event(f"Incoming POST request to: {self.path}")
+        # 1. Rate Limiting Check
+        client_ip = self.client_address[0]
+        if is_rate_limited(client_ip):
+            log_event(f"SECURITY: Rate limit exceeded for {client_ip}")
+            self.send_response(429)
+            self.send_header('Content-type', 'application/json')
+            self.end_headers()
+            self.wfile.write(json.dumps({"status": "error", "message": "Too many requests. Please wait a minute."}).encode())
+            return
+
+        log_event(f"API: Incoming submission to {self.path}")
         
         try:
-            content_length_header = self.headers.get('Content-Length')
-            content_length = int(content_length_header) if content_length_header else 0
+            content_length = int(self.headers.get('Content-Length', 0))
+            if content_length > 10 * 1024 * 1024: # Limit payload to 10MB (for attachments)
+                self.send_response(413)
+                self.end_headers()
+                return
+
             post_data = self.rfile.read(content_length).decode('utf-8')
+            payload = json.loads(post_data)
+            log_event(f"PAYLOAD: {json.dumps(payload)}")
         except Exception as e:
-            log_event(f"Error reading POST data: {e}")
-            self.send_response(400)
+            log_event(f"ERROR: Failed to read/parse POST data: {e}")
+            serve_error_page(self, 400)
+            return
+
+        # 2. Determine Endpoint
+        url_path = urllib.parse.urlparse(self.path).path
+        form_type = url_path.strip('/').split('/')[-1]
+        
+        target_url = ENDPOINTS.get(form_type)
+        
+        if not target_url:
+            log_event(f"SECURITY: Unauthorized/Unknown endpoint requested: {form_type}")
+            self.send_response(404)
             self.end_headers()
             return
 
-        # Determine form type from URL
-        url_path = urllib.parse.urlparse(self.path).path
-        path_parts = [p for p in url_path.split('/') if p]
-        form_type = path_parts[-1] if path_parts else "general"
+        # 3. Proxy to Power Automate
+        log_event(f"PROXY: Forwarding {form_type} to Power Automate...")
         
-        log_event(f"Detected path type: {form_type}")
+        try:
+            # Flatten payload for Power Automate (remove 'fields' wrapper if present)
+            if 'fields' in payload:
+                # Merge attachments back into the main payload if they were separate
+                final_payload = {**payload['fields']}
+                if 'attachments' in payload:
+                    final_payload['attachments'] = payload['attachments']
+            else:
+                final_payload = payload
 
-        # Proxy to Microsoft Graph
-        if form_type in ["submit-support", "submit-contact", "submit-eoi", "make-a-referral", "submit-feedback", "submit-complaint", "feedback", "complaint"]:
-            # 1. Select the correct List ID
-            list_ids = {
-                "submit-support": LIST_REQUEST_ID,
-                "submit-contact": LIST_ENQUIRY_ID,
-                "submit-eoi": LIST_EOI_ID,
-                "make-a-referral": LIST_REFERRAL_ID,
-                "submit-feedback": LIST_FEEDBACK_COMPLAINT_ID,
-                "submit-complaint": LIST_FEEDBACK_COMPLAINT_ID,
-                "feedback": LIST_FEEDBACK_COMPLAINT_ID,
-                "complaint": LIST_FEEDBACK_COMPLAINT_ID
-            }
-            list_id = list_ids.get(form_type)
+            # Inject caf_type for feedback consolidation
+            if form_type == "submit-feedback": final_payload['caf_type'] = "Feedback"
+            if form_type == "submit-complaint": final_payload['caf_type'] = "Complaint"
+
+            req = urllib.request.Request(
+                target_url,
+                data=json.dumps(final_payload).encode('utf-8'),
+                headers={'Content-Type': 'application/json'},
+                method='POST'
+            )
             
-            if not list_id or not SITE_ID:
-                log_event(f"Error: Missing configuration for {form_type} (SITE_ID or LIST_ID)")
-                self.send_response(500)
+            with urllib.request.urlopen(req) as response:
+                log_event(f"SUCCESS: {form_type} processed by remote endpoint.")
+                self.send_response(200)
                 self.send_header('Content-type', 'application/json')
                 self.end_headers()
-                self.wfile.write(json.dumps({"status": "error", "message": f"Server configuration error for {form_type}"}).encode())
+                self.wfile.write(json.dumps({"status": "success"}).encode())
                 return
-
-            # 2. Get Token
-            auth_header = get_access_token()
-            
-            if not auth_header:
-                self.send_response(500)
-                self.send_header('Content-type', 'application/json')
-                self.end_headers()
-                self.wfile.write(json.dumps({"status": "error", "message": "Failed to authenticate with Microsoft"}).encode())
-                return
-
-            # 3. Forward to Graph
-            log_event(f"Forwarding {form_type} to Microsoft Graph API for {SITE_ID} (List: {list_id})...")
-
-            try:
-                payload = json.loads(post_data)
-                
-                # Inject caf_type for feedback/complaint consolidation
-                if form_type in ["submit-feedback", "feedback"]:
-                    payload['fields']['caf_type'] = "Feedback"
-                elif form_type in ["submit-complaint", "complaint"]:
-                    payload['fields']['caf_type'] = "Complaint"
-
-                # 4. Handle Attachments for Referrals
-                if form_type == "make-a-referral" and "attachments" in payload:
-                    attachments = payload.get("attachments", [])
-                    log_event(f"Processing {len(attachments)} attachments for referral...")
-                    
-                    if not DRIVE_ID or not FOLDER_NAME:
-                        log_event("Warning: DRIVE_ID or FOLDER_NAME missing from .env. Skipping file uploads.")
-                    else:
-                        for att in attachments:
-                            file_name = att.get("name")
-                            file_content_b64 = att.get("content")
-                            
-                            if not file_name or not file_content_b64:
-                                continue
-                                
-                            try:
-                                log_event(f"Uploading file: {file_name}...")
-                                # Decode the base64 content
-                                file_data = base64.b64decode(file_content_b64)
-                                
-                                # PUT to Graph
-                                upload_url = f"https://graph.microsoft.com/v1.0/sites/{SITE_ID}/drives/{DRIVE_ID}/root:/{FOLDER_NAME}/{urllib.parse.quote(file_name)}:/content"
-                                
-                                log_event(f"--- DEBUG: MICROSOFT GRAPH UPLOAD (PUT) ---")
-                                log_event(f"URI: {upload_url}")
-                                log_event(f"-----------------------------------------")
-                                
-                                upload_req = urllib.request.Request(
-                                    upload_url,
-                                    data=file_data,
-                                    headers={
-                                        'Authorization': auth_header,
-                                        'Content-Type': 'application/octet-stream'
-                                    },
-                                    method='PUT'
-                                )
-                                
-                                with urllib.request.urlopen(upload_req) as upload_res:
-                                    upload_res_data = json.loads(upload_res.read().decode('utf-8'))
-                                    item_id = upload_res_data.get("id")
-                                    log_event(f"File uploaded successfully. Item ID: {item_id}")
-                                    
-                                    # POST check-in
-                                    checkin_url = f"https://graph.microsoft.com/v1.0/drives/{DRIVE_ID}/items/{item_id}/checkin"
-                                    
-                                    log_event(f"--- DEBUG: MICROSOFT GRAPH CHECK-IN (POST) ---")
-                                    log_event(f"URI: {checkin_url}")
-                                    log_event(f"-----------------------------------------")
-                                    
-                                    checkin_payload = json.dumps({"comment": "Checked in via Graph upload"})
-                                    checkin_req = urllib.request.Request(
-                                        checkin_url,
-                                        data=checkin_payload.encode('utf-8'),
-                                        headers={
-                                            'Authorization': auth_header,
-                                            'Content-Type': 'application/json'
-                                        },
-                                        method='POST'
-                                    )
-                                    
-                                    with urllib.request.urlopen(checkin_req) as checkin_res:
-                                        log_event(f"File {file_name} checked in successfully.")
-                            except Exception as att_err:
-                                log_event(f"Error uploading attachment {file_name}: {att_err}")
-                                # We continue with other files even if one fails
-
-                graph_url = f"https://graph.microsoft.com/v1.0/sites/{SITE_ID}/lists/{list_id}/items"
-                json_payload = json.dumps(payload)
-
-                log_event(f"--- DEBUG: MICROSOFT GRAPH API REQUEST ---")
-                log_event(f"URI: {graph_url}")
-                log_event(f"Body: {json_payload}")
-                log_event(f"-----------------------------------------")
-                
-                req = urllib.request.Request(
-                    graph_url,
-                    data=json_payload.encode('utf-8'),
-                    headers={
-                        'Authorization': auth_header,
-                        'Content-Type': 'application/json'
-                    },
-                    method='POST'
-                )
-                
-                try:
-                    with urllib.request.urlopen(req) as response:
-                        res_data = response.read().decode('utf-8')
-                        log_event(f"Successfully posted {form_type} to SharePoint via Graph API")
-                        self.send_response(200)
-                        self.send_header('Content-type', 'application/json')
-                        self.end_headers()
-                        self.wfile.write(json.dumps({"status": "success"}).encode())
-                        return
-                except urllib.error.HTTPError as e:
-                    error_body = e.read().decode('utf-8')
-                    log_event(f"Graph API HTTP Error {e.code}: {error_body}")
-                    self.send_response(e.code)
-                    self.send_header('Content-type', 'application/json')
-                    self.end_headers()
-                    self.wfile.write(error_body.encode())
-                    return
-            except Exception as e:
-                log_event(f"Proxy Error for {form_type}: {e}")
-                self.send_response(500)
-                self.send_header('Content-type', 'application/json')
-                self.end_headers()
-                self.wfile.write(json.dumps({"status": "error", "message": str(e)}).encode())
-                return
-
-        # Handle other POST requests (No-op or error)
-        self.send_response(404)
-        self.end_headers()
+        except urllib.error.HTTPError as e:
+            log_event(f"REMOTE ERROR: {e.code} - {e.read().decode()}")
+            serve_error_page(self, 502) # serve_error_page handles common codes, others might default
+        except Exception as e:
+            log_event(f"PROXY ERROR: {e}")
+            serve_error_page(self, 500)
 
     def do_GET(self):
-        # Regular file serving
+        # 1. Block access to sensitive files
+        forbidden_patterns = [".env", ".git", ".py", "logs/", ".bak", "config"]
+        path = self.path.split('?')[0].lower() # ignore query params and be case insensitive
+        
+        if any(pattern in path for pattern in forbidden_patterns):
+            log_event(f"SECURITY: BLOCKED access to {path} from {self.client_address[0]}")
+            serve_error_page(self, 403)
+            return
+
+        # 2. Prevent directory listing (not strictly necessary with SimpleHTTPRequestHandler but good practice)
+        if path.endswith('/') and not os.path.exists(os.path.join(os.getcwd(), path.strip('/'), 'index.html')):
+             self.send_response(403)
+             self.end_headers()
+             return
+
         return http.server.SimpleHTTPRequestHandler.do_GET(self)
+
+    def send_error(self, code, message=None, explain=None):
+        if code == 404:
+            serve_error_page(self, 404)
+        else:
+            super().send_error(code, message, explain)
 
 if __name__ == "__main__":
     log_event(f"CCG Clinical Backend starting at http://localhost:{PORT}")
-    with socketserver.TCPServer(("", PORT), CCGHandler) as httpd:
-        httpd.serve_forever()
+    
+    # Allow address reuse (solves most "port already in use" errors during dev)
+    socketserver.TCPServer.allow_reuse_address = True
+    
+    try:
+        with socketserver.TCPServer(("", PORT), CCGHandler) as httpd:
+            # Increase connection backlog and timeout for production stability
+            httpd.timeout = 30
+            httpd.serve_forever()
+    except OSError as e:
+        if e.errno == 10048:
+            log_event(f"CRITICAL ERROR: Port {PORT} is already in use.")
+            log_event("TIP: Run 'stop-server' or kill the existing Python process.")
+        raise

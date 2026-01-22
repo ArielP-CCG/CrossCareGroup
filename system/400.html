@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Request Clarification Required | Cross Care Group</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ccg-navy': '#003B5C',
+                        'ccg-gold': '#FFAB40',
+                        'ccg-teal': '#0096A1',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px -12px rgba(0, 59, 92, 0.1);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(255, 171, 64, 0.05), transparent),
+                radial-gradient(circle at bottom left, rgba(0, 59, 92, 0.05), transparent);
+        }
+
+        .error-graphic {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            font-size: 180px;
+            font-weight: 900;
+            color: #003B5C;
+            line-height: 1;
+        }
+
+        .circle-zero {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: #F8FAFC;
+            overflow: hidden;
+            border: 6px solid #003B5C;
+            position: relative;
+        }
+
+        /* Animations */
+        @keyframes tilt {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(-10deg);
+            }
+        }
+
+        .animate-tilt {
+            animation: tilt 3s ease-in-out infinite;
+        }
+
+        @keyframes data-float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(5deg);
+            }
+        }
+
+        .animate-float {
+            animation: data-float 4s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            90%,
+            100% {
+                transform: scaleY(1);
+            }
+
+            95% {
+                transform: scaleY(0.1);
+            }
+        }
+
+        .animate-blink {
+            animation: blink 4s infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-white min-h-screen flex items-center justify-center p-6 hero-gradient overflow-hidden">
+
+    <div class="max-w-3xl w-full text-center relative z-10">
+        <div class="mb-16">
+            <a href="/">
+                <img src="../images/logo.png" alt="Cross Care Group" class="h-16 lg:h-20 mx-auto drop-shadow-sm">
+            </a>
+        </div>
+
+        <div class="error-graphic mb-12 select-none">
+            <span>4</span>
+
+            <!-- 1st Zero: General Assistant -->
+            <div class="circle-zero">
+                <svg viewBox="0 0 100 100" class="w-full h-full">
+                    <!-- Head -->
+                    <rect x="28" y="24" width="44" height="52" rx="22" fill="#FFFFFF" stroke="#003B5C"
+                        stroke-width="3" />
+                    <!-- Simple Eyes -->
+                    <circle cx="42" cy="45" r="3" fill="#003B5C" />
+                    <circle cx="58" cy="45" r="3" fill="#003B5C" />
+                    <!-- Flat Mouth (Neutral/Unsure) -->
+                    <rect x="42" y="58" width="16" height="3" rx="1.5" fill="#003B5C" />
+                </svg>
+            </div>
+
+            <!-- 2nd Zero: Generic Error Icon -->
+            <div class="circle-zero">
+                <div class="absolute inset-0 bg-slate-50 flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" class="w-20 h-20 text-ccg-gold" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass-card p-12 rounded-[3.5rem] relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-2 bg-ccg-gold"></div>
+
+            <h1 class="text-4xl font-black text-ccg-navy mb-4 tracking-tight uppercase">Invalid Request</h1>
+            <p class="text-slate-500 text-lg leading-relaxed mb-10 font-medium px-4">
+                The server could not process this request. Please check the information provided or try again in a few
+                moments.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/"
+                    class="bg-ccg-navy text-white px-12 py-5 rounded-full font-black text-lg hover:bg-ccg-gold transition-all duration-300 shadow-xl shadow-navy/20 active:scale-95">
+                    Return to Homepage
+                </a>
+                <a href="/contact/"
+                    class="bg-white text-ccg-navy border-2 border-ccg-navy/10 px-12 py-5 rounded-full font-black text-lg hover:bg-slate-50 transition-all duration-300">
+                    Get Support
+                </a>
+            </div>
+        </div>
+
+        <div class="mt-12 text-[10px] font-black uppercase tracking-[0.4em] text-ccg-navy/30">
+            Precision Integrity • Clinical Accuracy
+        </div>
+    </div>
+</body>
+
+</html>

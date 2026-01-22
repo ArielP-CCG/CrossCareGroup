@@ -1,16 +1,44 @@
 /**
  * Cross Care Group - Standardised Form Submission Engine
- * Features: Global event delegation, modal feedback, and explicit redirection blocking.
+ * Updated: Secure Backend implementation
  */
 
 (function () {
-  console.log("CCG Form Engine: Initializing scorched-earth redirection block...");
+  console.log("CCG Form Engine: Secure Backend Mode.");
 
+  const CONFIG = {
+    'submit-support': {
+      endpoint: '/api/submit-support',
+      title: 'Support Request',
+      successMessage: 'Your request has been received. Our clinical team will be in touch shortly.'
+    },
+    'submit-contact': {
+      endpoint: '/api/submit-contact',
+      title: 'General Enquiry',
+      successMessage: 'Thank you for your enquiry. Our team will respond within one business day.'
+    },
+    'submit-eoi': {
+      endpoint: '/api/submit-eoi',
+      title: 'Expression of Interest',
+      successMessage: 'Your interest has been registered. Our recruitment team will review your details and reach out.'
+    },
+    'make-a-referral': {
+      endpoint: '/api/make-a-referral',
+      title: 'Medical Referral',
+      successMessage: 'Referral submitted successfully. Our clinical team will process this shortly.'
+    },
+    'submit-feedback': {
+      endpoint: '/api/submit-feedback',
+      title: 'Feedback Submission',
+      successMessage: 'Thank you for your feedback. Our management team will review your comments.'
+    },
+    'submit-complaint': {
+      endpoint: '/api/submit-complaint',
+      title: 'Complaint Submission',
+      successMessage: 'Your complaint has been received. Our quality team will investigate and contact you.'
+    }
+  };
 
-
-  /**
-   * Security: Input Sanitization
-   */
   function sanitize(str) {
     if (typeof str !== 'string') return str;
     const div = document.createElement('div');
@@ -18,30 +46,6 @@
     return div.innerHTML;
   }
 
-  /**
-   * Security: Client-side Rate Limiting (60s cooldown)
-   */
-  function checkRateLimit(formType) {
-    const lastSubmit = localStorage.getItem(`ccg_last_submit_${formType}`);
-    const now = Date.now();
-    if (lastSubmit && (now - lastSubmit < 60000)) {
-      const remaining = Math.ceil((60000 - (now - lastSubmit)) / 1000);
-      throw new Error(`Please wait ${remaining} seconds before submitting again.`);
-    }
-  }
-
-  /**
-   * Determine API Base URL
-   */
-  const getBaseUrl = (config) => {
-    if (config.isExternal) return '';
-    if (window.location.protocol === 'file:') return 'http://localhost:8001';
-    return '';
-  };
-
-  /**
-   * UI Helper: Show Premium Modal
-   */
   function showModal(type, title, message) {
     const existing = document.getElementById('ccg-modal-overlay');
     if (existing) existing.remove();
@@ -123,40 +127,6 @@
     }
   }
 
-  /**
-   * Autonomic Environment Loader
-   * Fetches and parses .env file at runtime
-   */
-  async function loadEnv() {
-    try {
-      // Find relative path to root .env
-      const path = window.location.pathname;
-      const pathDepth = path.endsWith('/') ? path.split('/').filter(p => p).length : path.split('/').filter(p => p).length - 1;
-      const dotDot = '../'.repeat(Math.max(0, pathDepth)) || './';
-      const response = await fetch(dotDot + '.env');
-      if (!response.ok) return;
-
-      const text = await response.text();
-      window.CCG_ENV = {};
-
-      text.split('\n').forEach(line => {
-        const trimmed = line.trim();
-        if (trimmed && !trimmed.startsWith('#') && trimmed.includes('=')) {
-          const [key, ...valueParts] = trimmed.split('=');
-          window.CCG_ENV[key.trim()] = valueParts.join('=').trim();
-        }
-      });
-      console.log("CCG Form Engine: Runtime .env loaded.");
-    } catch (e) {
-      console.warn("CCG Form Engine: .env runtime load skipped/failed.");
-    }
-  }
-
-  const envPromise = loadEnv();
-
-  /**
-   * Global Event Listener: Intercept ALL Form Submissions
-   */
   document.addEventListener('submit', async function (e) {
     const form = e.target;
     const formType = form.getAttribute('data-ccg-form');
@@ -170,12 +140,6 @@
       const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Submit';
 
       try {
-        // Direct first: Only wait for env if endpoint isn't a full URL
-        if (config.isExternal && !config.endpoint.startsWith('http')) {
-          await envPromise;
-        }
-
-        checkRateLimit(formType);
         showModal('loading', 'Processing Request', 'Please wait while we securely transmit your details...');
 
         if (submitBtn) {
@@ -184,16 +148,14 @@
         }
 
         const fields = {};
-        const checkboxGroups = {};
-
         for (const element of form.elements) {
           if (!element.name || ['Source', 'form-name', '_redirect'].includes(element.name)) continue;
 
           if (element.type === 'checkbox') {
             const group = form.querySelectorAll(`input[name="${element.name}"][type="checkbox"]`);
             if (group.length > 1) {
-              if (!checkboxGroups[element.name]) checkboxGroups[element.name] = [];
-              if (element.checked) checkboxGroups[element.name].push(sanitize(element.value));
+              if (!fields[element.name]) fields[element.name] = [];
+              if (element.checked) fields[element.name].push(sanitize(element.value));
             } else {
               fields[element.name] = element.checked;
             }
@@ -204,82 +166,52 @@
           }
         }
 
-        for (const [name, values] of Object.entries(checkboxGroups)) {
-          fields[name] = values.join(', ');
-        }
-
-        // Apply NDIS Date Defaults
-        if (formType === 'make-a-referral') {
-          if (!fields['ref_ndisStart']) fields['ref_ndisStart'] = '12/31/9999';
-          if (!fields['ref_ndisEnd']) fields['ref_ndisEnd'] = '12/31/9999';
+        // Clean up checkbox arrays to strings
+        for (const key in fields) {
+          if (Array.isArray(fields[key])) fields[key] = fields[key].join(', ');
         }
 
         let attachments = [];
-        if (formType !== 'submit-support') {
-          const fileInput = form.querySelector('input[type="file"]');
-          if (fileInput && fileInput.files.length > 0) {
-            const processFiles = Array.from(fileInput.files).map((file, index) => {
-              return new Promise((resolve) => {
-                const reader = new FileReader();
-                reader.onload = (event) => {
-                  let finalName = file.name;
-                  if (formType === 'make-a-referral') {
-                    const referrerName = (fields['Title'] || 'Referrer').replace(/[^a-z0-9]/gi, '_');
-                    const dateToday = new Date().toISOString().split('T')[0].replace(/-/g, '');
-                    finalName = `${referrerName}_${dateToday}_${index + 1}.${file.name.split('.').pop()}`;
-                  }
-                  resolve({ name: finalName, content: event.target.result.split(',')[1] });
-                };
-                reader.readAsDataURL(file);
-              });
+        const fileInput = form.querySelector('input[type="file"]');
+        if (fileInput && fileInput.files.length > 0) {
+          const processFiles = Array.from(fileInput.files).map(async (file, index) => {
+            return new Promise((resolve) => {
+              const reader = new FileReader();
+              reader.onload = (event) => {
+                let finalName = file.name;
+                if (formType === 'make-a-referral') {
+                  const referrerName = (fields['Title'] || 'Referrer').replace(/[^a-z0-9]/gi, '_');
+                  const dateToday = new Date().toISOString().split('T')[0].replace(/-/g, '');
+                  finalName = `${referrerName}_${dateToday}_${index + 1}.${file.name.split('.').pop()}`;
+                }
+                resolve({ name: finalName, content: event.target.result.split(',')[1] });
+              };
+              reader.readAsDataURL(file);
             });
-            attachments = await Promise.all(processFiles);
-            if (formType === 'make-a-referral') {
-              fields['ref_attachement'] = attachments.map(a => a.name).join('; ');
-            }
-          }
+          });
+          attachments = await Promise.all(processFiles);
         }
 
-        const baseUrl = getBaseUrl(config);
-        const dynamicUrl = (window.CCG_ENV && window.CCG_ENV[config.envKey]);
+        const payload = { fields };
+        if (attachments.length > 0) payload.attachments = attachments;
 
-        // Prioritize dynamicUrl from .env if available
-        let url = dynamicUrl || window[config.envKey] || window['VITE_' + config.envKey];
-
-        if (config.isExternal) {
-          if (!url) {
-            url = config.endpoint;
-          }
-        } else {
-          url = baseUrl + config.endpoint;
-        }
-
-        // Optimized payload: Only include attachments if they exist
-        let payload;
-        if (config.isExternal) {
-          payload = { ...fields };
-          if (attachments.length > 0) payload.attachments = attachments;
-        } else {
-          payload = { fields };
-          if (attachments.length > 0) payload.attachments = attachments;
-        }
-
-        const response = await fetch(url, {
+        const response = await fetch(config.endpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
         });
 
         if (response.ok) {
-          localStorage.setItem(`ccg_last_submit_${formType}`, Date.now());
           showModal('success', 'Submission Successful', config.successMessage);
           form.reset();
+        } else if (response.status === 429) {
+          throw new Error('Too many requests. Please wait a minute and try again.');
         } else {
-          throw new Error(`Server responded with ${response.status}`);
+          throw new Error(`Server error (${response.status}). Please try again later.`);
         }
 
       } catch (err) {
-        showModal('error', 'Submission Failed', err.message || 'We encountered an error. Please try again or contact us.');
+        showModal('error', 'Submission Failed', err.message);
       } finally {
         if (submitBtn) {
           submitBtn.disabled = false;
@@ -288,6 +220,4 @@
       }
     }
   }, true);
-
-  console.log("CCG Form Engine: Active.");
 })();
