@@ -95,11 +95,9 @@ class CCGHandler(http.server.SimpleHTTPRequestHandler):
     def end_headers(self):
         # Production Security Headers
         self.send_header('Access-Control-Allow-Origin', '*')
-        self.send_header('X-Frame-Options', 'DENY')
         self.send_header('X-Content-Type-Options', 'nosniff')
-        self.send_header('Content-Security-Policy', "default-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com https://cdn.tailwindcss.com; img-src 'self' data:;")
-        self.send_header('Strict-Transport-Security', 'max-age=31536000; includeSubDomains')
-        self.send_header('Referrer-Policy', 'strict-origin-when-cross-origin')
+        self.send_header('Content-Security-Policy', "default-src 'self' 'unsafe-inline' https://*; frame-src 'self' https://www.youtube.com https://youtube.com https://www.youtube-nocookie.com; img-src 'self' data: https://*;")
+        self.send_header('Referrer-Policy', 'no-referrer-when-downgrade')
         http.server.SimpleHTTPRequestHandler.end_headers(self)
 
     def do_POST(self):
