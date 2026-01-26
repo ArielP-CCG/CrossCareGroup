@@ -1,0 +1,177 @@
+{
+    "info": {
+        "name": "Cross Care Group - Referral API",
+        "description": "Postman collection for testing the Cross Care Group Referral Form API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "http://localhost:8000",
+            "type": "string"
+        },
+        {
+            "key": "csrfToken",
+            "value": "test-csrf-token-12345",
+            "type": "string"
+        }
+    ],
+    "item": [
+        {
+            "name": "Submit Referral (NDIS - Plan Manager)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "X-CSRF-Token",
+                        "value": "{{csrfToken}}",
+                        "description": "CSRF token (can be any random string for testing)"
+                    }
+                ],
+                "url": {
+                    "raw": "{{baseUrl}}/api/make-a-referral",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "make-a-referral"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"Title\": \"Dr. Jane Smith\",\n  \"ref_consent\": true,\n  \"ref_relationship\": \"Health Professional\",\n  \"ref_relationshipOther\": \"\",\n  \"ref_referrerOrg\": \"Brisbane General Hospital\",\n  \"ref_referrerPhone\": \"07 3123 4567\",\n  \"ref_referrerEmail\": \"jane.smith@brisbanehospital.com.au\",\n  \"ref_clientFullName\": \"John Michael Doe\",\n  \"ref_clientPhone\": \"0412 345 678\",\n  \"ref_clientEmail\": \"john.doe@email.com\",\n  \"ref_clientDob\": \"1985-06-15\",\n  \"ref_clientStreet\": \"123 Main Street\",\n  \"ref_clientCity\": \"Brisbane\",\n  \"ref_clientState\": \"QLD\",\n  \"ref_clientPostcode\": \"4000\",\n  \"ref_clientCountry\": \"Australia\",\n  \"ref_primaryContact\": \"Referrer\",\n  \"ref_emergencyName\": \"Mary Doe\",\n  \"ref_emergencyRel\": \"Spouse\",\n  \"ref_emergencyPhone\": \"0423 456 789\",\n  \"ref_emergencyEmail\": \"mary.doe@email.com\",\n  \"ref_primaryOtherName\": \"\",\n  \"ref_primaryOtherRel\": \"\",\n  \"ref_primaryOtherOrg\": \"\",\n  \"ref_primaryOtherPhone\": \"\",\n  \"ref_primaryOtherEmail\": \"\",\n  \"ref_fundingType\": \"NDIS\",\n  \"ref_ndisStart\": \"2024-01-01\",\n  \"ref_ndisEnd\": \"2025-01-01\",\n  \"ref_ndisGoals\": \"Improve mobility and independence at home\",\n  \"ref_planManagement\": \"Plan Manager\",\n  \"ref_planManagerOrg\": \"Plan Partners Australia\",\n  \"ref_planManagerPhone\": \"1300 123 456\",\n  \"ref_planManagerEmail\": \"invoices@planpartners.com.au\",\n  \"ref_selfManagedEmail\": \"\",\n  \"ref_insurerName\": \"\",\n  \"ref_claimNumber\": \"\",\n  \"ref_caseManager\": \"\",\n  \"ref_invoiceEmail\": \"\",\n  \"ref_fundingOther\": \"\",\n  \"ref_fundingAvailable\": \"15000\",\n  \"ref_fundingPeriod\": \"6 monthly\",\n  \"ref_referralServices\": \"Personal Care, Medication Management, Complex Wound Management\",\n  \"ref_referralOther\": \"\",\n  \"ref_referralDetails\": \"Client requires assistance with daily personal care activities following recent hospital discharge. Has complex wound on left leg requiring dressing changes every second day. Currently on multiple medications requiring supervision. Living alone, family support limited.\",\n  \"ref_referralUrgency\": \"High\",\n  \"ref_deliveryMethod\": \"In-Home Visit\",\n  \"ref_deliveryOther\": \"\",\n  \"ref_primaryDiagnosis\": \"Type 2 Diabetes with peripheral neuropathy\",\n  \"ref_secondaryDiagnosis\": \"Hypertension, Chronic kidney disease Stage 3\",\n  \"ref_currentSupports\": \"GP: Dr. Brown - 07 3555 1234\\nPharmacy: Terry White Chemist - 07 3555 5678\\nNo current in-home support services\",\n  \"ref_riskFlags\": \"Falls risk, Pressure injury\",\n  \"ref_riskOther\": \"\",\n  \"ref_snapshotNotes\": \"Client is motivated and willing to engage with support services. Prefers morning visits if possible.\",\n  \"ref_authority\": true,\n  \"ref_attachement\": \"\",\n  \"attachments\": []\n}"
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Submit Referral (NDIS - Self Managed)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "X-CSRF-Token",
+                        "value": "{{csrfToken}}"
+                    }
+                ],
+                "url": {
+                    "raw": "{{baseUrl}}/api/make-a-referral",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "make-a-referral"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"Title\": \"Sarah Johnson\",\n  \"ref_consent\": true,\n  \"ref_relationship\": \"Support Coordinator\",\n  \"ref_relationshipOther\": \"\",\n  \"ref_referrerOrg\": \"NDIS Support Services\",\n  \"ref_referrerPhone\": \"07 3456 7890\",\n  \"ref_referrerEmail\": \"sarah.johnson@ndissupport.com.au\",\n  \"ref_clientFullName\": \"Emily Rose Chen\",\n  \"ref_clientPhone\": \"0401 234 567\",\n  \"ref_clientEmail\": \"emily.chen@gmail.com\",\n  \"ref_clientDob\": \"1990-03-22\",\n  \"ref_clientStreet\": \"45 Park Avenue\",\n  \"ref_clientCity\": \"Gold Coast\",\n  \"ref_clientState\": \"QLD\",\n  \"ref_clientPostcode\": \"4217\",\n  \"ref_clientCountry\": \"Australia\",\n  \"ref_primaryContact\": \"Client\",\n  \"ref_emergencyName\": \"David Chen\",\n  \"ref_emergencyRel\": \"Father\",\n  \"ref_emergencyPhone\": \"0412 987 654\",\n  \"ref_emergencyEmail\": \"david.chen@email.com\",\n  \"ref_primaryOtherName\": \"\",\n  \"ref_primaryOtherRel\": \"\",\n  \"ref_primaryOtherOrg\": \"\",\n  \"ref_primaryOtherPhone\": \"\",\n  \"ref_primaryOtherEmail\": \"\",\n  \"ref_fundingType\": \"NDIS\",\n  \"ref_ndisStart\": \"2024-06-01\",\n  \"ref_ndisEnd\": \"2025-06-01\",\n  \"ref_ndisGoals\": \"Develop independent living skills and community access\",\n  \"ref_planManagement\": \"Self Managed\",\n  \"ref_planManagerOrg\": \"\",\n  \"ref_planManagerPhone\": \"\",\n  \"ref_planManagerEmail\": \"\",\n  \"ref_selfManagedEmail\": \"emily.chen@gmail.com\",\n  \"ref_insurerName\": \"\",\n  \"ref_claimNumber\": \"\",\n  \"ref_caseManager\": \"\",\n  \"ref_invoiceEmail\": \"emily.chen@gmail.com\",\n  \"ref_fundingOther\": \"\",\n  \"ref_fundingAvailable\": \"25000\",\n  \"ref_fundingPeriod\": \"12 monthly\",\n  \"ref_referralServices\": \"Allied Health Assessments, Personal Care\",\n  \"ref_referralOther\": \"\",\n  \"ref_referralDetails\": \"Client is a young adult with autism spectrum disorder seeking support to develop independent living skills. Recently moved out of family home and requires assistance establishing routines.\",\n  \"ref_referralUrgency\": \"Medium\",\n  \"ref_deliveryMethod\": \"Hybrid\",\n  \"ref_deliveryOther\": \"\",\n  \"ref_primaryDiagnosis\": \"Autism Spectrum Disorder (Level 2)\",\n  \"ref_secondaryDiagnosis\": \"Anxiety disorder\",\n  \"ref_currentSupports\": \"Psychologist: Dr. Lisa Wong - 07 3222 3333\\nOT: Kim's Allied Health - 07 3222 4444\",\n  \"ref_riskFlags\": \"Behaviours of concern\",\n  \"ref_riskOther\": \"\",\n  \"ref_snapshotNotes\": \"Client prefers written communication for appointment confirmations.\",\n  \"ref_authority\": true,\n  \"ref_attachement\": \"\",\n  \"attachments\": [\n    {\n      \"name\": \"Emily_Chen_20240126_1.pdf\",\n      \"content\": \"JVBERi0xLjQKJeLjz9MKMyAwIG9iago8PC9UeXBlL0ZvbnQvU3VidHl...\"\n    }\n  ]\n}"
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Submit Referral (Insurer Funded)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "X-CSRF-Token",
+                        "value": "{{csrfToken}}"
+                    }
+                ],
+                "url": {
+                    "raw": "{{baseUrl}}/api/make-a-referral",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "make-a-referral"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"Title\": \"Michael Brown\",\n  \"ref_consent\": true,\n  \"ref_relationship\": \"Case Manager\",\n  \"ref_relationshipOther\": \"\",\n  \"ref_referrerOrg\": \"Allianz Insurance\",\n  \"ref_referrerPhone\": \"02 9876 5432\",\n  \"ref_referrerEmail\": \"michael.brown@allianz.com.au\",\n  \"ref_clientFullName\": \"Robert James Wilson\",\n  \"ref_clientPhone\": \"0432 111 222\",\n  \"ref_clientEmail\": \"robert.wilson@outlook.com\",\n  \"ref_clientDob\": \"1975-11-08\",\n  \"ref_clientStreet\": \"78 Industrial Road\",\n  \"ref_clientCity\": \"Sydney\",\n  \"ref_clientState\": \"NSW\",\n  \"ref_clientPostcode\": \"2000\",\n  \"ref_clientCountry\": \"Australia\",\n  \"ref_primaryContact\": \"Other\",\n  \"ref_emergencyName\": \"\",\n  \"ref_emergencyRel\": \"\",\n  \"ref_emergencyPhone\": \"\",\n  \"ref_emergencyEmail\": \"\",\n  \"ref_primaryOtherName\": \"Susan Wilson\",\n  \"ref_primaryOtherRel\": \"Wife\",\n  \"ref_primaryOtherOrg\": \"\",\n  \"ref_primaryOtherPhone\": \"0432 222 333\",\n  \"ref_primaryOtherEmail\": \"susan.wilson@outlook.com\",\n  \"ref_fundingType\": \"Insurer\",\n  \"ref_ndisStart\": \"\",\n  \"ref_ndisEnd\": \"\",\n  \"ref_ndisGoals\": \"\",\n  \"ref_planManagement\": \"\",\n  \"ref_planManagerOrg\": \"\",\n  \"ref_planManagerPhone\": \"\",\n  \"ref_planManagerEmail\": \"\",\n  \"ref_selfManagedEmail\": \"\",\n  \"ref_insurerName\": \"Allianz Workers Compensation\",\n  \"ref_claimNumber\": \"WC-2024-123456\",\n  \"ref_caseManager\": \"Michael Brown - michael.brown@allianz.com.au\",\n  \"ref_invoiceEmail\": \"\",\n  \"ref_fundingOther\": \"\",\n  \"ref_fundingAvailable\": \"50000\",\n  \"ref_fundingPeriod\": \"As per claim approval\",\n  \"ref_referralServices\": \"Complex Wound Management, Medication Management, Personal Care\",\n  \"ref_referralOther\": \"\",\n  \"ref_referralDetails\": \"Workplace injury sustained 3 months ago. Client underwent spinal surgery and requires home-based rehabilitation support. Wound to surgical site requires specialist dressing changes.\",\n  \"ref_referralUrgency\": \"High\",\n  \"ref_deliveryMethod\": \"In-Home Visit\",\n  \"ref_deliveryOther\": \"\",\n  \"ref_primaryDiagnosis\": \"L4-L5 Spinal Fusion - Post-operative\",\n  \"ref_secondaryDiagnosis\": \"Chronic lower back pain, Depression (situational)\",\n  \"ref_currentSupports\": \"Surgeon: Dr. Patel - Sydney Spine Clinic - 02 9111 2222\\nPhysio: Active Recovery Physio - 02 9111 3333\",\n  \"ref_riskFlags\": \"Falls risk, Pressure injury\",\n  \"ref_riskOther\": \"Post-surgical bleeding risk\",\n  \"ref_snapshotNotes\": \"Client is currently unable to bend or lift. Requires assistance with all ADLs. Pain management via prescribed opioids.\",\n  \"ref_authority\": true,\n  \"ref_attachement\": \"\",\n  \"attachments\": []\n}"
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Submit Referral (Self-Funded - Minimal)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "X-CSRF-Token",
+                        "value": "{{csrfToken}}"
+                    }
+                ],
+                "url": {
+                    "raw": "{{baseUrl}}/api/make-a-referral",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "make-a-referral"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"Title\": \"Anna Smith\",\n  \"ref_consent\": true,\n  \"ref_relationship\": \"Family/Carer\",\n  \"ref_relationshipOther\": \"\",\n  \"ref_referrerOrg\": \"\",\n  \"ref_referrerPhone\": \"0411 222 333\",\n  \"ref_referrerEmail\": \"anna.smith@email.com\",\n  \"ref_clientFullName\": \"George Smith\",\n  \"ref_clientPhone\": \"0422 333 444\",\n  \"ref_clientEmail\": \"\",\n  \"ref_clientDob\": \"1955-02-14\",\n  \"ref_clientStreet\": \"10 Quiet Lane\",\n  \"ref_clientCity\": \"Adelaide\",\n  \"ref_clientState\": \"SA\",\n  \"ref_clientPostcode\": \"5000\",\n  \"ref_clientCountry\": \"Australia\",\n  \"ref_primaryContact\": \"Referrer\",\n  \"ref_emergencyName\": \"Anna Smith\",\n  \"ref_emergencyRel\": \"Daughter\",\n  \"ref_emergencyPhone\": \"0411 222 333\",\n  \"ref_emergencyEmail\": \"\",\n  \"ref_primaryOtherName\": \"\",\n  \"ref_primaryOtherRel\": \"\",\n  \"ref_primaryOtherOrg\": \"\",\n  \"ref_primaryOtherPhone\": \"\",\n  \"ref_primaryOtherEmail\": \"\",\n  \"ref_fundingType\": \"Self-funded\",\n  \"ref_ndisStart\": \"\",\n  \"ref_ndisEnd\": \"\",\n  \"ref_ndisGoals\": \"\",\n  \"ref_planManagement\": \"\",\n  \"ref_planManagerOrg\": \"\",\n  \"ref_planManagerPhone\": \"\",\n  \"ref_planManagerEmail\": \"\",\n  \"ref_selfManagedEmail\": \"\",\n  \"ref_insurerName\": \"\",\n  \"ref_claimNumber\": \"\",\n  \"ref_caseManager\": \"\",\n  \"ref_invoiceEmail\": \"anna.smith@email.com\",\n  \"ref_fundingOther\": \"\",\n  \"ref_fundingAvailable\": \"\",\n  \"ref_fundingPeriod\": \"\",\n  \"ref_referralServices\": \"Personal Care\",\n  \"ref_referralOther\": \"\",\n  \"ref_referralDetails\": \"Elderly father requires daily assistance with personal care. Unable to shower independently.\",\n  \"ref_referralUrgency\": \"Standard\",\n  \"ref_deliveryMethod\": \"In-Home Visit\",\n  \"ref_deliveryOther\": \"\",\n  \"ref_primaryDiagnosis\": \"Age-related frailty\",\n  \"ref_secondaryDiagnosis\": \"\",\n  \"ref_currentSupports\": \"No current formal supports\",\n  \"ref_riskFlags\": \"\",\n  \"ref_riskOther\": \"\",\n  \"ref_snapshotNotes\": \"\",\n  \"ref_authority\": true,\n  \"ref_attachement\": \"\",\n  \"attachments\": []\n}"
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Submit Referral (Other Funding Source)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "X-CSRF-Token",
+                        "value": "{{csrfToken}}"
+                    }
+                ],
+                "url": {
+                    "raw": "{{baseUrl}}/api/make-a-referral",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "make-a-referral"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"Title\": \"Dr. Peter Lee\",\n  \"ref_consent\": true,\n  \"ref_relationship\": \"Health Professional\",\n  \"ref_relationshipOther\": \"\",\n  \"ref_referrerOrg\": \"Veteran Affairs Hospital\",\n  \"ref_referrerPhone\": \"02 6123 4567\",\n  \"ref_referrerEmail\": \"peter.lee@veteranhealth.gov.au\",\n  \"ref_clientFullName\": \"James Thomas Anderson\",\n  \"ref_clientPhone\": \"0455 666 777\",\n  \"ref_clientEmail\": \"james.anderson@email.com\",\n  \"ref_clientDob\": \"1948-09-20\",\n  \"ref_clientStreet\": \"22 Memorial Drive\",\n  \"ref_clientCity\": \"Canberra\",\n  \"ref_clientState\": \"ACT\",\n  \"ref_clientPostcode\": \"2600\",\n  \"ref_clientCountry\": \"Australia\",\n  \"ref_primaryContact\": \"Client\",\n  \"ref_emergencyName\": \"Margaret Anderson\",\n  \"ref_emergencyRel\": \"Wife\",\n  \"ref_emergencyPhone\": \"0455 888 999\",\n  \"ref_emergencyEmail\": \"margaret.anderson@email.com\",\n  \"ref_primaryOtherName\": \"\",\n  \"ref_primaryOtherRel\": \"\",\n  \"ref_primaryOtherOrg\": \"\",\n  \"ref_primaryOtherPhone\": \"\",\n  \"ref_primaryOtherEmail\": \"\",\n  \"ref_fundingType\": \"Other\",\n  \"ref_ndisStart\": \"\",\n  \"ref_ndisEnd\": \"\",\n  \"ref_ndisGoals\": \"\",\n  \"ref_planManagement\": \"\",\n  \"ref_planManagerOrg\": \"\",\n  \"ref_planManagerPhone\": \"\",\n  \"ref_planManagerEmail\": \"\",\n  \"ref_selfManagedEmail\": \"\",\n  \"ref_insurerName\": \"\",\n  \"ref_claimNumber\": \"\",\n  \"ref_caseManager\": \"\",\n  \"ref_invoiceEmail\": \"\",\n  \"ref_fundingOther\": \"Department of Veterans Affairs (DVA) Gold Card\",\n  \"ref_fundingAvailable\": \"\",\n  \"ref_fundingPeriod\": \"Ongoing\",\n  \"ref_referralServices\": \"Personal Care, Medication Management, Palliative Care\",\n  \"ref_referralOther\": \"\",\n  \"ref_referralDetails\": \"Veteran with advanced COPD requiring home-based palliative support. Needs assistance with oxygen therapy management and daily activities. Wife is primary carer but requires respite support.\",\n  \"ref_referralUrgency\": \"High\",\n  \"ref_deliveryMethod\": \"In-Home Visit\",\n  \"ref_deliveryOther\": \"\",\n  \"ref_primaryDiagnosis\": \"Chronic Obstructive Pulmonary Disease (COPD) - Stage IV\",\n  \"ref_secondaryDiagnosis\": \"PTSD, Hearing loss, Arthritis\",\n  \"ref_currentSupports\": \"Respiratory Specialist: Dr. Williams - 02 6111 2222\\nDVA Coordinator: 1800 555 254\",\n  \"ref_riskFlags\": \"Falls risk, Dysphagia\",\n  \"ref_riskOther\": \"Oxygen dependent - no naked flames\",\n  \"ref_snapshotNotes\": \"Client is a Vietnam veteran. Prefers male carers where possible. Has a service dog named Max.\",\n  \"ref_authority\": true,\n  \"ref_attachement\": \"\",\n  \"attachments\": []\n}"
+                }
+            },
+            "response": []
+        }
+    ]
+}

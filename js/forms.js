@@ -1,10 +1,24 @@
 /**
  * Cross Care Group - Standardised Form Submission Engine
- * Updated: Secure Backend implementation
+ * Updated: Enterprise Security Implementation
+ * Features: XSS Prevention, CSRF Protection, Rate Limiting, File Validation
  */
 
 (function () {
-  console.log("CCG Form Engine: Secure Backend Mode.");
+  console.log("CCG Form Engine: Enterprise Security Mode.");
+
+  // --- SECURITY CONFIGURATION ---
+  const SECURITY_CONFIG = {
+    maxFileSize: 10 * 1024 * 1024, // 10MB
+    maxFiles: 5,
+    allowedFileTypes: ['.pdf', '.doc', '.docx', '.jpg', '.jpeg', '.png', '.txt'],
+    maxFieldLength: 5000,
+    rateLimitWindow: 60000, // 1 minute in ms
+    rateLimitMax: 5, // max submissions per window
+  };
+
+  // Client-side rate limiting
+  const submissionTimestamps = [];
 
   const CONFIG = {
     'submit-support': {
@@ -39,11 +53,95 @@
     }
   };
 
+  // --- SECURITY UTILITIES ---
+
+  /**
+   * Enhanced XSS prevention - sanitizes user input
+   */
   function sanitize(str) {
     if (typeof str !== 'string') return str;
+
+    // Trim and limit length
+    str = str.trim();
+    if (str.length > SECURITY_CONFIG.maxFieldLength) {
+      str = str.substring(0, SECURITY_CONFIG.maxFieldLength);
+    }
+
+    // Create temporary element for HTML encoding
     const div = document.createElement('div');
-    div.textContent = str.trim();
-    return div.innerHTML;
+    div.textContent = str;
+    let sanitized = div.innerHTML;
+
+    // Additional protection: remove potentially dangerous patterns
+    sanitized = sanitized
+      .replace(/javascript:/gi, '')
+      .replace(/on\w+\s*=/gi, '')
+      .replace(/<script[^>]*>.*?<\/script>/gi, '')
+      .replace(/<iframe[^>]*>.*?<\/iframe>/gi, '');
+
+    return sanitized;
+  }
+
+  /**
+   * Client-side rate limiting
+   */
+  function checkRateLimit() {
+    const now = Date.now();
+
+    // Remove old timestamps
+    while (submissionTimestamps.length > 0 &&
+      now - submissionTimestamps[0] > SECURITY_CONFIG.rateLimitWindow) {
+      submissionTimestamps.shift();
+    }
+
+    // Check if limit exceeded
+    if (submissionTimestamps.length >= SECURITY_CONFIG.rateLimitMax) {
+      return false;
+    }
+
+    submissionTimestamps.push(now);
+    return true;
+  }
+
+  /**
+   * Validate file uploads
+   */
+  function validateFile(file) {
+    // Check file size
+    if (file.size > SECURITY_CONFIG.maxFileSize) {
+      throw new Error(`File "${file.name}" is too large. Maximum size is ${SECURITY_CONFIG.maxFileSize / (1024 * 1024)}MB.`);
+    }
+
+    // Check file type
+    const ext = '.' + file.name.split('.').pop().toLowerCase();
+    if (!SECURITY_CONFIG.allowedFileTypes.includes(ext)) {
+      throw new Error(`File type "${ext}" is not allowed. Allowed types: ${SECURITY_CONFIG.allowedFileTypes.join(', ')}`);
+    }
+
+    // Check for double extensions (e.g., file.pdf.exe)
+    const parts = file.name.split('.');
+    if (parts.length > 2) {
+      const secondExt = '.' + parts[parts.length - 2].toLowerCase();
+      if (SECURITY_CONFIG.allowedFileTypes.includes(secondExt)) {
+        throw new Error(`Suspicious file name detected: "${file.name}". Please rename the file.`);
+      }
+    }
+
+    return true;
+  }
+
+  /**
+   * Generate a simple CSRF token (stored in sessionStorage)
+   */
+  function getCSRFToken() {
+    let token = sessionStorage.getItem('ccg_csrf_token');
+    if (!token) {
+      token = Array.from(crypto.getRandomValues(new Uint8Array(32)))
+        .map(b => b.toString(16).padStart(2, '0'))
+        .join('');
+      sessionStorage.setItem('ccg_csrf_token', token);
+    }
+    return token;
   }
 
   function showModal(type, title, message) {
@@ -140,6 +238,11 @@
       const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Submit';
 
       try {
+        // 1. Client-side rate limiting
+        if (!checkRateLimit()) {
+          throw new Error('Too many submissions. Please wait a minute before trying again.');
+        }
+
         showModal('loading', 'Processing Request', 'Please wait while we securely transmit your details...');
 
         if (submitBtn) {
@@ -171,47 +274,94 @@
           if (Array.isArray(fields[key])) fields[key] = fields[key].join(', ');
         }
 
+        // 2. Validate and process file uploads
         let attachments = [];
         const fileInput = form.querySelector('input[type="file"]');
         if (fileInput && fileInput.files.length > 0) {
+          // Check file count
+          if (fileInput.files.length > SECURITY_CONFIG.maxFiles) {
+            throw new Error(`Too many files. Maximum ${SECURITY_CONFIG.maxFiles} files allowed.`);
+          }
+
+          // Validate each file
+          for (const file of fileInput.files) {
+            validateFile(file);
+          }
+
           const processFiles = Array.from(fileInput.files).map(async (file, index) => {
-            return new Promise((resolve) => {
+            return new Promise((resolve, reject) => {
               const reader = new FileReader();
               reader.onload = (event) => {
-                let finalName = file.name;
-                if (formType === 'make-a-referral') {
-                  const referrerName = (fields['Title'] || 'Referrer').replace(/[^a-z0-9]/gi, '_');
-                  const dateToday = new Date().toISOString().split('T')[0].replace(/-/g, '');
-                  finalName = `${referrerName}_${dateToday}_${index + 1}.${file.name.split('.').pop()}`;
+                try {
+                  let finalName = file.name;
+                  // Sanitize filename
+                  finalName = finalName.replace(/[^a-zA-Z0-9._-]/g, '_');
+
+                  if (formType === 'make-a-referral') {
+                    const clientFullName = (fields['ref_clientFullName'] || 'Referrer').replace(/[^a-z0-9]/gi, '_');
+                    const dateToday = new Date().toISOString().split('T')[0].replace(/-/g, '');
+                    const ext = file.name.split('.').pop();
+                    finalName = `${clientFullName}_${dateToday}_${index + 1}.${ext}`;
+                  }
+                  resolve({ name: finalName, content: event.target.result.split(',')[1] });
+                } catch (err) {
+                  reject(err);
                 }
-                resolve({ name: finalName, content: event.target.result.split(',')[1] });
               };
+              reader.onerror = () => reject(new Error('Failed to read file'));
               reader.readAsDataURL(file);
             });
           });
           attachments = await Promise.all(processFiles);
         }
 
+        // 3. Build secure payload
         const payload = { fields };
         if (attachments.length > 0) payload.attachments = attachments;
 
+        // Add CSRF token
+        const csrfToken = getCSRFToken();
+
+        // 4. Submit to backend
         const response = await fetch(config.endpoint, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': csrfToken
+          },
+          body: JSON.stringify(payload),
+          credentials: 'same-origin' // Include cookies for additional security
         });
 
+        // 5. Handle response
         if (response.ok) {
           showModal('success', 'Submission Successful', config.successMessage);
           form.reset();
+          // Clear file input
+          if (fileInput) fileInput.value = '';
         } else if (response.status === 429) {
           throw new Error('Too many requests. Please wait a minute and try again.');
+        } else if (response.status === 400) {
+          const errorData = await response.json().catch(() => ({}));
+          throw new Error(errorData.message || 'Invalid submission. Please check your inputs.');
+        } else if (response.status === 413) {
+          throw new Error('Files are too large. Please reduce file sizes and try again.');
+        } else if (response.status >= 500) {
+          throw new Error('Server error. Our team has been notified. Please try again later.');
         } else {
-          throw new Error(`Server error (${response.status}). Please try again later.`);
+          throw new Error(`Submission failed (${response.status}). Please try again later.`);
         }
 
       } catch (err) {
-        showModal('error', 'Submission Failed', err.message);
+        console.error('Form submission error:', err);
+        // Show user-friendly error message
+        const errorMessage = err.message || 'An unexpected error occurred. Please try again.';
+        showModal('error', 'Submission Failed', errorMessage);
+
+        // Remove the last timestamp from rate limit if submission failed
+        if (submissionTimestamps.length > 0) {
+          submissionTimestamps.pop();
+        }
       } finally {
         if (submitBtn) {
           submitBtn.disabled = false;

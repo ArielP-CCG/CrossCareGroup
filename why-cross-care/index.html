@@ -537,68 +537,16 @@
             <div class="container max-w-[1200px] relative z-10" data-reveal>
                 <div id="video-wrapper"
                     class="relative group rounded-[3rem] overflow-hidden glass-card shadow-2xl border-8 border-white aspect-video max-w-[1000px] mx-auto cursor-pointer">
-                    <!-- Premium Video Cover -->
-                    <div id="video-cover"
-                        class="absolute inset-0 z-20 flex items-center justify-center transition-opacity duration-1000">
-                        <img src="../images/about-hero.png" alt="Video Preview" class="w-full h-full object-cover">
-                        <div
-                            class="absolute inset-0 bg-ccg-navy/40 group-hover:bg-ccg-navy/20 transition-all duration-700">
-                        </div>
 
-                        <!-- Premium Play Button -->
-                        <div
-                            class="relative w-24 h-24 bg-white/10 backdrop-blur-md rounded-full border border-white/20 flex items-center justify-center transform group-hover:scale-110 transition-all duration-500 shadow-2xl">
-                            <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-inner">
-                                <svg class="w-8 h-8 text-ccg-navy ml-1" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M8 5v14l11-7z" />
-                                </svg>
-                            </div>
-                            <div class="absolute inset-0 rounded-full bg-white/20 animate-ping"></div>
-                        </div>
-                    </div>
 
                     <!-- YouTube Iframe -->
-                    <div id="player-target" class="absolute inset-0 z-10 hidden"></div>
+                    <div id="player-target" class="absolute inset-0 z-10">
+                        <iframe width="1905" height="748" src="https://www.youtube.com/embed/gP6ScTuPmM4"
+                            title="Cross Care Group-Our Mission" class="w-full h-full" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
                 </div>
-
-                <script>
-                    document.getElementById('video-wrapper').addEventListener('click', function () {
-                        const cover = document.getElementById('video-cover');
-                        const target = document.getElementById('player-target');
-
-                        // Detect if running on file:// protocol (local file)
-                        const isFileProtocol = window.location.protocol === 'file:';
-
-                        cover.style.opacity = '0';
-                        setTimeout(() => {
-                            cover.classList.add('hidden');
-                            target.classList.remove('hidden');
-
-                            if (isFileProtocol) {
-                                target.innerHTML = `
-                                    <div class="absolute inset-0 bg-ccg-navy flex flex-col items-center justify-center p-8 text-center">
-                                        <p class="text-white text-lg font-bold mb-6 italic px-4">Browser security blocks embedded video in local files.</p>
-                                        <a href="https://www.youtube.com/watch?v=gP6ScTuPmM4" target="_blank" 
-                                           class="bg-ccg-gold text-ccg-navy px-12 py-5 rounded-full font-black text-lg hover:bg-white transition-all shadow-2xl active:scale-95">
-                                            Watch Directly on YouTube
-                                        </a>
-                                        <p class="text-white/40 text-[10px] mt-8 uppercase tracking-[0.3em] font-black italic">Tip: Use http://localhost:8000/why-cross-care/ to view in-page</p>
-                                    </div>`;
-                            } else {
-                                target.innerHTML = `<iframe 
-                                    class="w-full h-full"
-                                    src="https://www.youtube.com/watch?v=gP6ScTuPmM4" 
-                                    title="Cross Care Group Video" 
-                                    frameborder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                    referrerpolicy="strict-origin-when-cross-origin"
-                                    allowfullscreen>
-                                </iframe>`;
-                            }
-                        }, 500);
-                    });
-                </script>
-
                 <div class="text-center mt-12">
                     <p class="text-[10px] font-black uppercase tracking-[0.5em] text-ccg-navy/40">Clinical Excellence •
                         Human Depth • System Integrity</p>
@@ -824,7 +772,7 @@
         </section>
 
         <!-- Leadership Snapshot -->
-        <section class="section !pt-20 !pb-20 bg-slate-50 overflow-hidden relative">
+        <!-- <section class="section !pt-20 !pb-20 bg-slate-50 overflow-hidden relative">
             <div
                 class="absolute top-1/2 left-0 w-64 h-64 bg-ccg-teal/5 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2">
             </div>
@@ -834,7 +782,7 @@
                 <div class="grid lg:grid-cols-2 gap-24 items-center">
 
                     <div class="relative order-2 lg:order-1">
-                        <!-- Founder Card -->
+                        
                         <div class="relative">
                             <div class="absolute -inset-4 bg-slate-50 rounded-[4rem] -rotate-2 -z-10"></div>
                             <div
@@ -905,7 +853,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- Privacy & Data Security -->
         <section id="privacy-security" class="section !pt-20 !pb-20 bg-white relative overflow-hidden">
