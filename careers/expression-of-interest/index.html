@@ -645,6 +645,72 @@
                             class="w-full bg-slate-50 border-none rounded-2xl px-6 py-5 text-ccg-navy font-semibold focus:ring-2 focus:ring-ccg-teal transition-all">
                     </div>
 
+                    <!-- CV/Resume Upload -->
+                    <div class="space-y-3">
+                        <label for="cv_upload"
+                            class="block text-[13px] font-black uppercase tracking-widest text-ccg-navy/40 ml-1">CV /
+                            Resume (Optional)</label>
+                        <div class="relative">
+                            <label for="cv_upload"
+                                class="flex flex-col items-center justify-center w-full py-8 px-6 bg-slate-50 border-2 border-dashed border-slate-200 rounded-2xl cursor-pointer hover:bg-slate-100 hover:border-ccg-teal/40 transition-all duration-300 group">
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-white flex items-center justify-center shadow-sm mb-4 group-hover:shadow-md transition-all">
+                                    <svg class="w-6 h-6 text-ccg-teal" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <span class="text-ccg-navy font-bold text-sm mb-1">Click to upload your CV</span>
+                                <span class="text-slate-400 text-xs font-medium">PDF only (Max. 10MB)</span>
+                            </label>
+                            <input type="file" id="cv_upload" name="eoi_cv" accept=".pdf"
+                                class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                        </div>
+                        <div id="cv_filename" class="hidden px-4 py-3 bg-ccg-teal/10 rounded-xl">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-ccg-teal shrink-0" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                    </path>
+                                </svg>
+                                <span class="text-ccg-navy font-semibold text-sm truncate" id="cv_filename_text"></span>
+                                <button type="button" id="cv_remove"
+                                    class="ml-auto text-slate-400 hover:text-red-500 transition-colors">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M6 18L18 6M6 6l12 12"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        (function () {
+                            const cvInput = document.getElementById('cv_upload');
+                            const filenameDisplay = document.getElementById('cv_filename');
+                            const filenameText = document.getElementById('cv_filename_text');
+                            const removeBtn = document.getElementById('cv_remove');
+
+                            cvInput.addEventListener('change', function () {
+                                if (this.files && this.files[0]) {
+                                    filenameText.textContent = this.files[0].name;
+                                    filenameDisplay.classList.remove('hidden');
+                                } else {
+                                    filenameDisplay.classList.add('hidden');
+                                }
+                            });
+
+                            removeBtn.addEventListener('click', function () {
+                                cvInput.value = '';
+                                filenameDisplay.classList.add('hidden');
+                            });
+                        })();
+                    </script>
+
                     <div class="space-y-3">
                         <label for="message"
                             class="block text-[13px] font-black uppercase tracking-widest text-ccg-navy/40 ml-1">Your
@@ -804,7 +870,8 @@
                         <div class="group">
                             <p class="text-[10px] font-black uppercase tracking-widest text-ccg-gold mb-1 opacity-50">
                                 Email Enquiries</p>
-                            <p class="font-bold text-white/50 group-hover:text-ccg-gold transition-colors whitespace-nowrap">
+                            <p
+                                class="font-bold text-white/50 group-hover:text-ccg-gold transition-colors whitespace-nowrap">
                                 clientservices@crosscaregroup.com.au</p>
                         </div>
                         <div class="group">
