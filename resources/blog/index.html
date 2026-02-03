@@ -2,6 +2,8 @@
 <html lang="en-AU">
 
 <head>
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*; frame-src 'self' https://www.youtube.com https://youtube.com https://www.youtube-nocookie.com; connect-src 'self' https://*.powerplatform.com https://*.azure.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Blog | Cross Care Group</title>
@@ -91,11 +93,9 @@
             class="text-[17px] lg:text-[16px] font-semibold text-white lg:text-ccg-navy group-hover:text-ccg-gold px-3 transition-all flex items-center gap-1">
             For Referrers <span class="text-[10px] opacity-70 group-hover:rotate-180 transition-transform">▼</span>
           </a>
+          <!-- Dropdown -->
           <div
             class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-navy/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-[1100] py-3 overflow-hidden">
-            <a href="../../make-a-referral/#referral-guide"
-              class="block px-6 py-3 text-[14px] font-semibold text-ccg-navy/80 hover:text-white hover:bg-ccg-gold transition-all">Referral
-              Guide</a>
             <a href="../../make-a-referral/#referral-container"
               class="block px-6 py-3 text-[14px] font-semibold text-ccg-navy/80 hover:text-white hover:bg-ccg-gold transition-all">Referral
               Form</a>
@@ -221,14 +221,13 @@
           <a href="../../" class="text-3xl font-black text-white hover:text-ccg-gold transition-colors py-2">Home</a>
           <a href="../../get-support/"
             class="text-3xl font-black text-white hover:text-ccg-gold transition-colors py-2">Get Support</a>
-          <div class="flex flex-col gap-y-3 pt-4">
+          <div class="flex flex-col gap-y-3 pt-4 items-center text-center">
             <span class="text-xs font-black uppercase tracking-widest text-white/40">For Referrers</span>
-            <a href="../../make-a-referral/#referral-guide"
-              class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Referral Guide</a>
             <a href="../../make-a-referral/#referral-container"
-              class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Referral Form</a>
+              class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Referral
+              Form</a>
           </div>
-          <div class="flex flex-col gap-y-3 pt-8">
+          <div class="flex flex-col gap-y-3 pt-8 items-center text-center">
             <span class="text-xs font-black uppercase tracking-widest text-white/40">Services</span>
             <a href="../../services/community-care/"
               class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Community
@@ -240,25 +239,9 @@
             <a href="../../services/complex-care/"
               class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Complex Care</a>
           </div>
-          <div class="flex flex-col gap-y-3 pt-8">
-            <span class="text-xs font-black uppercase tracking-widest text-white/40">Resources</span>
-            <a href="../../resources/easy-read/"
-              class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Easy
-              Read</a>
-            <a href="../../resources/faqs/"
-              class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">FAQs</a>
-            <a href="../../resources/guides/"
-              class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Guides &
-              Checklists</a>
-            <a href="../../resources/forms/"
-              class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Forms &
-              Documents</a>
-            <a href="../../resources/blog/"
-              class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Blog</a>
-          </div>
           <a href="../../why-cross-care/"
             class="text-3xl font-black text-white hover:text-ccg-gold transition-colors py-2">About</a>
-          <div class="flex flex-col gap-y-3 pt-8">
+          <div class="flex flex-col gap-y-3 pt-8 items-center text-center">
             <span class="text-xs font-black uppercase tracking-widest text-white/40">Advocacy</span>
             <a href="../../rights-feedback-complaints/#rights"
               class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Your Rights</a>
@@ -268,6 +251,22 @@
               class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Feedback</a>
             <a href="../../rights-feedback-complaints/#complaints"
               class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Complaints</a>
+          </div>
+          <div class="flex flex-col gap-y-3 pt-8 items-center text-center">
+            <span class="text-xs font-black uppercase tracking-widest text-white/40">Resources</span>
+            <a href="../../resources/easy-read/"
+              class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Easy
+              Read</a>
+            <a href="../../resources/faqs/"
+              class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">FAQs</a>
+            <a href="../../resources/guides/"
+              class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Guides
+              & Checklists</a>
+            <a href="../../resources/forms/"
+              class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Forms
+              & Documents</a>
+            <a href="../../resources/blog/"
+              class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Blog</a>
           </div>
         </nav>
         <div class="mt-auto pt-10 flex flex-col gap-4 items-center">

@@ -2,6 +2,8 @@
 <html lang="en-AU">
 
 <head>
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*; frame-src 'self' https://www.youtube.com https://youtube.com https://www.youtube-nocookie.com; connect-src 'self' https://*.powerplatform.com https://*.azure.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stories | Cross Care Group</title>
@@ -83,9 +85,6 @@
           <!-- Dropdown -->
           <div
             class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-navy/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-[1100] py-3 overflow-hidden">
-            <a href="../make-a-referral/#referral-guide"
-              class="block px-6 py-3 text-[14px] font-semibold text-ccg-navy/80 hover:text-white hover:bg-ccg-gold transition-all">Referral
-              Guide</a>
             <a href="../make-a-referral/#referral-container"
               class="block px-6 py-3 text-[14px] font-semibold text-ccg-navy/80 hover:text-white hover:bg-ccg-gold transition-all">Referral
               Form</a>
@@ -220,11 +219,8 @@
           <a href="../get-support/"
             class="text-3xl font-black text-white hover:text-ccg-gold transition-colors py-2">Get
             Support</a>
-          <div class="flex flex-col gap-y-3 pt-4">
+          <div class="flex flex-col gap-y-3 pt-4 items-center text-center">
             <span class="text-xs font-black uppercase tracking-widest text-white/40">For Referrers</span>
-            <a href="../make-a-referral/#referral-guide"
-              class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Referral
-              Guide</a>
             <a href="../make-a-referral/#referral-container"
               class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Referral
               Form</a>
@@ -243,7 +239,7 @@
             <a href="../services/complex-care/"
               class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Complex Care</a>
           </div>
-          <div class="flex flex-col gap-y-3 pt-8">
+          <div class="flex flex-col gap-y-3 pt-8 items-center text-center">
             <span class="text-xs font-black uppercase tracking-widest text-white/40">Resources</span>
             <a href="../resources/easy-read/"
               class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Easy
@@ -261,7 +257,7 @@
           </div>
           <a href="../why-cross-care/"
             class="text-3xl font-black text-white hover:text-ccg-gold transition-colors py-2">About</a>
-          <div class="flex flex-col gap-y-3 pt-8">
+          <div class="flex flex-col gap-y-3 pt-8 items-center text-center">
             <span class="text-xs font-black uppercase tracking-widest text-white/40">Careers</span>
             <a href="../careers/jobs/" class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Open
               Roles</a>

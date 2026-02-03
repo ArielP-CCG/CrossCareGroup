@@ -2,6 +2,8 @@
 <html lang="en-AU">
 
 <head>
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.googletagmanager.com https://cdn.jotfor.ms https://*.jotform.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*; frame-src 'self' https://www.youtube.com https://youtube.com https://www.youtube-nocookie.com https://form.jotform.com https://*.jotform.com; connect-src 'self' https://*.powerplatform.com https://*.azure.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'https://form.jotform.com'; upgrade-insecure-requests;">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Make a Referral | Cross Care Group</title>
@@ -155,9 +157,6 @@
                     <!-- Dropdown -->
                     <div
                         class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-navy/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-[1100] py-3 overflow-hidden">
-                        <a href="#referral-guide"
-                            class="block px-6 py-3 text-[14px] font-semibold text-ccg-navy/80 hover:text-white hover:bg-ccg-gold transition-all">Referral
-                            Guide</a>
                         <a href="#referral-container"
                             class="block px-6 py-3 text-[14px] font-semibold text-ccg-navy/80 hover:text-white hover:bg-ccg-gold transition-all">Referral
                             Form</a>
@@ -297,16 +296,13 @@
                     <a href="../get-support/"
                         class="text-3xl font-black text-white hover:text-ccg-gold transition-colors py-2">Get
                         Support</a>
-                    <div class="flex flex-col gap-y-3 pt-4">
+                    <div class="flex flex-col gap-y-3 pt-4 items-center">
                         <span class="text-xs font-black uppercase tracking-widest text-white/40">For Referrers</span>
-                        <a href="./#referral-guide"
-                            class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Referral
-                            Guide</a>
                         <a href="./#referral-container"
                             class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Referral
                             Form</a>
                     </div>
-                    <div class="flex flex-col gap-y-3 pt-8">
+                    <div class="flex flex-col gap-y-3 pt-8 items-center">
                         <span class="text-xs font-black uppercase tracking-widest text-white/40">Services</span>
                         <a href="../services/community-care/"
                             class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Community
@@ -320,7 +316,7 @@
                         <a href="../services/complex-care/"
                             class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Complex Care</a>
                     </div>
-                    <div class="flex flex-col gap-y-3 pt-8">
+                    <div class="flex flex-col gap-y-3 pt-8 items-center text-center">
                         <span class="text-xs font-black uppercase tracking-widest text-white/40">Advocacy</span>
                         <a href="../rights-feedback-complaints/#rights"
                             class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Your
@@ -334,7 +330,7 @@
                     </div>
                     <a href="../why-cross-care/"
                         class="text-3xl font-black text-white hover:text-ccg-gold transition-colors py-2">About</a>
-                    <div class="flex flex-col gap-y-3 pt-8">
+                    <div class="flex flex-col gap-y-3 pt-8 items-center text-center">
                         <span class="text-xs font-black uppercase tracking-widest text-white/40">Careers</span>
                         <a href="../careers/jobs/"
                             class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Open
@@ -343,7 +339,7 @@
                             class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Expression
                             of Interest</a>
                     </div>
-                    <div class="flex flex-col gap-y-3 pt-8">
+                    <div class="flex flex-col gap-y-3 pt-8 items-center text-center">
                         <span class="text-xs font-black uppercase tracking-widest text-white/40">Resources</span>
                         <a href="../resources/easy-read/"
                             class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Easy
@@ -372,8 +368,6 @@
                     </a>
                 </div>
             </div>
-        </div>
-        </div>
         </div>
     </header>
 
@@ -418,10 +412,7 @@
                                     d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                             </svg>
                         </a>
-                        <a href="#referral-guide"
-                            class="bg-white border-2 border-slate-100 text-ccg-navy px-10 py-5 rounded-full font-black text-lg hover:bg-slate-50 hover:border-ccg-gold/30 transition-all hover:-translate-y-1">
-                            Referral Guide
-                        </a>
+
                     </div>
                 </div>
 
@@ -469,18 +460,25 @@
         </section>
 
         <!-- Form Section -->
-        <section class="section relative pt-4 pb-48" id="referral-container">
+        <section class="section relative pt-8 pb-48" id="referral-container">
             <div class="container relative z-10">
                 <div class="max-w-4xl mx-auto">
 
                     <!-- Progress Bar -->
                     <div class="mb-12 text-center" data-reveal>
-                        <h2 class="text-4xl font-black text-ccg-navy mb-4 mt-10">Guided Referral <span
-                                class="text-ccg-teal">Pathway</span></h2>
-                        <p class="text-slate-500 font-medium max-w-2xl mx-auto mb-12">Submit your details through our
-                            secure clinical portal for streamlined intake and coordination.</p>
+                        <h2
+                            class="text-5xl md:text-6xl font-black text-ccg-navy mb-4 mt-10 tracking-tight leading-tight">
+                            Guided Referral <span class="text-ccg-teal">Pathway</span></h2>
+                        <p class="text-ccg-navy/60 font-medium max-w-2xl mx-auto mb-8 text-lg">Submit your details
+                            through our secure clinical portal for streamlined intake and coordination.</p>
+                        <!-- Choice Label -->
+                        <div class="mb-4">
+                            <span
+                                class="text-[10px] md:text-xs uppercase tracking-[0.3em] font-black text-ccg-navy/30">Select
+                                Referral Category</span>
+                        </div>
                     </div>
-
+                    <!--
                     <div class="mb-8 px-10">
                         <div class="flex justify-between items-center mb-4">
                             <span id="step-count"
@@ -493,1005 +491,1148 @@
                             <div id="progress-bar" class="progress-bar-inner h-full bg-ccg-teal" style="width: 7.14%;">
                             </div>
                         </div>
+                    </div> -->
+
+                    <!-- New Referral Interface -->
+                    <div class="w-[95%] mx-auto mb-20 px-4" data-reveal>
+
+                        <div class="flex justify-center w-full relative z-10 items-end mb-6 gap-4 md:gap-6">
+                            <!-- Community Care Button (Default Active) -->
+                            <button onclick="switchReferralTab('community')" id="tab-community"
+                                class="flex-1 py-3 md:py-4 text-center font-bold text-xs md:text-base uppercase tracking-[0.2em] rounded-[2rem] bg-ccg-navy text-ccg-gold transition-all duration-700 relative z-20 shadow-[0_15px_30px_-5px_rgba(0,59,92,0.15)] hover:scale-[1.02] active:scale-95 flex flex-col items-center justify-center group h-12 md:h-16 border-[1.5px] border-ccg-gold/50">
+                                <span>Community Care</span>
+                            </button>
+
+                            <button onclick="switchReferralTab('allied')" id="tab-allied"
+                                class="flex-1 py-3 md:py-4 text-center font-bold text-xs md:text-base uppercase tracking-[0.2em] rounded-[2rem] bg-white text-ccg-navy/40 transition-all duration-700 relative z-10 shadow-sm hover:shadow-xl hover:scale-[1.02] active:scale-95 flex flex-col items-center justify-center group h-12 md:h-16 border-[1.5px] border-ccg-navy">
+                                <span>Allied Health</span>
+                            </button>
+                        </div>
+
+                        <!-- Content Area -->
+                        <div
+                            class="bg-white shadow-premium relative z-20 w-full rounded-[2.5rem] overflow-hidden border border-slate-200/50">
+                            <!-- Community Care Wrapper -->
+                            <!-- Community Care Wrapper -->
+                            <div id="community-wrapper" class="w-full">
+                                <iframe id="JotFormIFrame-252181200577451" title="CC Referral Form"
+                                    allowtransparency="true"
+                                    allow="geolocation; microphone; camera; fullscreen; payment"
+                                    src="https://form.jotform.com/252181200577451" frameborder="0"
+                                    style="min-width:100%;max-width:100%;height:539px;border:none;" scrolling="no">
+                                </iframe>
+                                <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+                                <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-252181200577451']", "https://form.jotform.com/")</script>
+                            </div>
+
+
+
+
+                            <!-- Allied Health Iframe -->
+                            <!-- TODO: Add the actual Allied Health Referral Form URL below -->
+                            <!-- Allied Health Wrapper -->
+                            <div id="allied-wrapper" class="hidden w-full">
+                                <iframe id="JotFormIFrame-252117703960050" title="AH Referral Form"
+                                    allowtransparency="true"
+                                    allow="geolocation; microphone; camera; fullscreen; payment"
+                                    src="https://form.jotform.com/252117703960050" frameborder="0"
+                                    style="min-width:100%;max-width:100%;height:539px;border:none;" scrolling="no">
+                                </iframe>
+                                <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+                                <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-252117703960050']", "https://form.jotform.com/")</script>
+                            </div>
+                        </div>
                     </div>
 
-                    <form action="javascript:void(0);" id="referral-form" method="POST" data-ccg-form="make-a-referral"
-                        novalidate
-                        class="bg-white rounded-[4rem] shadow-premium border border-white p-10 md:pt-14 md:pb-20 md:px-20 space-y-12 relative overflow-hidden">
+                    <!-- Script for switching tabs -->
+                    <script>
 
-                        <!-- Step 1: Consent -->
-                        <div class="form-step active" data-step="1">
-                            <h2 class="text-3xl font-black text-ccg-navy tracking-tight italic mb-8">Clinical <span
-                                    class="text-ccg-teal">Consent</span></h2>
-                            <p class="text-slate-600 font-medium leading-relaxed mb-10">
-                                By proceeding, you consent to Cross Care Group collecting, using and storing your
-                                personal
-                                information in accordance with the Privacy Act 1988 (Cth) and the Australian Privacy
-                                Principles (APPs), and as set out in Cross Care Group's <a
-                                    href="../legal/privacy-policy/"
-                                    class="text-ccg-teal font-bold hover:underline">Privacy Policy</a>.
-                            </p>
-                            <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
-                                <label class="flex items-center gap-6 cursor-pointer group">
-                                    <input type="checkbox" id="consent" name="ref_consent" required
-                                        class="w-8 h-8 text-ccg-teal rounded-xl border-slate-200 focus:ring-ccg-teal/20 cursor-pointer">
-                                    <span
-                                        class="text-sm font-bold text-slate-600 group-hover:text-ccg-navy transition-colors">I
-                                        understand and consent to the above. <span
-                                            class="text-red-500"></span>(Required)</span></span>
-                                </label>
-                            </div>
-                        </div>
 
-                        <!-- Step 2: Referrer Info Section Header -->
-                        <div class="form-step text-center" data-step="2">
-                            <div
-                                class="w-20 h-20 bg-ccg-teal/10 rounded-full flex items-center justify-center mx-auto mb-8">
-                                <svg class="w-10 h-10 text-ccg-teal" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                                </svg>
-                            </div>
-                            <h2 class="text-4xl font-black text-ccg-navy tracking-tight mb-4">Referrer Information</h2>
-                            <p
-                                class="text-slate-400 font-bold uppercase tracking-widest text-xs flex items-center justify-center gap-2">
-                                <span>2 Questions in this section</span>
-                                <span class="w-1 h-1 bg-slate-200 rounded-full"></span>
-                                <span class="text-ccg-teal underline decoration-ccg-teal/30">All Required</span>
-                            </p>
-                        </div>
 
-                        <!-- Step 3: Relationship -->
-                        <div class="form-step" data-step="3">
-                            <h2 class="text-3xl font-black text-ccg-navy tracking-tight italic mb-10">Relationship <span
-                                    class="text-ccg-teal">to the client? *</span></h2>
-                            <div class="space-y-4">
-                                <label class="wizard-option">
-                                    <span class="radio-dot"></span>
-                                    <input type="radio" name="ref_relationship" value="Support Coordinator" required
-                                        class="hidden">
-                                    <span class="text-slate-600 font-bold">Support Coordinator</span>
-                                </label>
-                                <label class="wizard-option">
-                                    <span class="radio-dot"></span>
-                                    <input type="radio" name="ref_relationship" value="Plan Manager" required
-                                        class="hidden">
-                                    <span class="text-slate-600 font-bold">Plan Manager</span>
-                                </label>
-                                <label class="wizard-option">
-                                    <span class="radio-dot"></span>
-                                    <input type="radio" name="ref_relationship" value="Local Area Coordinator" required
-                                        class="hidden">
-                                    <span class="text-slate-600 font-bold">Local Area Coordinator</span>
-                                </label>
-                                <label class="wizard-option">
-                                    <span class="radio-dot"></span>
-                                    <input type="radio" name="ref_relationship"
-                                        value="Healthcare Practitioner / Clinician" required class="hidden">
-                                    <span class="text-slate-600 font-bold">Healthcare Practitioner / Clinician</span>
-                                </label>
-                                <label class="wizard-option">
-                                    <span class="radio-dot"></span>
-                                    <input type="radio" name="ref_relationship" value="Hospital / Discharge Planner"
-                                        required class="hidden">
-                                    <span class="text-slate-600 font-bold">Hospital / Discharge Planner</span>
-                                </label>
-                                <label class="wizard-option">
-                                    <span class="radio-dot"></span>
-                                    <input type="radio" name="ref_relationship" value="Family Member / Friend" required
-                                        class="hidden">
-                                    <span class="text-slate-600 font-bold">Family Member / Friend</span>
-                                </label>
-                                <label class="wizard-option">
-                                    <span class="radio-dot"></span>
-                                    <input type="radio" name="ref_relationship"
-                                        value="I am referring myself (self-referral)" required class="hidden">
-                                    <span class="text-slate-600 font-bold">I am referring myself (self-referral)</span>
-                                </label>
-                                <label class="wizard-option" data-conditional-target="#rel-other-wrap">
-                                    <span class="radio-dot"></span>
-                                    <input type="radio" name="ref_relationship" value="Other" required class="hidden">
-                                    <span class="text-slate-600 font-bold">Other relationship</span>
-                                </label>
-                            </div>
-                            <div id="rel-other-wrap" class="mt-6 hidden">
-                                <input type="text" id="relationshipOther" name="ref_relationshipOther"
-                                    class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                    placeholder="Please specify relationship...">
-                            </div>
-                        </div>
 
-                        <!-- Step 4: Referrer Details -->
-                        <div class="form-step" data-step="4">
-                            <h2 class="text-3xl font-black text-ccg-navy tracking-tight italic mb-12">Referrer <span
-                                    class="text-ccg-teal">Contact Details</span></h2>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                <div class="space-y-4 md:col-span-2">
-                                    <label for="referrerFullName"
-                                        class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1">Full
-                                        Name * <span class="text-[9px] text-red-500">(Required)</span></label>
-                                    <input type="text" id="referrerFullName" name="Title" required
-                                        class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                        placeholder="Enter name">
+
+
+
+
+
+
+
+
+
+
+
+                        function switchReferralTab(type) {
+                            const tabCommunity = document.getElementById('tab-community');
+                            const tabAllied = document.getElementById('tab-allied');
+                            const wrapperCommunity = document.getElementById('community-wrapper');
+                            const wrapperAllied = document.getElementById('allied-wrapper');
+
+                            // Button Base Classes
+                            const btnActive = ['bg-ccg-navy', 'text-ccg-gold', 'z-20', 'shadow-[0_15px_30px_-5px_rgba(0,59,92,0.15)]', 'border-[1.5px]', 'border-ccg-gold/50'];
+                            const btnInactive = ['bg-white', 'text-ccg-navy/40', 'z-10', 'shadow-sm', 'border-[1.5px]', 'border-ccg-navy'];
+
+                            if (type === 'community') {
+                                // Community Active
+                                tabCommunity.classList.add(...btnActive);
+                                tabCommunity.classList.remove(...btnInactive);
+
+                                // Allied Inactive
+                                tabAllied.classList.add(...btnInactive);
+                                tabAllied.classList.remove(...btnActive);
+
+                                // Show Community Wrapper
+                                wrapperCommunity.classList.remove('hidden');
+                                wrapperAllied.classList.add('hidden');
+                            } else {
+                                // Allied Active
+                                tabAllied.classList.add(...btnActive);
+                                tabAllied.classList.remove(...btnInactive);
+
+                                // Community Inactive
+                                tabCommunity.classList.add(...btnInactive);
+                                tabCommunity.classList.remove(...btnActive);
+
+                                // Show Allied Wrapper
+                                wrapperAllied.classList.remove('hidden');
+                                wrapperCommunity.classList.add('hidden');
+                            }
+                        }
+                    </script>
+
+                    <template id="old-referral-form-template">
+                        <form action="javascript:void(0);" id="referral-form" method="POST"
+                            data-ccg-form="make-a-referral" novalidate
+                            class="bg-white rounded-[4rem] shadow-premium border border-white p-10 md:pt-14 md:pb-20 md:px-20 space-y-12 relative overflow-hidden">
+
+
+                            <!-- Step 1: Consent -->
+                            <div class="form-step active" data-step="1">
+                                <h2 class="text-3xl font-black text-ccg-navy tracking-tight italic mb-8">Clinical <span
+                                        class="text-ccg-teal">Consent</span></h2>
+                                <p class="text-slate-600 font-medium leading-relaxed mb-10">
+                                    By proceeding, you consent to Cross Care Group collecting, using and storing your
+                                    personal
+                                    information in accordance with the Privacy Act 1988 (Cth) and the Australian Privacy
+                                    Principles (APPs), and as set out in Cross Care Group's <a
+                                        href="../legal/privacy-policy/"
+                                        class="text-ccg-teal font-bold hover:underline">Privacy Policy</a>.
+                                </p>
+                                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                                    <label class="flex items-center gap-6 cursor-pointer group">
+                                        <input type="checkbox" id="consent" name="ref_consent" required
+                                            class="w-8 h-8 text-ccg-teal rounded-xl border-slate-200 focus:ring-ccg-teal/20 cursor-pointer">
+                                        <span
+                                            class="text-sm font-bold text-slate-600 group-hover:text-ccg-navy transition-colors">I
+                                            understand and consent to the above. <span
+                                                class="text-red-500"></span>(Required)</span></span>
+                                    </label>
                                 </div>
-                                <div class="space-y-4 md:col-span-2">
-                                    <label for="referrerOrg"
-                                        class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1">Company/Organisation
-                                        <span class="text-[9px] text-slate-300">(Optional)</span></label>
-                                    <input type="text" id="referrerOrg" name="ref_referrerOrg"
-                                        class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                        placeholder="e.g. Royal Brisbane Hospital">
+                            </div>
+
+                            <!-- Step 2: Referrer Info Section Header -->
+                            <div class="form-step text-center" data-step="2">
+                                <div
+                                    class="w-20 h-20 bg-ccg-teal/10 rounded-full flex items-center justify-center mx-auto mb-8">
+                                    <svg class="w-10 h-10 text-ccg-teal" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z">
+                                        </path>
+                                    </svg>
                                 </div>
+                                <h2 class="text-4xl font-black text-ccg-navy tracking-tight mb-4">Referrer Information
+                                </h2>
+                                <p
+                                    class="text-slate-400 font-bold uppercase tracking-widest text-xs flex items-center justify-center gap-2">
+                                    <span>2 Questions in this section</span>
+                                    <span class="w-1 h-1 bg-slate-200 rounded-full"></span>
+                                    <span class="text-ccg-teal underline decoration-ccg-teal/30">All Required</span>
+                                </p>
+                            </div>
+
+                            <!-- Step 3: Relationship -->
+                            <div class="form-step" data-step="3">
+                                <h2 class="text-3xl font-black text-ccg-navy tracking-tight italic mb-10">Relationship
+                                    <span class="text-ccg-teal">to the client? *</span>
+                                </h2>
                                 <div class="space-y-4">
-                                    <label for="referrerPhone"
-                                        class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1">Phone
-                                        Number * <span class="text-[9px] text-red-500">(Required)</span></label>
-                                    <input type="tel" id="referrerPhone" name="ref_referrerPhone" required
-                                        data-validate="phone"
-                                        class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                        placeholder="0400 000 000">
+                                    <label class="wizard-option">
+                                        <span class="radio-dot"></span>
+                                        <input type="radio" name="ref_relationship" value="Support Coordinator" required
+                                            class="hidden">
+                                        <span class="text-slate-600 font-bold">Support Coordinator</span>
+                                    </label>
+                                    <label class="wizard-option">
+                                        <span class="radio-dot"></span>
+                                        <input type="radio" name="ref_relationship" value="Plan Manager" required
+                                            class="hidden">
+                                        <span class="text-slate-600 font-bold">Plan Manager</span>
+                                    </label>
+                                    <label class="wizard-option">
+                                        <span class="radio-dot"></span>
+                                        <input type="radio" name="ref_relationship" value="Local Area Coordinator"
+                                            required class="hidden">
+                                        <span class="text-slate-600 font-bold">Local Area Coordinator</span>
+                                    </label>
+                                    <label class="wizard-option">
+                                        <span class="radio-dot"></span>
+                                        <input type="radio" name="ref_relationship"
+                                            value="Healthcare Practitioner / Clinician" required class="hidden">
+                                        <span class="text-slate-600 font-bold">Healthcare Practitioner /
+                                            Clinician</span>
+                                    </label>
+                                    <label class="wizard-option">
+                                        <span class="radio-dot"></span>
+                                        <input type="radio" name="ref_relationship" value="Hospital / Discharge Planner"
+                                            required class="hidden">
+                                        <span class="text-slate-600 font-bold">Hospital / Discharge Planner</span>
+                                    </label>
+                                    <label class="wizard-option">
+                                        <span class="radio-dot"></span>
+                                        <input type="radio" name="ref_relationship" value="Family Member / Friend"
+                                            required class="hidden">
+                                        <span class="text-slate-600 font-bold">Family Member / Friend</span>
+                                    </label>
+                                    <label class="wizard-option">
+                                        <span class="radio-dot"></span>
+                                        <input type="radio" name="ref_relationship"
+                                            value="I am referring myself (self-referral)" required class="hidden">
+                                        <span class="text-slate-600 font-bold">I am referring myself
+                                            (self-referral)</span>
+                                    </label>
+                                    <label class="wizard-option" data-conditional-target="#rel-other-wrap">
+                                        <span class="radio-dot"></span>
+                                        <input type="radio" name="ref_relationship" value="Other" required
+                                            class="hidden">
+                                        <span class="text-slate-600 font-bold">Other relationship</span>
+                                    </label>
                                 </div>
-                                <div class="space-y-4">
-                                    <label for="referrerEmail"
-                                        class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1">Email
-                                        * <span class="text-[9px] text-red-500">(Required)</span></label>
-                                    <input type="email" id="referrerEmail" name="ref_referrerEmail" required
-                                        data-validate="email"
+                                <div id="rel-other-wrap" class="mt-6 hidden">
+                                    <input type="text" id="relationshipOther" name="ref_relationshipOther"
                                         class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                        placeholder="work@email.com">
+                                        placeholder="Please specify relationship...">
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Step 5: Client Info Section Header -->
-                        <div class="form-step text-center" data-step="5">
-                            <div
-                                class="w-20 h-20 bg-ccg-gold/10 rounded-full flex items-center justify-center mx-auto mb-8">
-                                <svg class="w-10 h-10 text-ccg-gold" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
-                                    </path>
-                                </svg>
-                            </div>
-                            <h2 class="text-4xl font-black text-ccg-navy tracking-tight mb-4">Client Information</h2>
-                            <p
-                                class="text-slate-400 font-bold uppercase tracking-widest text-xs flex items-center justify-center gap-2">
-                                <span>4 Questions in this section</span>
-                                <span class="w-1 h-1 bg-slate-200 rounded-full"></span>
-                                <span class="text-ccg-gold underline decoration-ccg-gold/30">All Required</span>
-                            </p>
-                        </div>
-
-                        <!-- Step 6: Client Details -->
-                        <div class="form-step" data-step="6">
-                            <h2 class="text-3xl font-black text-ccg-navy tracking-tight italic mb-12">Who needs <span
-                                    class="text-ccg-gold">support?</span></h2>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                <div class="space-y-4 md:col-span-2">
-                                    <label for="clientFullName"
-                                        class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1">Full
-                                        Name * <span class="text-[9px] text-red-500">(Required)</span></label>
-                                    <input type="text" id="clientFullName" name="ref_clientFullName" required
-                                        class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                        placeholder="Enter name">
-                                </div>
-                                <div class="space-y-4">
-                                    <label for="clientPhone"
-                                        class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1">Phone
-                                        Number * <span class="text-[9px] text-red-500">(Required)</span></label>
-                                    <input type="tel" id="clientPhone" name="ref_clientPhone" required
-                                        data-validate="phone"
-                                        class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                        placeholder="0400 000 000">
-                                </div>
-                                <div class="space-y-4">
-                                    <label for="clientEmail"
-                                        class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1">Email
-                                        * <span class="text-[9px] text-red-500">(Required)</span></label>
-                                    <input type="email" id="clientEmail" name="ref_clientEmail" required
-                                        data-validate="email"
-                                        class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                        placeholder="email@address.com">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Step 7: DOB -->
-                        <div class="form-step" data-step="7">
-                            <h2 class="text-3xl font-black text-ccg-navy tracking-tight italic mb-8">Client <span
-                                    class="text-ccg-gold">Date of Birth</span></h2>
-                            <div class="space-y-4">
-                                <label for="clientDob"
-                                    class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1">Date
-                                    * <span class="text-[9px] text-red-500">(Required)</span></label>
-                                <input type="date" id="clientDob" name="ref_clientDob" required
-                                    class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none">
-                            </div>
-                        </div>
-
-                        <!-- Step 8: Address -->
-                        <div class="form-step" data-step="8">
-                            <h2 class="text-3xl font-black text-ccg-navy tracking-tight italic mb-8">Client <span
-                                    class="text-ccg-gold">Address</span></h2>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                <div class="space-y-4 md:col-span-2">
-                                    <label for="clientStreet"
-                                        class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1">Street
-                                        Address * <span class="text-[9px] text-red-500">(Required)</span></label>
-                                    <input type="text" id="clientStreet" name="ref_clientStreet" required
-                                        class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                        placeholder="Street Address">
-                                </div>
-                                <div class="space-y-4">
-                                    <label for="clientCity"
-                                        class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1">City
-                                        * <span class="text-[9px] text-red-500">(Required)</span></label>
-                                    <input type="text" id="clientCity" name="ref_clientCity" required
-                                        class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                        placeholder="City">
-                                </div>
-                                <div class="space-y-4">
-                                    <label for="clientState"
-                                        class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1">State
-                                        * <span class="text-[9px] text-red-500">(Required)</span></label>
-                                    <select id="clientState" name="ref_clientState" required
-                                        class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none appearance-none">
-                                        <option value="">Select State</option>
-                                        <option>Queensland</option>
-                                        <option>New South Wales</option>
-                                        <option>South Australia</option>
-                                        <option>Western Australia</option>
-                                        <option>Tasmania</option>
-                                        <option>Other / Interstate</option>
-                                    </select>
-                                </div>
-                                <div class="space-y-4">
-                                    <label for="clientPostcode"
-                                        class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1">Postcode
-                                        * <span class="text-[9px] text-red-500">(Required)</span></label>
-                                    <input type="text" id="clientPostcode" name="ref_clientPostcode" required
-                                        data-validate="number"
-                                        class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                        placeholder="Postcode">
-                                </div>
-                                <div class="space-y-4">
-                                    <label for="clientCountry"
-                                        class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1">Country
-                                        <span class="text-[9px] text-slate-300">(Optional)</span></label>
-                                    <select id="clientCountry" name="ref_clientCountry"
-                                        class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none appearance-none">
-                                        <option value="Australia">Australia</option>
-                                        <option value="New Zealand">New Zealand</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Step 9: Primary Contact -->
-                        <div class="form-step" data-step="9">
-                            <h2 class="text-3xl font-black text-ccg-navy tracking-tight italic mb-8">Client's Primary
-                                <span class="text-ccg-gold">Contact *</span>
-                            </h2>
-                            <p class="text-slate-500 font-medium mb-10">Who should we contact to coordinate
-                                appointments? <span
-                                    class="text-xs font-bold text-red-500 ml-2 underline decoration-red-500/30 underline-offset-4">(Required)</span>
-                            </p>
-                            <div class="space-y-4">
-                                <label class="wizard-option" data-conditional-target="#emergency-contact-wrap">
-                                    <span class="radio-dot"></span>
-                                    <input type="radio" name="ref_primaryContact" value="Referrer" required
-                                        class="hidden">
-                                    <span class="text-slate-600 font-bold">Referrer</span>
-                                </label>
-                                <label class="wizard-option" data-conditional-target="#emergency-contact-wrap">
-                                    <span class="radio-dot"></span>
-                                    <input type="radio" name="ref_primaryContact" value="Client" required
-                                        class="hidden">
-                                    <span class="text-slate-600 font-bold">Client</span>
-                                </label>
-                                <label class="wizard-option" data-conditional-target="#primary-other-wrap">
-                                    <span class="radio-dot"></span>
-                                    <input type="radio" name="ref_primaryContact" value="Other" required class="hidden">
-                                    <span class="text-slate-600 font-bold">Other (NOK / Guardian)</span>
-                                </label>
-                            </div>
-
-                            <!-- Branch A: Emergency Contact Form -->
-                            <div id="emergency-contact-wrap" class="mt-12 hidden space-y-8 animate-slideIn">
-                                <div class="bg-white border-2 border-slate-50 rounded-[3rem] p-10 shadow-sm">
-                                    <h3 class="text-2xl font-black text-ccg-navy mb-8 text-center">Client Emergency
-                                        Contact</h3>
-                                    <div class="space-y-6">
-                                        <div class="space-y-3">
-                                            <input type="text" name="ref_emergencyName" required
-                                                class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-8 py-5 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                                placeholder="Full Name">
-                                        </div>
-                                        <div class="space-y-3">
-                                            <input type="text" name="ref_emergencyRel" required
-                                                class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-8 py-5 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                                placeholder="Relationship to client">
-                                        </div>
-                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                            <input type="tel" name="ref_emergencyPhone" data-validate="phone" required
-                                                class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-8 py-5 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                                placeholder="Phone Number">
-                                            <input type="email" name="ref_emergencyEmail" data-validate="email"
-                                                class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-8 py-5 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                                placeholder="Email (Optional)">
-                                        </div>
+                            <!-- Step 4: Referrer Details -->
+                            <div class="form-step" data-step="4">
+                                <h2 class="text-3xl font-black text-ccg-navy tracking-tight italic mb-12">Referrer <span
+                                        class="text-ccg-teal">Contact Details</span></h2>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div class="space-y-4 md:col-span-2">
+                                        <label for="referrerFullName"
+                                            class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1">Full
+                                            Name * <span class="text-[9px] text-red-500">(Required)</span></label>
+                                        <input type="text" id="referrerFullName" name="Title" required
+                                            class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                            placeholder="Enter name">
+                                    </div>
+                                    <div class="space-y-4 md:col-span-2">
+                                        <label for="referrerOrg"
+                                            class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1">Company/Organisation
+                                            <span class="text-[9px] text-slate-300">(Optional)</span></label>
+                                        <input type="text" id="referrerOrg" name="ref_referrerOrg"
+                                            class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                            placeholder="e.g. Royal Brisbane Hospital">
+                                    </div>
+                                    <div class="space-y-4">
+                                        <label for="referrerPhone"
+                                            class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1">Phone
+                                            Number * <span class="text-[9px] text-red-500">(Required)</span></label>
+                                        <input type="tel" id="referrerPhone" name="ref_referrerPhone" required
+                                            data-validate="phone"
+                                            class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                            placeholder="0400 000 000">
+                                    </div>
+                                    <div class="space-y-4">
+                                        <label for="referrerEmail"
+                                            class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1">Email
+                                            * <span class="text-[9px] text-red-500">(Required)</span></label>
+                                        <input type="email" id="referrerEmail" name="ref_referrerEmail" required
+                                            data-validate="email"
+                                            class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                            placeholder="work@email.com">
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Branch B: Other Primary Contact Form -->
-                            <div id="primary-other-wrap" class="mt-12 hidden space-y-8 animate-slideIn">
-                                <div class="bg-white border-2 border-slate-50 rounded-[3rem] p-10 shadow-sm">
-                                    <h3 class="text-2xl font-black text-red-500 mb-2 text-center">Other: Client's
-                                        Primary Contact Details</h3>
-                                    <p class="text-slate-400 font-bold text-center text-sm mb-8">Please specify</p>
-                                    <div class="space-y-6">
+                            <!-- Step 5: Client Info Section Header -->
+                            <div class="form-step text-center" data-step="5">
+                                <div
+                                    class="w-20 h-20 bg-ccg-gold/10 rounded-full flex items-center justify-center mx-auto mb-8">
+                                    <svg class="w-10 h-10 text-ccg-gold" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h2 class="text-4xl font-black text-ccg-navy tracking-tight mb-4">Client Information
+                                </h2>
+                                <p
+                                    class="text-slate-400 font-bold uppercase tracking-widest text-xs flex items-center justify-center gap-2">
+                                    <span>4 Questions in this section</span>
+                                    <span class="w-1 h-1 bg-slate-200 rounded-full"></span>
+                                    <span class="text-ccg-gold underline decoration-ccg-gold/30">All Required</span>
+                                </p>
+                            </div>
+
+                            <!-- Step 6: Client Details -->
+                            <div class="form-step" data-step="6">
+                                <h2 class="text-3xl font-black text-ccg-navy tracking-tight italic mb-12">Who needs
+                                    <span class="text-ccg-gold">support?</span>
+                                </h2>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div class="space-y-4 md:col-span-2">
+                                        <label for="clientFullName"
+                                            class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1">Full
+                                            Name * <span class="text-[9px] text-red-500">(Required)</span></label>
+                                        <input type="text" id="clientFullName" name="ref_clientFullName" required
+                                            class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                            placeholder="Enter name">
+                                    </div>
+                                    <div class="space-y-4">
+                                        <label for="clientPhone"
+                                            class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1">Phone
+                                            Number * <span class="text-[9px] text-red-500">(Required)</span></label>
+                                        <input type="tel" id="clientPhone" name="ref_clientPhone" required
+                                            data-validate="phone"
+                                            class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                            placeholder="0400 000 000">
+                                    </div>
+                                    <div class="space-y-4">
+                                        <label for="clientEmail"
+                                            class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1">Email
+                                            * <span class="text-[9px] text-red-500">(Required)</span></label>
+                                        <input type="email" id="clientEmail" name="ref_clientEmail" required
+                                            data-validate="email"
+                                            class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                            placeholder="email@address.com">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 7: DOB -->
+                            <div class="form-step" data-step="7">
+                                <h2 class="text-3xl font-black text-ccg-navy tracking-tight italic mb-8">Client <span
+                                        class="text-ccg-gold">Date of Birth</span></h2>
+                                <div class="space-y-4">
+                                    <label for="clientDob"
+                                        class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1">Date
+                                        * <span class="text-[9px] text-red-500">(Required)</span></label>
+                                    <input type="date" id="clientDob" name="ref_clientDob" required
+                                        class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none">
+                                </div>
+                            </div>
+
+                            <!-- Step 8: Address -->
+                            <div class="form-step" data-step="8">
+                                <h2 class="text-3xl font-black text-ccg-navy tracking-tight italic mb-8">Client <span
+                                        class="text-ccg-gold">Address</span></h2>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div class="space-y-4 md:col-span-2">
+                                        <label for="clientStreet"
+                                            class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1">Street
+                                            Address * <span class="text-[9px] text-red-500">(Required)</span></label>
+                                        <input type="text" id="clientStreet" name="ref_clientStreet" required
+                                            class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                            placeholder="Street Address">
+                                    </div>
+                                    <div class="space-y-4">
+                                        <label for="clientCity"
+                                            class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1">City
+                                            * <span class="text-[9px] text-red-500">(Required)</span></label>
+                                        <input type="text" id="clientCity" name="ref_clientCity" required
+                                            class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                            placeholder="City">
+                                    </div>
+                                    <div class="space-y-4">
+                                        <label for="clientState"
+                                            class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1">State
+                                            * <span class="text-[9px] text-red-500">(Required)</span></label>
+                                        <select id="clientState" name="ref_clientState" required
+                                            class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none appearance-none">
+                                            <option value="">Select State</option>
+                                            <option>Queensland</option>
+                                            <option>New South Wales</option>
+                                            <option>South Australia</option>
+                                            <option>Western Australia</option>
+                                            <option>Tasmania</option>
+                                            <option>Other / Interstate</option>
+                                        </select>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <label for="clientPostcode"
+                                            class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1">Postcode
+                                            * <span class="text-[9px] text-red-500">(Required)</span></label>
+                                        <input type="text" id="clientPostcode" name="ref_clientPostcode" required
+                                            data-validate="number"
+                                            class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                            placeholder="Postcode">
+                                    </div>
+                                    <div class="space-y-4">
+                                        <label for="clientCountry"
+                                            class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1">Country
+                                            <span class="text-[9px] text-slate-300">(Optional)</span></label>
+                                        <select id="clientCountry" name="ref_clientCountry"
+                                            class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none appearance-none">
+                                            <option value="Australia">Australia</option>
+                                            <option value="New Zealand">New Zealand</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 9: Primary Contact -->
+                            <div class="form-step" data-step="9">
+                                <h2 class="text-3xl font-black text-ccg-navy tracking-tight italic mb-8">Client's
+                                    Primary
+                                    <span class="text-ccg-gold">Contact *</span>
+                                </h2>
+                                <p class="text-slate-500 font-medium mb-10">Who should we contact to coordinate
+                                    appointments? <span
+                                        class="text-xs font-bold text-red-500 ml-2 underline decoration-red-500/30 underline-offset-4">(Required)</span>
+                                </p>
+                                <div class="space-y-4">
+                                    <label class="wizard-option" data-conditional-target="#emergency-contact-wrap">
+                                        <span class="radio-dot"></span>
+                                        <input type="radio" name="ref_primaryContact" value="Referrer" required
+                                            class="hidden">
+                                        <span class="text-slate-600 font-bold">Referrer</span>
+                                    </label>
+                                    <label class="wizard-option" data-conditional-target="#emergency-contact-wrap">
+                                        <span class="radio-dot"></span>
+                                        <input type="radio" name="ref_primaryContact" value="Client" required
+                                            class="hidden">
+                                        <span class="text-slate-600 font-bold">Client</span>
+                                    </label>
+                                    <label class="wizard-option" data-conditional-target="#primary-other-wrap">
+                                        <span class="radio-dot"></span>
+                                        <input type="radio" name="ref_primaryContact" value="Other" required
+                                            class="hidden">
+                                        <span class="text-slate-600 font-bold">Other (NOK / Guardian)</span>
+                                    </label>
+                                </div>
+
+                                <!-- Branch A: Emergency Contact Form -->
+                                <div id="emergency-contact-wrap" class="mt-12 hidden space-y-8 animate-slideIn">
+                                    <div class="bg-white border-2 border-slate-50 rounded-[3rem] p-10 shadow-sm">
+                                        <h3 class="text-2xl font-black text-ccg-navy mb-8 text-center">Client Emergency
+                                            Contact</h3>
                                         <div class="space-y-6">
                                             <div class="space-y-3">
-                                                <input type="text" name="ref_primaryOtherName" required
+                                                <input type="text" name="ref_emergencyName" required
                                                     class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-8 py-5 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
                                                     placeholder="Full Name">
                                             </div>
                                             <div class="space-y-3">
-                                                <input type="text" name="ref_primaryOtherRel" required
+                                                <input type="text" name="ref_emergencyRel" required
                                                     class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-8 py-5 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                                    placeholder="Specify your relationship to the client">
-                                            </div>
-                                            <div class="space-y-3">
-                                                <input type="text" name="ref_primaryOtherOrg"
-                                                    class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-8 py-5 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                                    placeholder="Company/Organisation (Optional)">
+                                                    placeholder="Relationship to client">
                                             </div>
                                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                                <input type="tel" name="ref_primaryOtherPhone" data-validate="phone"
+                                                <input type="tel" name="ref_emergencyPhone" data-validate="phone"
                                                     required
                                                     class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-8 py-5 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
                                                     placeholder="Phone Number">
-                                                <input type="email" name="ref_primaryOtherEmail" data-validate="email"
-                                                    required
+                                                <input type="email" name="ref_emergencyEmail" data-validate="email"
                                                     class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-8 py-5 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                                    placeholder="Email">
+                                                    placeholder="Email (Optional)">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Branch B: Other Primary Contact Form -->
+                                <div id="primary-other-wrap" class="mt-12 hidden space-y-8 animate-slideIn">
+                                    <div class="bg-white border-2 border-slate-50 rounded-[3rem] p-10 shadow-sm">
+                                        <h3 class="text-2xl font-black text-red-500 mb-2 text-center">Other: Client's
+                                            Primary Contact Details</h3>
+                                        <p class="text-slate-400 font-bold text-center text-sm mb-8">Please specify</p>
+                                        <div class="space-y-6">
+                                            <div class="space-y-6">
+                                                <div class="space-y-3">
+                                                    <input type="text" name="ref_primaryOtherName" required
+                                                        class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-8 py-5 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                                        placeholder="Full Name">
+                                                </div>
+                                                <div class="space-y-3">
+                                                    <input type="text" name="ref_primaryOtherRel" required
+                                                        class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-8 py-5 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                                        placeholder="Specify your relationship to the client">
+                                                </div>
+                                                <div class="space-y-3">
+                                                    <input type="text" name="ref_primaryOtherOrg"
+                                                        class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-8 py-5 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                                        placeholder="Company/Organisation (Optional)">
+                                                </div>
+                                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                    <input type="tel" name="ref_primaryOtherPhone" data-validate="phone"
+                                                        required
+                                                        class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-8 py-5 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                                        placeholder="Phone Number">
+                                                    <input type="email" name="ref_primaryOtherEmail"
+                                                        data-validate="email" required
+                                                        class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-8 py-5 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                                        placeholder="Email">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Step 10: Funding -->
-                        <div class="form-step" data-step="10">
-                            <div class="text-center mb-12">
-                                <h2 class="text-4xl font-black text-ccg-navy tracking-tight mb-4">Funding</h2>
-                                <p class="text-slate-400 font-bold uppercase tracking-widest text-xs">Funding Selection
-                                    & Details</p>
-                            </div>
+                            <!-- Step 10: Funding -->
+                            <div class="form-step" data-step="10">
+                                <div class="text-center mb-12">
+                                    <h2 class="text-4xl font-black text-ccg-navy tracking-tight mb-4">Funding</h2>
+                                    <p class="text-slate-400 font-bold uppercase tracking-widest text-xs">Funding
+                                        Selection
+                                        & Details</p>
+                                </div>
 
-                            <div class="space-y-10">
-                                <!-- Q1: Funding Type -->
-                                <div class="space-y-4">
-                                    <h3 class="text-xl font-black text-ccg-navy italic">How will this service be
-                                        funded?* <span class="text-red-500 text-sm">(Required)</span></h3>
-                                    <div class="space-y-3">
-                                        <label class="wizard-option !py-4" data-conditional-target="#ndis-wrap">
-                                            <span class="radio-dot"></span>
-                                            <input type="radio" name="ref_fundingType" value="NDIS Plan" required
-                                                class="hidden">
-                                            <span class="text-slate-600 font-bold">NDIS Plan</span>
-                                        </label>
-                                        <label class="wizard-option !py-4" data-conditional-target="#insurer-wrap">
-                                            <span class="radio-dot"></span>
-                                            <input type="radio" name="ref_fundingType"
-                                                value="Private Health / Injury Insurer" required class="hidden">
-                                            <span class="text-slate-600 font-bold">Private Health / Injury Insurer
-                                                (e.g., iCare, NIISQ, TAC)</span>
-                                        </label>
-                                        <label class="wizard-option !py-4" data-conditional-target="#self-funded-wrap">
-                                            <span class="radio-dot"></span>
-                                            <input type="radio" name="ref_fundingType" value="Self-funded / Private"
-                                                required class="hidden">
-                                            <span class="text-slate-600 font-bold">Self-funded / Private</span>
-                                        </label>
-                                        <div id="funding-other-group">
-                                            <label class="wizard-option !py-4"
-                                                data-conditional-target="#funding-other-wrap">
+                                <div class="space-y-10">
+                                    <!-- Q1: Funding Type -->
+                                    <div class="space-y-4">
+                                        <h3 class="text-xl font-black text-ccg-navy italic">How will this service be
+                                            funded?* <span class="text-red-500 text-sm">(Required)</span></h3>
+                                        <div class="space-y-3">
+                                            <label class="wizard-option !py-4" data-conditional-target="#ndis-wrap">
                                                 <span class="radio-dot"></span>
-                                                <input type="radio" name="ref_fundingType" value="Other" required
+                                                <input type="radio" name="ref_fundingType" value="NDIS Plan" required
                                                     class="hidden">
-                                                <span class="text-slate-600 font-bold">Other, please specify:</span>
+                                                <span class="text-slate-600 font-bold">NDIS Plan</span>
                                             </label>
+                                            <label class="wizard-option !py-4" data-conditional-target="#insurer-wrap">
+                                                <span class="radio-dot"></span>
+                                                <input type="radio" name="ref_fundingType"
+                                                    value="Private Health / Injury Insurer" required class="hidden">
+                                                <span class="text-slate-600 font-bold">Private Health / Injury Insurer
+                                                    (e.g., iCare, NIISQ, TAC)</span>
+                                            </label>
+                                            <label class="wizard-option !py-4"
+                                                data-conditional-target="#self-funded-wrap">
+                                                <span class="radio-dot"></span>
+                                                <input type="radio" name="ref_fundingType" value="Self-funded / Private"
+                                                    required class="hidden">
+                                                <span class="text-slate-600 font-bold">Self-funded / Private</span>
+                                            </label>
+                                            <div id="funding-other-group">
+                                                <label class="wizard-option !py-4"
+                                                    data-conditional-target="#funding-other-wrap">
+                                                    <span class="radio-dot"></span>
+                                                    <input type="radio" name="ref_fundingType" value="Other" required
+                                                        class="hidden">
+                                                    <span class="text-slate-600 font-bold">Other, please specify:</span>
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <!-- Conditional Branch: NDIS -->
-                                <div id="ndis-wrap" class="hidden space-y-8 animate-slideIn">
-                                    <div
-                                        class="bg-white border-2 border-slate-50 rounded-[2.5rem] p-8 shadow-sm space-y-6">
-                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <!-- Conditional Branch: NDIS -->
+                                    <div id="ndis-wrap" class="hidden space-y-8 animate-slideIn">
+                                        <div
+                                            class="bg-white border-2 border-slate-50 rounded-[2.5rem] p-8 shadow-sm space-y-6">
+                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                                <div class="space-y-2">
+                                                    <label
+                                                        class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Plan
+                                                        Start Date *</label>
+                                                    <input type="date" name="ref_ndisStart"
+                                                        class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-6 py-4 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none">
+                                                </div>
+                                                <div class="space-y-2">
+                                                    <label
+                                                        class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Plan
+                                                        End Date *</label>
+                                                    <input type="date" name="ref_ndisEnd"
+                                                        class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-6 py-4 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none">
+                                                </div>
+                                            </div>
                                             <div class="space-y-2">
                                                 <label
-                                                    class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Plan
-                                                    Start Date *</label>
-                                                <input type="date" name="ref_ndisStart"
-                                                    class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-6 py-4 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none">
+                                                    class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Relevant
+                                                    NDIS Goals (Optional)</label>
+                                                <textarea name="ref_ndisGoals" rows="3"
+                                                    class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-6 py-6 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none resize-none"
+                                                    placeholder="List goals as they appear on the official plan..."></textarea>
                                             </div>
-                                            <div class="space-y-2">
-                                                <label
-                                                    class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Plan
-                                                    End Date *</label>
-                                                <input type="date" name="ref_ndisEnd"
-                                                    class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-6 py-4 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none">
-                                            </div>
-                                        </div>
-                                        <div class="space-y-2">
-                                            <label
-                                                class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Relevant
-                                                NDIS Goals (Optional)</label>
-                                            <textarea name="ref_ndisGoals" rows="3"
-                                                class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-6 py-6 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none resize-none"
-                                                placeholder="List goals as they appear on the official plan..."></textarea>
-                                        </div>
-                                        <div class="space-y-4">
-                                            <label
-                                                class="text-[11px] font-black uppercase tracking-widest text-ccg-navy/40 ml-1">Plan
-                                                Management Details *</label>
-                                            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                                                <label class="wizard-option !py-4 !px-4 !text-sm">
-                                                    <span class="radio-dot"></span>
-                                                    <input type="radio" name="ref_planManagement" value="Self-Managed"
-                                                        id="plan-self-managed" class="hidden">
-                                                    <span class="font-bold">Self-Managed</span>
-                                                </label>
-                                                <label class="wizard-option !py-4 !px-4 !text-sm">
-                                                    <span class="radio-dot"></span>
-                                                    <input type="radio" name="ref_planManagement" value="Plan Manager"
-                                                        id="plan-manager" class="hidden">
-                                                    <span class="font-bold">Plan Manager</span>
-                                                </label>
-                                                <label class="wizard-option !py-4 !px-4 !text-sm">
-                                                    <span class="radio-dot"></span>
-                                                    <input type="radio" name="ref_planManagement"
-                                                        value="NDIA/Agency Managed" id="plan-agency" class="hidden">
-                                                    <span class="font-bold">Agency Managed</span>
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        <!-- Self-Managed Plan Details (hidden by default) -->
-                                        <div id="self-managed-details" class="hidden space-y-4 animate-slideIn">
-                                            <h4 class="text-xl font-black text-ccg-teal italic text-center">Self-Managed
-                                                Plan Details*</h4>
-                                            <div class="space-y-2">
-                                                <label
-                                                    class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Invoice
-                                                    Email Address *</label>
-                                                <input type="email" name="ref_selfManagedEmail" id="self-managed-email"
-                                                    class="w-full bg-slate-50 border-2 border-slate-200 rounded-2xl px-6 py-4 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                                    placeholder="What email address are invoices to be sent to?">
-                                            </div>
-                                        </div>
-
-                                        <!-- Plan Manager Details (hidden by default) -->
-                                        <div id="plan-manager-details" class="hidden space-y-4 animate-slideIn">
-                                            <h4 class="text-xl font-black text-ccg-teal italic text-center">Plan Manager
-                                                Details*</h4>
                                             <div class="space-y-4">
-                                                <div class="space-y-2">
-                                                    <label
-                                                        class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Organisation
-                                                        Name *</label>
-                                                    <input type="text" name="ref_planManagerOrg" id="plan-manager-org"
-                                                        class="w-full bg-slate-50 border-2 border-slate-200 rounded-2xl px-6 py-4 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                                        placeholder="Organisation Name">
+                                                <label
+                                                    class="text-[11px] font-black uppercase tracking-widest text-ccg-navy/40 ml-1">Plan
+                                                    Management Details *</label>
+                                                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                                                    <label class="wizard-option !py-4 !px-4 !text-sm">
+                                                        <span class="radio-dot"></span>
+                                                        <input type="radio" name="ref_planManagement"
+                                                            value="Self-Managed" id="plan-self-managed" class="hidden">
+                                                        <span class="font-bold">Self-Managed</span>
+                                                    </label>
+                                                    <label class="wizard-option !py-4 !px-4 !text-sm">
+                                                        <span class="radio-dot"></span>
+                                                        <input type="radio" name="ref_planManagement"
+                                                            value="Plan Manager" id="plan-manager" class="hidden">
+                                                        <span class="font-bold">Plan Manager</span>
+                                                    </label>
+                                                    <label class="wizard-option !py-4 !px-4 !text-sm">
+                                                        <span class="radio-dot"></span>
+                                                        <input type="radio" name="ref_planManagement"
+                                                            value="NDIA/Agency Managed" id="plan-agency" class="hidden">
+                                                        <span class="font-bold">Agency Managed</span>
+                                                    </label>
                                                 </div>
-                                                <div class="space-y-2">
-                                                    <label
-                                                        class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Phone
-                                                        Number (Optional)</label>
-                                                    <input type="tel" name="ref_planManagerPhone"
-                                                        id="plan-manager-phone"
-                                                        class="w-full bg-slate-50 border-2 border-slate-200 rounded-2xl px-6 py-4 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                                        placeholder="Phone Number (Optional)">
-                                                </div>
+                                            </div>
+
+                                            <!-- Self-Managed Plan Details (hidden by default) -->
+                                            <div id="self-managed-details" class="hidden space-y-4 animate-slideIn">
+                                                <h4 class="text-xl font-black text-ccg-teal italic text-center">
+                                                    Self-Managed
+                                                    Plan Details*</h4>
                                                 <div class="space-y-2">
                                                     <label
                                                         class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Invoice
                                                         Email Address *</label>
-                                                    <input type="email" name="ref_planManagerEmail"
-                                                        id="plan-manager-email"
+                                                    <input type="email" name="ref_selfManagedEmail"
+                                                        id="self-managed-email"
                                                         class="w-full bg-slate-50 border-2 border-slate-200 rounded-2xl px-6 py-4 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
                                                         placeholder="What email address are invoices to be sent to?">
+                                                </div>
+                                            </div>
+
+                                            <!-- Plan Manager Details (hidden by default) -->
+                                            <div id="plan-manager-details" class="hidden space-y-4 animate-slideIn">
+                                                <h4 class="text-xl font-black text-ccg-teal italic text-center">Plan
+                                                    Manager
+                                                    Details*</h4>
+                                                <div class="space-y-4">
+                                                    <div class="space-y-2">
+                                                        <label
+                                                            class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Organisation
+                                                            Name *</label>
+                                                        <input type="text" name="ref_planManagerOrg"
+                                                            id="plan-manager-org"
+                                                            class="w-full bg-slate-50 border-2 border-slate-200 rounded-2xl px-6 py-4 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                                            placeholder="Organisation Name">
+                                                    </div>
+                                                    <div class="space-y-2">
+                                                        <label
+                                                            class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Phone
+                                                            Number (Optional)</label>
+                                                        <input type="tel" name="ref_planManagerPhone"
+                                                            id="plan-manager-phone"
+                                                            class="w-full bg-slate-50 border-2 border-slate-200 rounded-2xl px-6 py-4 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                                            placeholder="Phone Number (Optional)">
+                                                    </div>
+                                                    <div class="space-y-2">
+                                                        <label
+                                                            class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Invoice
+                                                            Email Address *</label>
+                                                        <input type="email" name="ref_planManagerEmail"
+                                                            id="plan-manager-email"
+                                                            class="w-full bg-slate-50 border-2 border-slate-200 rounded-2xl px-6 py-4 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                                            placeholder="What email address are invoices to be sent to?">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Conditional Branch: Insurer -->
+                                    <div id="insurer-wrap" class="hidden animate-slideIn">
+                                        <div
+                                            class="bg-white border-2 border-slate-50 rounded-[2.5rem] p-8 shadow-sm space-y-6">
+                                            <h3 class="text-xl font-black text-ccg-navy italic text-center mb-4">Insurer
+                                                Details</h3>
+                                            <div class="space-y-4 text-left">
+                                                <div class="space-y-2">
+                                                    <label
+                                                        class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Insurer
+                                                        Name *</label>
+                                                    <input type="text" name="ref_insurerName"
+                                                        class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-6 py-4 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                                        placeholder="Enter insurer name">
+                                                </div>
+                                                <div class="space-y-2">
+                                                    <label
+                                                        class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Claim
+                                                        Number *</label>
+                                                    <input type="text" name="ref_claimNumber"
+                                                        class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-6 py-4 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                                        placeholder="Enter claim number">
+                                                </div>
+                                                <div class="space-y-2">
+                                                    <label
+                                                        class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Case
+                                                        Manager Name & Email (if known)</label>
+                                                    <input type="text" name="ref_caseManager"
+                                                        class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-6 py-4 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                                        placeholder="Name and Email...">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Conditional Branch: Self-funded -->
+                                    <div id="self-funded-wrap" class="hidden animate-slideIn">
+                                        <div
+                                            class="bg-white border-2 border-slate-50 rounded-[2.5rem] p-8 shadow-sm space-y-6">
+                                            <h3 class="text-xl font-black text-ccg-navy italic text-center mb-4">
+                                                Self-Managed Plan Details *</h3>
+                                            <div class="space-y-2 text-left">
+                                                <label
+                                                    class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Invoice
+                                                    Email Address *</label>
+                                                <input type="email" name="ref_invoiceEmail" data-validate="email"
+                                                    class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-6 py-4 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                                    placeholder="email@address.com">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Conditional Branch: Other -->
+                                    <div id="funding-other-wrap" class="mt-3 hidden pl-12 animate-slideIn">
+                                        <input type="text" id="fundingOther" name="ref_fundingOther"
+                                            class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-6 py-4 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                            placeholder="Specify funding source...">
+                                    </div>
+
+                                    <!-- Q2: Funding Available (Optional) -->
+                                    <div class="space-y-4 text-left">
+                                        <h3 class="text-xl font-black text-ccg-navy italic">Funding Available <span
+                                                class="text-slate-400 text-sm">(Optional)</span></h3>
+                                        <div class="relative flex items-center">
+                                            <span class="absolute left-6 text-ccg-navy font-black text-lg">$</span>
+                                            <input type="number" name="ref_fundingAvailable" min="0" step="0.01"
+                                                class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl pl-12 pr-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                                placeholder="Enter amount...">
+                                        </div>
+                                    </div>
+
+                                    <!-- Q3: Funding Period (Optional) -->
+                                    <div class="space-y-4 text-left">
+                                        <h3 class="text-xl font-black text-ccg-navy italic">Funding Period <span
+                                                class="text-slate-400 text-sm">(Optional)</span></h3>
+                                        <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest ml-1">
+                                            (e.g.
+                                            3 monthly, 6 monthly, etc)</p>
+                                        <input type="text" name="ref_fundingPeriod"
+                                            class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                            placeholder="Enter period...">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 11: Reason for Referral -->
+                            <div class="form-step" data-step="11">
+                                <h2 class="text-3xl font-black text-ccg-navy tracking-tight italic mb-6">Reason for
+                                    <span class="text-ccg-teal">Referral *</span>
+                                </h2>
+                                <p class="text-slate-500 font-medium mb-10 text-sm text-left">Which Community Care
+                                    services
+                                    do you require? (Select all that apply) <span
+                                        class="text-red-500 font-bold underline decoration-red-500/30 underline-offset-4 ml-2">(Required)</span>
+                                </p>
+
+                                <div class="grid grid-cols-1 gap-3 max-h-[500px] overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-slate-200"
+                                    id="reason-services-group">
+                                    <label class="wizard-option !py-4">
+                                        <input type="checkbox" name="ref_referralServices" value="Personal Care"
+                                            class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
+                                        <span class="text-slate-600 font-bold">Personal Care</span>
+                                    </label>
+                                    <label class="wizard-option !py-4">
+                                        <input type="checkbox" name="ref_referralServices" value="Palliative Care"
+                                            class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
+                                        <span class="text-slate-600 font-bold">Palliative Care</span>
+                                    </label>
+                                    <label class="wizard-option !py-4">
+                                        <input type="checkbox" name="ref_referralServices" value="Tracheostomy Care"
+                                            class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
+                                        <span class="text-slate-600 font-bold">Tracheostomy Care</span>
+                                    </label>
+                                    <label class="wizard-option !py-4">
+                                        <input type="checkbox" name="ref_referralServices" value="Catheter Management"
+                                            class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
+                                        <span class="text-slate-600 font-bold">Catheter Management</span>
+                                    </label>
+                                    <label class="wizard-option !py-4">
+                                        <input type="checkbox" name="ref_referralServices" value="Complex Bowel Therapy"
+                                            class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
+                                        <span class="text-slate-600 font-bold">Complex Bowel Therapy</span>
+                                    </label>
+                                    <label class="wizard-option !py-4">
+                                        <input type="checkbox" name="ref_referralServices"
+                                            value="Enteral Feeding and Management"
+                                            class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
+                                        <span class="text-slate-600 font-bold">Enteral Feeding and Management</span>
+                                    </label>
+                                    <label class="wizard-option !py-4">
+                                        <input type="checkbox" name="ref_referralServices"
+                                            value="Complex Wound Management"
+                                            class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
+                                        <span class="text-slate-600 font-bold">Complex Wound Management</span>
+                                    </label>
+                                    <label class="wizard-option !py-4">
+                                        <input type="checkbox" name="ref_referralServices"
+                                            value="Advanced Airway Management"
+                                            class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
+                                        <span class="text-slate-600 font-bold">Advanced Airway Management</span>
+                                    </label>
+                                    <label class="wizard-option !py-4">
+                                        <input type="checkbox" name="ref_referralServices"
+                                            value="Ventilation Care & Management"
+                                            class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
+                                        <span class="text-slate-600 font-bold">Ventilation Care & Management</span>
+                                    </label>
+                                    <label class="wizard-option !py-4">
+                                        <input type="checkbox" name="ref_referralServices" value="Bariatric Management"
+                                            class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
+                                        <span class="text-slate-600 font-bold">Bariatric Management</span>
+                                    </label>
+                                    <label class="wizard-option !py-4">
+                                        <input type="checkbox" name="ref_referralServices" value="Medication Management"
+                                            class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
+                                        <span class="text-slate-600 font-bold">Medication Management</span>
+                                    </label>
+                                    <label class="wizard-option !py-4">
+                                        <input type="checkbox" name="ref_referralServices" value="Diabetic Management"
+                                            class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
+                                        <span class="text-slate-600 font-bold">Diabetic Management</span>
+                                    </label>
+                                    <label class="wizard-option !py-4">
+                                        <input type="checkbox" name="ref_referralServices" value="Oncology Management"
+                                            class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
+                                        <span class="text-slate-600 font-bold">Oncology Management</span>
+                                    </label>
+                                    <label class="wizard-option !py-4">
+                                        <input type="checkbox" name="ref_referralServices"
+                                            value="Complex Cognitive Impairment Support"
+                                            class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
+                                        <span class="text-slate-600 font-bold">Complex Cognitive Impairment
+                                            Support</span>
+                                    </label>
+                                    <label class="wizard-option !py-4">
+                                        <input type="checkbox" name="ref_referralServices" value="Continence Assessment"
+                                            class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
+                                        <span class="text-slate-600 font-bold">Continence Assessment</span>
+                                    </label>
+                                    <label class="wizard-option !py-4">
+                                        <input type="checkbox" name="ref_referralServices"
+                                            value="Allied Health Assessments"
+                                            class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
+                                        <span class="text-slate-600 font-bold">Allied Health Assessments</span>
+                                    </label>
+                                    <div class="space-y-4">
+                                        <label class="wizard-option !py-4">
+                                            <input type="checkbox" name="ref_referralServices" value="Other"
+                                                id="referral-other-checkbox"
+                                                class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
+                                            <span class="text-slate-600 font-bold">Other, please specify:</span>
+                                        </label>
+                                        <input type="text" name="ref_referralOther" id="referral-other-input"
+                                            class="hidden w-full bg-slate-50 border-2 border-transparent rounded-2xl px-8 py-5 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                            placeholder="Enter other service needs...">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 12: Referral Context & Urgency -->
+                            <div class="form-step" data-step="12">
+                                <div class="space-y-12">
+                                    <!-- Referral Details -->
+                                    <div class="space-y-4">
+                                        <h2 class="text-3xl font-black text-ccg-navy tracking-tight italic">Referral
+                                            <span class="text-ccg-teal">Details *</span>
+                                        </h2>
+                                        <p class="text-slate-500 font-medium text-sm leading-relaxed">Please describe
+                                            the
+                                            client's current situation, functional challenges, and what you hope to
+                                            achieve
+                                            with this referral. <br><span
+                                                class="text-xs text-slate-400 font-bold uppercase tracking-widest mt-2 block">Include
+                                                any relevant medical history or diagnoses.</span></p>
+                                        <textarea name="ref_referralDetails" rows="6" required
+                                            class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-[2rem] px-8 py-8 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none resize-none"
+                                            placeholder="Describe the situation..."></textarea>
+                                    </div>
+
+                                    <!-- Urgency -->
+                                    <div class="space-y-6">
+                                        <h3 class="text-xl font-black text-ccg-navy italic">How would you rate the
+                                            urgency
+                                            of this referral? *</h3>
+                                        <div class="grid grid-cols-1 gap-3">
+                                            <label class="wizard-option !py-4">
+                                                <span class="radio-dot"></span>
+                                                <input type="radio" name="ref_referralUrgency" value="Standard" required
+                                                    class="hidden">
+                                                <span class="text-slate-600 font-bold">Standard: Routine assessment
+                                                    needed.</span>
+                                            </label>
+                                            <label class="wizard-option !py-4">
+                                                <span class="radio-dot"></span>
+                                                <input type="radio" name="ref_referralUrgency" value="Medium" required
+                                                    class="hidden">
+                                                <span class="text-slate-600 font-bold">Medium: Client has clear needs
+                                                    impacting daily life.</span>
+                                            </label>
+                                            <label class="wizard-option !py-4">
+                                                <span class="radio-dot"></span>
+                                                <input type="radio" name="ref_referralUrgency" value="High" required
+                                                    class="hidden">
+                                                <span class="text-slate-600 font-bold">High: Significant risk of harm,
+                                                    hospital admission, or breakdown of supports.</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Service Delivery -->
+                                    <div class="space-y-6">
+                                        <h3 class="text-xl font-black text-ccg-navy italic">What is the preferred method
+                                            of
+                                            service delivery? *</h3>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                            <label class="wizard-option !py-4">
+                                                <span class="radio-dot"></span>
+                                                <input type="radio" name="ref_deliveryMethod" value="In-Home Visit"
+                                                    required class="hidden">
+                                                <span class="text-slate-600 font-bold">In-Home Visit</span>
+                                            </label>
+                                            <label class="wizard-option !py-4">
+                                                <span class="radio-dot"></span>
+                                                <input type="radio" name="ref_deliveryMethod" value="Telehealth"
+                                                    required class="hidden">
+                                                <span class="text-slate-600 font-bold">Telehealth</span>
+                                            </label>
+                                            <label class="wizard-option !py-4">
+                                                <span class="radio-dot"></span>
+                                                <input type="radio" name="ref_deliveryMethod" value="Hybrid" required
+                                                    class="hidden">
+                                                <span class="text-slate-600 font-bold">A mix of both (hybrid)</span>
+                                            </label>
+                                            <div class="space-y-3">
+                                                <label class="wizard-option !py-4"
+                                                    data-conditional-target="#delivery-other-wrap">
+                                                    <span class="radio-dot"></span>
+                                                    <input type="radio" name="ref_deliveryMethod" value="Other" required
+                                                        class="hidden">
+                                                    <span class="text-slate-600 font-bold">Other</span>
+                                                </label>
+                                                <div id="delivery-other-wrap" class="hidden pl-8 animate-slideIn">
+                                                    <input type="text" name="ref_deliveryOther"
+                                                        class="w-full bg-slate-50 border-2 border-transparent rounded-xl px-4 py-3 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                                        placeholder="Please specify...">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <!-- Conditional Branch: Insurer -->
-                                <div id="insurer-wrap" class="hidden animate-slideIn">
-                                    <div
-                                        class="bg-white border-2 border-slate-50 rounded-[2.5rem] p-8 shadow-sm space-y-6">
-                                        <h3 class="text-xl font-black text-ccg-navy italic text-center mb-4">Insurer
-                                            Details</h3>
-                                        <div class="space-y-4 text-left">
+                            <!-- Step 13: Clinical Snapshot -->
+                            <div class="form-step" data-step="13">
+                                <div class="space-y-12">
+                                    <!-- Diagnoses -->
+                                    <div class="space-y-6">
+                                        <h2
+                                            class="text-3xl font-black text-ccg-navy tracking-tight italic text-center underline decoration-red-500/20 underline-offset-8">
+                                            Diagnoses</h2>
+                                        <div class="space-y-4">
                                             <div class="space-y-2">
-                                                <label
-                                                    class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Insurer
-                                                    Name *</label>
-                                                <input type="text" name="ref_insurerName"
-                                                    class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-6 py-4 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                                    placeholder="Enter insurer name">
+                                                <input type="text" name="ref_primaryDiagnosis" required
+                                                    class="w-full bg-white border-2 border-red-500/30 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-red-500/5 focus:border-red-500 transition-all outline-none"
+                                                    placeholder="Primary Diagnosis *">
                                             </div>
                                             <div class="space-y-2">
-                                                <label
-                                                    class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Claim
-                                                    Number *</label>
-                                                <input type="text" name="ref_claimNumber"
-                                                    class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-6 py-4 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                                    placeholder="Enter claim number">
-                                            </div>
-                                            <div class="space-y-2">
-                                                <label
-                                                    class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Case
-                                                    Manager Name & Email (if known)</label>
-                                                <input type="text" name="ref_caseManager"
-                                                    class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-6 py-4 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                                    placeholder="Name and Email...">
+                                                <textarea name="ref_secondaryDiagnosis" rows="2"
+                                                    class="w-full bg-[#FBFBFB] border-2 border-slate-100 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none resize-none"
+                                                    placeholder="Secondary Diagnoses/Background (if any)..."></textarea>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <!-- Conditional Branch: Self-funded -->
-                                <div id="self-funded-wrap" class="hidden animate-slideIn">
-                                    <div
-                                        class="bg-white border-2 border-slate-50 rounded-[2.5rem] p-8 shadow-sm space-y-6">
-                                        <h3 class="text-xl font-black text-ccg-navy italic text-center mb-4">
-                                            Self-Managed Plan Details *</h3>
-                                        <div class="space-y-2 text-left">
-                                            <label
-                                                class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Invoice
-                                                Email Address *</label>
-                                            <input type="email" name="ref_invoiceEmail" data-validate="email"
-                                                class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-6 py-4 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                                placeholder="email@address.com">
-                                        </div>
+                                    <!-- Current Supports -->
+                                    <div class="space-y-6">
+                                        <h2
+                                            class="text-3xl font-black text-red-500 tracking-tight italic text-center underline decoration-red-500/20 underline-offset-8">
+                                            Current supports in place *</h2>
+                                        <p class="text-slate-500 font-medium text-center text-sm leading-relaxed">
+                                            What supports does the client currently have in place? <br>
+                                            Please list role and contact details.
+                                            <span class="block text-xs text-slate-400 mt-2">Examples include: support
+                                                workers, carers, family, allied health practitioners, medical
+                                                specialists.</span>
+                                        </p>
+                                        <textarea name="ref_currentSupports" required rows="4"
+                                            class="w-full bg-[#FBFBFB] border-2 border-slate-100 rounded-3xl px-8 py-8 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none resize-none"
+                                            placeholder="List supports and contact details..."></textarea>
                                     </div>
-                                </div>
 
-                                <!-- Conditional Branch: Other -->
-                                <div id="funding-other-wrap" class="mt-3 hidden pl-12 animate-slideIn">
-                                    <input type="text" id="fundingOther" name="ref_fundingOther"
-                                        class="w-full bg-slate-50 border-2 border-transparent rounded-2xl px-6 py-4 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                        placeholder="Specify funding source...">
-                                </div>
-
-                                <!-- Q2: Funding Available (Optional) -->
-                                <div class="space-y-4 text-left">
-                                    <h3 class="text-xl font-black text-ccg-navy italic">Funding Available <span
-                                            class="text-slate-400 text-sm">(Optional)</span></h3>
-                                    <div class="relative flex items-center">
-                                        <span class="absolute left-6 text-ccg-navy font-black text-lg">$</span>
-                                        <input type="number" name="ref_fundingAvailable" min="0" step="0.01"
-                                            class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl pl-12 pr-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                            placeholder="Enter amount...">
-                                    </div>
-                                </div>
-
-                                <!-- Q3: Funding Period (Optional) -->
-                                <div class="space-y-4 text-left">
-                                    <h3 class="text-xl font-black text-ccg-navy italic">Funding Period <span
-                                            class="text-slate-400 text-sm">(Optional)</span></h3>
-                                    <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest ml-1">(e.g.
-                                        3 monthly, 6 monthly, etc)</p>
-                                    <input type="text" name="ref_fundingPeriod"
-                                        class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                        placeholder="Enter period...">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Step 11: Reason for Referral -->
-                        <div class="form-step" data-step="11">
-                            <h2 class="text-3xl font-black text-ccg-navy tracking-tight italic mb-6">Reason for <span
-                                    class="text-ccg-teal">Referral *</span></h2>
-                            <p class="text-slate-500 font-medium mb-10 text-sm text-left">Which Community Care services
-                                do you require? (Select all that apply) <span
-                                    class="text-red-500 font-bold underline decoration-red-500/30 underline-offset-4 ml-2">(Required)</span>
-                            </p>
-
-                            <div class="grid grid-cols-1 gap-3 max-h-[500px] overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-slate-200"
-                                id="reason-services-group">
-                                <label class="wizard-option !py-4">
-                                    <input type="checkbox" name="ref_referralServices" value="Personal Care"
-                                        class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
-                                    <span class="text-slate-600 font-bold">Personal Care</span>
-                                </label>
-                                <label class="wizard-option !py-4">
-                                    <input type="checkbox" name="ref_referralServices" value="Palliative Care"
-                                        class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
-                                    <span class="text-slate-600 font-bold">Palliative Care</span>
-                                </label>
-                                <label class="wizard-option !py-4">
-                                    <input type="checkbox" name="ref_referralServices" value="Tracheostomy Care"
-                                        class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
-                                    <span class="text-slate-600 font-bold">Tracheostomy Care</span>
-                                </label>
-                                <label class="wizard-option !py-4">
-                                    <input type="checkbox" name="ref_referralServices" value="Catheter Management"
-                                        class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
-                                    <span class="text-slate-600 font-bold">Catheter Management</span>
-                                </label>
-                                <label class="wizard-option !py-4">
-                                    <input type="checkbox" name="ref_referralServices" value="Complex Bowel Therapy"
-                                        class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
-                                    <span class="text-slate-600 font-bold">Complex Bowel Therapy</span>
-                                </label>
-                                <label class="wizard-option !py-4">
-                                    <input type="checkbox" name="ref_referralServices"
-                                        value="Enteral Feeding and Management"
-                                        class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
-                                    <span class="text-slate-600 font-bold">Enteral Feeding and Management</span>
-                                </label>
-                                <label class="wizard-option !py-4">
-                                    <input type="checkbox" name="ref_referralServices" value="Complex Wound Management"
-                                        class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
-                                    <span class="text-slate-600 font-bold">Complex Wound Management</span>
-                                </label>
-                                <label class="wizard-option !py-4">
-                                    <input type="checkbox" name="ref_referralServices"
-                                        value="Advanced Airway Management"
-                                        class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
-                                    <span class="text-slate-600 font-bold">Advanced Airway Management</span>
-                                </label>
-                                <label class="wizard-option !py-4">
-                                    <input type="checkbox" name="ref_referralServices"
-                                        value="Ventilation Care & Management"
-                                        class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
-                                    <span class="text-slate-600 font-bold">Ventilation Care & Management</span>
-                                </label>
-                                <label class="wizard-option !py-4">
-                                    <input type="checkbox" name="ref_referralServices" value="Bariatric Management"
-                                        class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
-                                    <span class="text-slate-600 font-bold">Bariatric Management</span>
-                                </label>
-                                <label class="wizard-option !py-4">
-                                    <input type="checkbox" name="ref_referralServices" value="Medication Management"
-                                        class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
-                                    <span class="text-slate-600 font-bold">Medication Management</span>
-                                </label>
-                                <label class="wizard-option !py-4">
-                                    <input type="checkbox" name="ref_referralServices" value="Diabetic Management"
-                                        class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
-                                    <span class="text-slate-600 font-bold">Diabetic Management</span>
-                                </label>
-                                <label class="wizard-option !py-4">
-                                    <input type="checkbox" name="ref_referralServices" value="Oncology Management"
-                                        class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
-                                    <span class="text-slate-600 font-bold">Oncology Management</span>
-                                </label>
-                                <label class="wizard-option !py-4">
-                                    <input type="checkbox" name="ref_referralServices"
-                                        value="Complex Cognitive Impairment Support"
-                                        class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
-                                    <span class="text-slate-600 font-bold">Complex Cognitive Impairment Support</span>
-                                </label>
-                                <label class="wizard-option !py-4">
-                                    <input type="checkbox" name="ref_referralServices" value="Continence Assessment"
-                                        class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
-                                    <span class="text-slate-600 font-bold">Continence Assessment</span>
-                                </label>
-                                <label class="wizard-option !py-4">
-                                    <input type="checkbox" name="ref_referralServices" value="Allied Health Assessments"
-                                        class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
-                                    <span class="text-slate-600 font-bold">Allied Health Assessments</span>
-                                </label>
-                                <div class="space-y-4">
-                                    <label class="wizard-option !py-4">
-                                        <input type="checkbox" name="ref_referralServices" value="Other"
-                                            id="referral-other-checkbox"
-                                            class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200">
-                                        <span class="text-slate-600 font-bold">Other, please specify:</span>
-                                    </label>
-                                    <input type="text" name="ref_referralOther" id="referral-other-input"
-                                        class="hidden w-full bg-slate-50 border-2 border-transparent rounded-2xl px-8 py-5 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                        placeholder="Enter other service needs...">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Step 12: Referral Context & Urgency -->
-                        <div class="form-step" data-step="12">
-                            <div class="space-y-12">
-                                <!-- Referral Details -->
-                                <div class="space-y-4">
-                                    <h2 class="text-3xl font-black text-ccg-navy tracking-tight italic">Referral <span
-                                            class="text-ccg-teal">Details *</span></h2>
-                                    <p class="text-slate-500 font-medium text-sm leading-relaxed">Please describe the
-                                        client's current situation, functional challenges, and what you hope to achieve
-                                        with this referral. <br><span
-                                            class="text-xs text-slate-400 font-bold uppercase tracking-widest mt-2 block">Include
-                                            any relevant medical history or diagnoses.</span></p>
-                                    <textarea name="ref_referralDetails" rows="6" required
-                                        class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-[2rem] px-8 py-8 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none resize-none"
-                                        placeholder="Describe the situation..."></textarea>
-                                </div>
-
-                                <!-- Urgency -->
-                                <div class="space-y-6">
-                                    <h3 class="text-xl font-black text-ccg-navy italic">How would you rate the urgency
-                                        of this referral? *</h3>
-                                    <div class="grid grid-cols-1 gap-3">
-                                        <label class="wizard-option !py-4">
-                                            <span class="radio-dot"></span>
-                                            <input type="radio" name="ref_referralUrgency" value="Standard" required
-                                                class="hidden">
-                                            <span class="text-slate-600 font-bold">Standard: Routine assessment
-                                                needed.</span>
-                                        </label>
-                                        <label class="wizard-option !py-4">
-                                            <span class="radio-dot"></span>
-                                            <input type="radio" name="ref_referralUrgency" value="Medium" required
-                                                class="hidden">
-                                            <span class="text-slate-600 font-bold">Medium: Client has clear needs
-                                                impacting daily life.</span>
-                                        </label>
-                                        <label class="wizard-option !py-4">
-                                            <span class="radio-dot"></span>
-                                            <input type="radio" name="ref_referralUrgency" value="High" required
-                                                class="hidden">
-                                            <span class="text-slate-600 font-bold">High: Significant risk of harm,
-                                                hospital admission, or breakdown of supports.</span>
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <!-- Service Delivery -->
-                                <div class="space-y-6">
-                                    <h3 class="text-xl font-black text-ccg-navy italic">What is the preferred method of
-                                        service delivery? *</h3>
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                        <label class="wizard-option !py-4">
-                                            <span class="radio-dot"></span>
-                                            <input type="radio" name="ref_deliveryMethod" value="In-Home Visit" required
-                                                class="hidden">
-                                            <span class="text-slate-600 font-bold">In-Home Visit</span>
-                                        </label>
-                                        <label class="wizard-option !py-4">
-                                            <span class="radio-dot"></span>
-                                            <input type="radio" name="ref_deliveryMethod" value="Telehealth" required
-                                                class="hidden">
-                                            <span class="text-slate-600 font-bold">Telehealth</span>
-                                        </label>
-                                        <label class="wizard-option !py-4">
-                                            <span class="radio-dot"></span>
-                                            <input type="radio" name="ref_deliveryMethod" value="Hybrid" required
-                                                class="hidden">
-                                            <span class="text-slate-600 font-bold">A mix of both (hybrid)</span>
-                                        </label>
-                                        <div class="space-y-3">
-                                            <label class="wizard-option !py-4"
-                                                data-conditional-target="#delivery-other-wrap">
-                                                <span class="radio-dot"></span>
-                                                <input type="radio" name="ref_deliveryMethod" value="Other" required
-                                                    class="hidden">
-                                                <span class="text-slate-600 font-bold">Other</span>
+                                    <!-- Risks/Alerts -->
+                                    <div class="space-y-6">
+                                        <h2
+                                            class="text-3xl font-black text-ccg-navy tracking-tight italic text-center underline decoration-slate-200 underline-offset-8">
+                                            Risks/alerts</h2>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="risk-checklist">
+                                            <label class="wizard-option !py-4">
+                                                <input type="checkbox" name="ref_riskFlags" value="Falls risk"
+                                                    class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200 mr-2">
+                                                <span class="text-slate-600 font-bold">Falls risk</span>
                                             </label>
-                                            <div id="delivery-other-wrap" class="hidden pl-8 animate-slideIn">
-                                                <input type="text" name="ref_deliveryOther"
-                                                    class="w-full bg-slate-50 border-2 border-transparent rounded-xl px-4 py-3 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                                    placeholder="Please specify...">
-                                            </div>
+                                            <label class="wizard-option !py-4">
+                                                <input type="checkbox" name="ref_riskFlags" value="Pressure injury"
+                                                    class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200 mr-2">
+                                                <span class="text-slate-600 font-bold">Pressure injury</span>
+                                            </label>
+                                            <label class="wizard-option !py-4">
+                                                <input type="checkbox" name="ref_riskFlags" value="Dysphagia"
+                                                    class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200 mr-2">
+                                                <span class="text-slate-600 font-bold">Dysphagia</span>
+                                            </label>
+                                            <label class="wizard-option !py-4">
+                                                <input type="checkbox" name="ref_riskFlags"
+                                                    value="Behaviours of concern"
+                                                    class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200 mr-2">
+                                                <span class="text-slate-600 font-bold">Behaviours of concern</span>
+                                            </label>
+                                            <label class="wizard-option !py-4">
+                                                <input type="checkbox" name="ref_riskFlags" value="Infection risk"
+                                                    class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200 mr-2">
+                                                <span class="text-slate-600 font-bold">Infection risk</span>
+                                            </label>
+                                            <label class="wizard-option !py-4">
+                                                <input type="checkbox" name="ref_riskFlags" value="Allergies or alerts"
+                                                    class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200 mr-2">
+                                                <span class="text-slate-600 font-bold">Allergies or alerts</span>
+                                            </label>
                                         </div>
+
+                                        <!-- Other, please specify - Full width row -->
+                                        <label
+                                            class="wizard-option !py-4 flex flex-col items-start md:flex-row md:items-center md:justify-between gap-3 md:gap-4">
+                                            <div class="flex items-center">
+                                                <input type="checkbox" name="ref_riskFlags" value="Other"
+                                                    id="risk-other-checkbox"
+                                                    class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200 mr-2">
+                                                <span class="text-slate-600 font-bold">Other, please specify:</span>
+                                            </div>
+                                            <input type="text" name="ref_riskOther" id="risk-other-input"
+                                                class="hidden w-full md:flex-1 bg-slate-50 border-2 border-slate-200 rounded-xl px-4 py-3 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
+                                                placeholder="Specify other risks...">
+                                        </label>
+                                    </div>
+
+                                    <div class="mt-4">
+                                        <label
+                                            class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1 mb-4 text-center">Additional
+                                            Intake Notes (Optional)</label>
+                                        <textarea name="ref_snapshotNotes" rows="3"
+                                            class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none resize-none"
+                                            placeholder="Any other details for intake..."></textarea>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Step 13: Clinical Snapshot -->
-                        <div class="form-step" data-step="13">
-                            <div class="space-y-12">
-                                <!-- Diagnoses -->
-                                <div class="space-y-6">
-                                    <h2
-                                        class="text-3xl font-black text-ccg-navy tracking-tight italic text-center underline decoration-red-500/20 underline-offset-8">
-                                        Diagnoses</h2>
-                                    <div class="space-y-4">
-                                        <div class="space-y-2">
-                                            <input type="text" name="ref_primaryDiagnosis" required
-                                                class="w-full bg-white border-2 border-red-500/30 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-red-500/5 focus:border-red-500 transition-all outline-none"
-                                                placeholder="Primary Diagnosis *">
-                                        </div>
-                                        <div class="space-y-2">
-                                            <textarea name="ref_secondaryDiagnosis" rows="2"
-                                                class="w-full bg-[#FBFBFB] border-2 border-slate-100 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none resize-none"
-                                                placeholder="Secondary Diagnoses/Background (if any)..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Current Supports -->
-                                <div class="space-y-6">
-                                    <h2
-                                        class="text-3xl font-black text-red-500 tracking-tight italic text-center underline decoration-red-500/20 underline-offset-8">
-                                        Current supports in place *</h2>
-                                    <p class="text-slate-500 font-medium text-center text-sm leading-relaxed">
-                                        What supports does the client currently have in place? <br>
-                                        Please list role and contact details.
-                                        <span class="block text-xs text-slate-400 mt-2">Examples include: support
-                                            workers, carers, family, allied health practitioners, medical
-                                            specialists.</span>
-                                    </p>
-                                    <textarea name="ref_currentSupports" required rows="4"
-                                        class="w-full bg-[#FBFBFB] border-2 border-slate-100 rounded-3xl px-8 py-8 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none resize-none"
-                                        placeholder="List supports and contact details..."></textarea>
-                                </div>
-
-                                <!-- Risks/Alerts -->
-                                <div class="space-y-6">
-                                    <h2
-                                        class="text-3xl font-black text-ccg-navy tracking-tight italic text-center underline decoration-slate-200 underline-offset-8">
-                                        Risks/alerts</h2>
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="risk-checklist">
-                                        <label class="wizard-option !py-4">
-                                            <input type="checkbox" name="ref_riskFlags" value="Falls risk"
-                                                class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200 mr-2">
-                                            <span class="text-slate-600 font-bold">Falls risk</span>
-                                        </label>
-                                        <label class="wizard-option !py-4">
-                                            <input type="checkbox" name="ref_riskFlags" value="Pressure injury"
-                                                class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200 mr-2">
-                                            <span class="text-slate-600 font-bold">Pressure injury</span>
-                                        </label>
-                                        <label class="wizard-option !py-4">
-                                            <input type="checkbox" name="ref_riskFlags" value="Dysphagia"
-                                                class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200 mr-2">
-                                            <span class="text-slate-600 font-bold">Dysphagia</span>
-                                        </label>
-                                        <label class="wizard-option !py-4">
-                                            <input type="checkbox" name="ref_riskFlags" value="Behaviours of concern"
-                                                class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200 mr-2">
-                                            <span class="text-slate-600 font-bold">Behaviours of concern</span>
-                                        </label>
-                                        <label class="wizard-option !py-4">
-                                            <input type="checkbox" name="ref_riskFlags" value="Infection risk"
-                                                class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200 mr-2">
-                                            <span class="text-slate-600 font-bold">Infection risk</span>
-                                        </label>
-                                        <label class="wizard-option !py-4">
-                                            <input type="checkbox" name="ref_riskFlags" value="Allergies or alerts"
-                                                class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200 mr-2">
-                                            <span class="text-slate-600 font-bold">Allergies or alerts</span>
-                                        </label>
-                                    </div>
-
-                                    <!-- Other, please specify - Full width row -->
-                                    <label
-                                        class="wizard-option !py-4 flex flex-col items-start md:flex-row md:items-center md:justify-between gap-3 md:gap-4">
-                                        <div class="flex items-center">
-                                            <input type="checkbox" name="ref_riskFlags" value="Other"
-                                                id="risk-other-checkbox"
-                                                class="w-6 h-6 text-ccg-teal rounded-lg border-slate-200 mr-2">
-                                            <span class="text-slate-600 font-bold">Other, please specify:</span>
-                                        </div>
-                                        <input type="text" name="ref_riskOther" id="risk-other-input"
-                                            class="hidden w-full md:flex-1 bg-slate-50 border-2 border-slate-200 rounded-xl px-4 py-3 text-ccg-navy font-bold focus:bg-white focus:border-ccg-teal transition-all outline-none"
-                                            placeholder="Specify other risks...">
-                                    </label>
-                                </div>
-
-                                <div class="mt-4">
-                                    <label
-                                        class="block text-[11px] font-black uppercase tracking-[0.2em] text-ccg-navy/40 ml-1 mb-4 text-center">Additional
-                                        Intake Notes (Optional)</label>
-                                    <textarea name="ref_snapshotNotes" rows="3"
-                                        class="w-full bg-[#FBFBFB] border-2 border-slate-50 rounded-2xl px-8 py-6 text-ccg-navy font-bold focus:ring-4 focus:ring-ccg-teal/5 focus:bg-white focus:border-ccg-teal transition-all outline-none resize-none"
-                                        placeholder="Any other details for intake..."></textarea>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Step 14: Supporting Documents -->
-                        <div class="form-step" data-step="14">
-                            <div class="space-y-10">
-                                <div class="text-center space-y-4">
-                                    <h2 class="text-4xl font-black text-ccg-navy tracking-tight italic">Supporting <span
-                                            class="text-ccg-teal">Documents</span></h2>
-                                    <p class="text-slate-500 font-medium max-w-2xl mx-auto text-sm leading-relaxed">
-                                        To help us process this referral faster, please upload any relevant documents.
-                                        <br>
-                                        <span
-                                            class="text-xs text-slate-400 font-bold uppercase tracking-widest mt-2 block italic px-4">Examples
-                                            include: GP reports/letters, psychologists reports, hospital documents,
-                                            physio report, medication lists</span>
-                                    </p>
-                                </div>
-
-                                <div class="relative group">
-                                    <div
-                                        class="border-2 border-dashed border-ccg-teal/30 rounded-[3rem] p-16 transition-all hover:bg-ccg-teal/5 hover:border-ccg-teal group-hover:shadow-[0_20px_50px_-12px_rgba(20,184,166,0.1)] flex flex-col md:flex-row items-center justify-between gap-12 text-left">
-                                        <div class="flex items-center gap-8">
-                                            <div
-                                                class="w-20 h-20 bg-white rounded-3xl shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0 border border-slate-50">
-                                                <svg class="w-10 h-10 text-ccg-teal" fill="none" stroke="currentColor"
-                                                    viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="1.5"
-                                                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12">
-                                                    </path>
-                                                </svg>
-                                            </div>
-                                            <div>
-                                                <h3 class="text-2xl font-black text-ccg-navy mb-1 italic">Drag and drop
-                                                    files here</h3>
-                                                <p class="text-slate-400 font-bold text-xs uppercase tracking-widest">
-                                                    Images, Word, PDF (Max 100MB)</p>
-                                            </div>
-                                        </div>
-
-                                        <label for="attachment" class="cursor-pointer">
-                                            <div
-                                                class="bg-ccg-navy text-white px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-ccg-teal hover:shadow-xl hover:-translate-y-1 transition-all active:scale-95 whitespace-nowrap">
-                                                Browse Files
-                                            </div>
-                                            <input type="file" id="attachment" name="attachment" class="hidden"
-                                                accept="image/*,.doc,.docx,.pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/pdf"
-                                                multiple>
-                                        </label>
-                                    </div>
-                                    <div id="file-name"
-                                        class="mt-8 text-center text-ccg-teal font-black text-lg animate-fadeIn hidden">
-                                    </div>
-                                </div>
-
-                                <!-- Summary & Authority (Merged from Step 15) -->
-                                <div class="mt-16 space-y-10">
-                                    <div class="pt-10 border-t border-slate-100">
-                                        <h3 class="text-2xl font-black text-ccg-navy italic mb-6">Review your <span
-                                                class="text-ccg-teal">referral</span></h3>
-                                    </div>
-
-                                    <div class="bg-ccg-navy/5 p-10 rounded-[3rem] border border-ccg-navy/10">
-                                        <label class="flex items-center gap-6 cursor-pointer group">
-                                            <input type="checkbox" id="authority" name="ref_authority" required
-                                                class="w-8 h-8 text-ccg-teal rounded-xl border-slate-200 focus:ring-ccg-teal/20 cursor-pointer">
+                            <!-- Step 14: Supporting Documents -->
+                            <div class="form-step" data-step="14">
+                                <div class="space-y-10">
+                                    <div class="text-center space-y-4">
+                                        <h2 class="text-4xl font-black text-ccg-navy tracking-tight italic">Supporting
+                                            <span class="text-ccg-teal">Documents</span>
+                                        </h2>
+                                        <p class="text-slate-500 font-medium max-w-2xl mx-auto text-sm leading-relaxed">
+                                            To help us process this referral faster, please upload any relevant
+                                            documents.
+                                            <br>
                                             <span
-                                                class="text-sm font-bold text-ccg-navy/80 group-hover:text-ccg-navy transition-colors">I
-                                                confirm I have authority/permission to share the above information for
-                                                clinical
-                                                intake triage.</span>
-                                        </label>
+                                                class="text-xs text-slate-400 font-bold uppercase tracking-widest mt-2 block italic px-4">Examples
+                                                include: GP reports/letters, psychologists reports, hospital documents,
+                                                physio report, medication lists</span>
+                                        </p>
+                                    </div>
+
+                                    <div class="relative group">
+                                        <div
+                                            class="border-2 border-dashed border-ccg-teal/30 rounded-[3rem] p-16 transition-all hover:bg-ccg-teal/5 hover:border-ccg-teal group-hover:shadow-[0_20px_50px_-12px_rgba(20,184,166,0.1)] flex flex-col md:flex-row items-center justify-between gap-12 text-left">
+                                            <div class="flex items-center gap-8">
+                                                <div
+                                                    class="w-20 h-20 bg-white rounded-3xl shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0 border border-slate-50">
+                                                    <svg class="w-10 h-10 text-ccg-teal" fill="none"
+                                                        stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="1.5"
+                                                            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12">
+                                                        </path>
+                                                    </svg>
+                                                </div>
+                                                <div>
+                                                    <h3 class="text-2xl font-black text-ccg-navy mb-1 italic">Drag and
+                                                        drop
+                                                        files here</h3>
+                                                    <p
+                                                        class="text-slate-400 font-bold text-xs uppercase tracking-widest">
+                                                        Images, Word, PDF (Max 100MB)</p>
+                                                </div>
+                                            </div>
+
+                                            <label for="attachment" class="cursor-pointer">
+                                                <div
+                                                    class="bg-ccg-navy text-white px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-ccg-teal hover:shadow-xl hover:-translate-y-1 transition-all active:scale-95 whitespace-nowrap">
+                                                    Browse Files
+                                                </div>
+                                                <input type="file" id="attachment" name="attachment" class="hidden"
+                                                    accept="image/*,.doc,.docx,.pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/pdf"
+                                                    multiple>
+                                            </label>
+                                        </div>
+                                        <div id="file-name"
+                                            class="mt-8 text-center text-ccg-teal font-black text-lg animate-fadeIn hidden">
+                                        </div>
+                                    </div>
+
+                                    <!-- Summary & Authority (Merged from Step 15) -->
+                                    <div class="mt-16 space-y-10">
+                                        <div class="pt-10 border-t border-slate-100">
+                                            <h3 class="text-2xl font-black text-ccg-navy italic mb-6">Review your <span
+                                                    class="text-ccg-teal">referral</span></h3>
+                                        </div>
+
+                                        <div class="bg-ccg-navy/5 p-10 rounded-[3rem] border border-ccg-navy/10">
+                                            <label class="flex items-center gap-6 cursor-pointer group">
+                                                <input type="checkbox" id="authority" name="ref_authority" required
+                                                    class="w-8 h-8 text-ccg-teal rounded-xl border-slate-200 focus:ring-ccg-teal/20 cursor-pointer">
+                                                <span
+                                                    class="text-sm font-bold text-ccg-navy/80 group-hover:text-ccg-navy transition-colors">I
+                                                    confirm I have authority/permission to share the above information
+                                                    for
+                                                    clinical
+                                                    intake triage.</span>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
 
 
-                        <!-- Form Navigation -->
-                        <div class="mt-20 flex flex-col md:flex-row gap-6">
-                            <button type="button" id="prev-btn"
-                                class="hidden flex-1 bg-white border-2 border-slate-100 text-ccg-navy px-10 py-6 rounded-3xl font-black text-[15px] uppercase tracking-[0.2em] hover:bg-slate-50 transition-all">
-                                Back
-                            </button>
-                            <button type="button" id="next-btn"
-                                class="flex-[2] bg-ccg-navy text-white px-10 py-6 rounded-3xl font-black text-[15px] uppercase tracking-[0.2em] hover:bg-ccg-gold hover:text-ccg-navy transition-all shadow-xl shadow-ccg-navy/20">
-                                Next Step
-                            </button>
-                            <button type="submit" id="submit-btn"
-                                class="hidden flex-[2] bg-ccg-navy text-white px-10 py-6 rounded-3xl font-black text-[15px] uppercase tracking-[0.4em] hover:bg-ccg-gold hover:text-ccg-navy transition-all shadow-xl shadow-ccg-navy/20">
-                                Submit Referral
-                            </button>
-                        </div>
-                    </form>
+                            <!-- Form Navigation -->
+                            <div class="mt-20 flex flex-col md:flex-row gap-6">
+                                <button type="button" id="prev-btn"
+                                    class="hidden flex-1 bg-white border-2 border-slate-100 text-ccg-navy px-10 py-6 rounded-3xl font-black text-[15px] uppercase tracking-[0.2em] hover:bg-slate-50 transition-all">
+                                    Back
+                                </button>
+                                <button type="button" id="next-btn"
+                                    class="flex-[2] bg-ccg-navy text-white px-10 py-6 rounded-3xl font-black text-[15px] uppercase tracking-[0.2em] hover:bg-ccg-gold hover:text-ccg-navy transition-all shadow-xl shadow-ccg-navy/20">
+                                    Next Step
+                                </button>
+                                <button type="submit" id="submit-btn"
+                                    class="hidden flex-[2] bg-ccg-navy text-white px-10 py-6 rounded-3xl font-black text-[15px] uppercase tracking-[0.4em] hover:bg-ccg-gold hover:text-ccg-navy transition-all shadow-xl shadow-ccg-navy/20">
+                                    Submit Referral
+                                </button>
+                            </div>
+                        </form>
+                    </template>
                 </div>
             </div>
         </section>
@@ -1557,72 +1698,7 @@
             </div>
         </section>
 
-        <!-- Referral Guide Section -->
-        <section class="section relative py-32" id="referral-guide">
-            <div class="container">
-                <div class="bg-ccg-navy rounded-[4rem] overflow-hidden relative shadow-2xl">
-                    <!-- Background Accent -->
-                    <div class="absolute top-0 right-0 w-1/3 h-full bg-ccg-gold/10 -skew-x-12 translate-x-1/2"></div>
 
-                    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center p-12 md:p-24">
-                        <div data-reveal>
-                            <div
-                                class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full mb-8 border border-white/10 uppercase tracking-widest text-[10px] font-black text-white">
-                                Resources for Referrers
-                            </div>
-                            <h2 class="text-5xl font-black text-white italic mb-8">Referral <span
-                                    class="text-ccg-gold">Guide.</span></h2>
-                            <p class="text-xl text-white/70 leading-relaxed font-medium mb-12">
-                                Download our comprehensive guide for detailed information on our intake pathways,
-                                service boundaries, and clinical requirements.
-                            </p>
-                            <a href="../assets/docs/Referral-Guide.pdf" download
-                                class="inline-flex items-center gap-4 bg-white text-ccg-navy px-10 py-5 rounded-full font-black text-lg hover:bg-ccg-gold transition-all group">
-                                <svg class="w-6 h-6 group-hover:translate-y-1 transition-transform" fill="none"
-                                    stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                        d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
-                                </svg>
-                                Download Guide (PDF)
-                            </a>
-                        </div>
-                        <div class="relative" data-reveal>
-                            <!-- Visual placeholder for the PDF guide -->
-                            <div
-                                class="aspect-[3/4] bg-white/5 backdrop-blur-lg rounded-[2.5rem] border border-white/10 p-8 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-700 overflow-hidden group">
-                                <div
-                                    class="w-full h-full bg-white/95 rounded-2xl p-10 flex flex-col justify-between relative overflow-hidden">
-                                    <!-- Decorative lines mimicking content -->
-                                    <div class="space-y-6">
-                                        <div class="h-8 w-2/3 bg-ccg-navy/10 rounded-lg"></div>
-                                        <div class="h-4 w-full bg-ccg-gold/10 rounded-md"></div>
-                                        <div class="h-4 w-4/5 bg-slate-50 rounded-md"></div>
-                                        <div class="h-4 w-full bg-slate-50 rounded-md"></div>
-                                        <div class="grid grid-cols-3 gap-4 pt-8">
-                                            <div class="h-20 bg-ccg-navy/5 rounded-xl"></div>
-                                            <div class="h-20 bg-ccg-navy/5 rounded-xl"></div>
-                                            <div class="h-20 bg-ccg-navy/5 rounded-xl"></div>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center gap-4">
-                                        <img src="../images/logo.png" alt="" class="h-6 w-auto opacity-20">
-                                        <div class="h-1 flex-1 bg-ccg-gold/20 rounded-full"></div>
-                                    </div>
-
-                                    <!-- Premium Overlay on hover -->
-                                    <div
-                                        class="absolute inset-0 bg-ccg-navy/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                        <span
-                                            class="text-white font-black uppercase tracking-widest text-sm underline decoration-ccg-gold underline-offset-8">Click
-                                            to Download</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- Footer -->
@@ -2366,6 +2442,7 @@
     </script>
     <script src="../js/script.js" defer></script>
     <script src="../js/app.js" defer></script>
+    <script src="../js/config.js"></script>
     <script src="../js/forms.js" defer></script>
 </body>
 

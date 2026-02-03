@@ -2,6 +2,8 @@
 <html lang="en-AU">
 
 <head>
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*; frame-src 'self' https://www.youtube.com https://youtube.com https://www.youtube-nocookie.com; connect-src 'self' https://*.powerplatform.com https://*.azure.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Expression of Interest | Cross Care Group</title>
@@ -65,9 +67,6 @@
                     <!-- Dropdown -->
                     <div
                         class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-navy/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-[1100] py-3 overflow-hidden">
-                        <a href="../../make-a-referral/#referral-guide"
-                            class="block px-6 py-3 text-[14px] font-semibold text-ccg-navy/80 hover:text-white hover:bg-ccg-gold transition-all">Referral
-                            Guide</a>
                         <a href="../../make-a-referral/#referral-container"
                             class="block px-6 py-3 text-[14px] font-semibold text-ccg-navy/80 hover:text-white hover:bg-ccg-gold transition-all">Referral
                             Form</a>
@@ -208,16 +207,13 @@
                     <a href="../../get-support/"
                         class="text-3xl font-black text-white hover:text-ccg-gold transition-colors py-2">Get
                         Support</a>
-                    <div class="flex flex-col gap-y-3 pt-4">
+                    <div class="flex flex-col gap-y-3 pt-4 items-center text-center">
                         <span class="text-xs font-black uppercase tracking-widest text-white/40">For Referrers</span>
-                        <a href="../../make-a-referral/#referral-guide"
-                            class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Referral
-                            Guide</a>
                         <a href="../../make-a-referral/#referral-container"
                             class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Referral
                             Form</a>
                     </div>
-                    <div class="flex flex-col gap-y-3 pt-8">
+                    <div class="flex flex-col gap-y-3 pt-8 items-center text-center">
                         <span class="text-xs font-black uppercase tracking-widest text-white/40">Services</span>
                         <a href="../../services/community-care/"
                             class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Community
@@ -231,7 +227,7 @@
                         <a href="../../services/complex-care/"
                             class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Complex Care</a>
                     </div>
-                    <div class="flex flex-col gap-y-3 pt-8">
+                    <div class="flex flex-col gap-y-3 pt-8 items-center text-center">
                         <span class="text-xs font-black uppercase tracking-widest text-white/40">Resources</span>
                         <a href="../../resources/easy-read/"
                             class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Easy
@@ -249,7 +245,7 @@
                     </div>
                     <a href="../../why-cross-care/"
                         class="text-3xl font-black text-white hover:text-ccg-gold transition-colors py-2">About</a>
-                    <div class="flex flex-col gap-y-3 pt-8">
+                    <div class="flex flex-col gap-y-3 pt-8 items-center text-center">
                         <span class="text-xs font-black uppercase tracking-widest text-white/40">Careers</span>
                         <a href="../../careers/jobs/"
                             class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Open
@@ -258,7 +254,7 @@
                             class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Expression
                             of Interest</a>
                     </div>
-                    <div class="flex flex-col gap-y-3 pt-8">
+                    <div class="flex flex-col gap-y-3 pt-8 items-center text-center">
                         <span class="text-xs font-black uppercase tracking-widest text-white/40">Advocacy</span>
                         <a href="../../rights-feedback-complaints/#rights"
                             class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Your
@@ -639,8 +635,8 @@
                     <div class="space-y-3">
                         <label for="registration"
                             class="block text-[13px] font-black uppercase tracking-widest text-ccg-navy/40 ml-1">Registrations
-                            (Optional)</label>
-                        <input type="text" id="registration" name="eoi_registrations"
+                            *</label>
+                        <input type="text" id="registration" name="eoi_registrations" required
                             placeholder="e.g. AHPRA, Certificates"
                             class="w-full bg-slate-50 border-none rounded-2xl px-6 py-5 text-ccg-navy font-semibold focus:ring-2 focus:ring-ccg-teal transition-all">
                     </div>
@@ -649,7 +645,7 @@
                     <div class="space-y-3">
                         <label for="cv_upload"
                             class="block text-[13px] font-black uppercase tracking-widest text-ccg-navy/40 ml-1">CV /
-                            Resume (Optional)</label>
+                            Resume</label>
                         <div class="relative">
                             <label for="cv_upload"
                                 class="flex flex-col items-center justify-center w-full py-8 px-6 bg-slate-50 border-2 border-dashed border-slate-200 rounded-2xl cursor-pointer hover:bg-slate-100 hover:border-ccg-teal/40 transition-all duration-300 group">
@@ -666,7 +662,7 @@
                                 <span class="text-slate-400 text-xs font-medium">PDF only (Max. 10MB)</span>
                             </label>
                             <input type="file" id="cv_upload" name="eoi_cv" accept=".pdf"
-                                class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                                class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" required>
                         </div>
                         <div id="cv_filename" class="hidden px-4 py-3 bg-ccg-teal/10 rounded-xl">
                             <div class="flex items-center gap-3">
@@ -714,8 +710,8 @@
                     <div class="space-y-3">
                         <label for="message"
                             class="block text-[13px] font-black uppercase tracking-widest text-ccg-navy/40 ml-1">Your
-                            Narrative</label>
-                        <textarea id="message" name="eoi_narrative" rows="4"
+                            Narrative *</label>
+                        <textarea id="message" name="eoi_narrative" rows="4" required
                             placeholder="Tell us about yourself and why you'd like to join Cross Care Group..."
                             class="w-full bg-slate-50 border-none rounded-2xl px-8 py-6 text-ccg-navy font-semibold focus:ring-2 focus:ring-ccg-teal transition-all resize-none outline-none"></textarea>
                     </div>
@@ -904,6 +900,7 @@
     </footer>
     <script src="../../js/script.js" defer></script>
     <script src="../../js/app.js" defer></script>
+    <script src="../../js/config.js"></script>
     <script src="../../js/forms.js" defer></script>
 </body>
 
