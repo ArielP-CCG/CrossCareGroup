@@ -76,4 +76,57 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // 6. Navigation Active State Highlight
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('#site-header nav a, #mobile-menu nav a');
+
+    // Simple helper to check if a link points to the current page
+    const isCurrentPage = (linkUrl) => {
+        const normalize = (path) => path.replace(/\/index\.html$/, '/').replace(/\/$/, '') || '/';
+        const normalizedCurrent = normalize(currentPath);
+        const normalizedLink = normalize(linkUrl.pathname);
+        return normalizedCurrent === normalizedLink;
+    };
+
+    navLinks.forEach(link => {
+        try {
+            const linkUrl = new URL(link.href, window.location.origin);
+
+            // 6a. Apply Active State
+            if (isCurrentPage(linkUrl)) {
+                link.classList.add('active-nav-link');
+                link.style.color = '#FFAB40'; // ccg-gold
+
+                // Highlight parent if in dropdown
+                const parentGroup = link.closest('.group');
+                if (parentGroup) {
+                    const parentLink = parentGroup.querySelector('a');
+                    if (parentLink && parentLink !== link) {
+                        parentLink.style.color = '#FFAB40';
+                    }
+                }
+            }
+
+            // 6b. Desktop Hover Background Effect (lg screens only)
+            if (window.innerWidth >= 1024 && link.closest('#site-header')) {
+                link.style.borderRadius = '0.75rem';
+                link.style.paddingTop = '0.5rem';
+                link.style.paddingBottom = '0.5rem';
+
+                link.addEventListener('mouseenter', () => {
+                    link.style.backgroundColor = '#003B5C'; // ccg-navy
+                    link.style.color = '#FFAB40'; // ccg-gold
+                });
+
+                link.addEventListener('mouseleave', () => {
+                    link.style.backgroundColor = '';
+                    // Return to active color if it's the current page, otherwise reset
+                    link.style.color = isCurrentPage(linkUrl) ? '#FFAB40' : '';
+                });
+            }
+        } catch (e) {
+            console.error('Nav logic error:', e);
+        }
+    });
 });
