@@ -169,13 +169,13 @@
       </nav>
 
       <!-- Actions -->
-      <div class="flex items-center gap-x-6">
+      <div class="flex items-center gap-x-2 lg:gap-x-6">
         <a href="../../contact/"
           class="hidden xl:flex items-center justify-center bg-ccg-gold text-ccg-navy px-8 py-4 rounded-full font-bold text-[16px] hover:bg-white transition-all hover:-translate-y-0.5 shadow-lg whitespace-nowrap">
           Contact
         </a>
         <a href="../../get-support/#support-form-container"
-          class="bg-ccg-gold text-ccg-navy px-8 py-4 rounded-full font-bold text-[16px] hover:bg-white transition-all hover:-translate-y-0.5 shadow-lg whitespace-nowrap">
+          class="bg-ccg-gold text-ccg-navy px-4 py-2 lg:px-8 lg:py-4 rounded-full font-bold text-sm lg:text-[16px] hover:bg-white transition-all hover:-translate-y-0.5 shadow-lg whitespace-nowrap">
           Request Support
         </a>
 
@@ -226,10 +226,18 @@
             <a href="../../services/complex-care/"
               class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Complex Care</a>
           </div>
-          <a href="../../why-cross-care/"
-            class="text-3xl font-black text-white hover:text-ccg-gold transition-colors py-2">About</a>
+          <div class="flex flex-col gap-y-3 pt-8 items-center text-center">
+            <span class="text-xs font-black uppercase tracking-widest text-white/40">Careers</span>
+            <a href="../../careers/jobs/"
+              class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Open Roles</a>
+            <a href="../../careers/expression-of-interest/"
+              class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Expression of
+              Interest</a>
+          </div>
           <a href="../../stories/"
             class="text-3xl font-black text-white hover:text-ccg-gold transition-colors py-2">Stories</a>
+          <a href="../../why-cross-care/"
+            class="text-3xl font-black text-white hover:text-ccg-gold transition-colors py-2">About</a>
           <div class="flex flex-col gap-y-3 pt-8 items-center text-center">
             <span class="text-xs font-black uppercase tracking-widest text-white/40">Resources</span>
             <a href="../../rights-feedback-complaints/#rights"
@@ -252,7 +260,7 @@
         </nav>
         <div class="mt-auto pt-10 flex flex-col gap-4 items-center">
           <a href="../../contact/"
-            class="w-full max-w-[320px] bg-ccg-gold text-ccg-navy text-center py-5 px-8 rounded-full font-black text-lg hover:bg-white transition-all shadow-xl">
+            class="w-full max-w-[320px] bg-white text-ccg-navy text-center py-5 px-8 rounded-full font-black text-lg hover:bg-ccg-gold transition-all shadow-xl">
             Contact Us
           </a>
           <a href="../../get-support/#support-form-container"
@@ -439,7 +447,7 @@
         <!-- Navigation -->
         <div data-reveal>
           <h3 class="text-white font-black text-xs uppercase tracking-[0.3em] mb-4">Navigation</h3>
-          <ul class="space-y-3">
+          <ul class="space-y-5">
             <li><a href="../../get-support/"
                 class="text-white/50 hover:text-ccg-gold transition-colors text-[14px] font-bold uppercase tracking-widest">Get
                 Support</a></li>
@@ -754,6 +762,7 @@
 
       modal.classList.remove('invisible', 'opacity-0');
       document.body.style.overflow = 'hidden';
+      document.getElementById('modal-content').scrollTop = 0;
     }
 
     function closeModalFunc() {
