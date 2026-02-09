@@ -922,57 +922,6 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        const header = document.getElementById('site-header');
-        const logo = document.getElementById('header-logo');
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-        const closeIcon = document.getElementById('close-icon');
-        let isMenuOpen = false;
-
-        function toggleMenu() {
-            isMenuOpen = !isMenuOpen;
-            if (isMenuOpen) {
-                mobileMenu.classList.remove('opacity-0', 'invisible', 'translate-x-full');
-                menuIcon.classList.add('hidden');
-                closeIcon.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            } else {
-                mobileMenu.classList.add('opacity-0', 'invisible', 'translate-x-full');
-                menuIcon.classList.remove('hidden');
-                closeIcon.classList.add('hidden');
-                document.body.style.overflow = '';
-            }
-        }
-
-        mobileMenuToggle.addEventListener('click', toggleMenu);
-
-        const mobileMenuBack = document.getElementById('mobile-menu-back');
-        mobileMenuBack?.addEventListener('click', toggleMenu);
-
-        // Close menu on link click
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (isMenuOpen) toggleMenu();
-            });
-        });
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                header.classList.remove('h-24', 'lg:h-32');
-                header.classList.add('h-20', 'lg:h-24', 'shadow-lg');
-                logo.classList.remove('h-12', 'lg:h-16');
-                logo.classList.add('h-10', 'lg:h-12');
-            } else {
-                header.classList.add('h-24', 'lg:h-32');
-                header.classList.remove('h-20', 'lg:h-24', 'shadow-lg');
-                logo.classList.add('h-12', 'lg:h-16');
-                logo.classList.remove('h-10', 'lg:h-12');
-            }
-        });
-    </script>
     <script src="../../js/script.js" defer></script>
     <script src="../../js/app.js" defer></script>
 </body>

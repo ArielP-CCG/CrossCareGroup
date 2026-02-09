@@ -235,57 +235,6 @@
         </div>
     </header>
 
-    <script>
-        const header = document.getElementById('site-header');
-        const logo = document.getElementById('header-logo');
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-        const closeIcon = document.getElementById('close-icon');
-        let isMenuOpen = false;
-
-        function toggleMenu() {
-            isMenuOpen = !isMenuOpen;
-            if (isMenuOpen) {
-                mobileMenu.classList.remove('opacity-0', 'invisible', 'translate-x-full');
-                menuIcon.classList.add('hidden');
-                closeIcon.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            } else {
-                mobileMenu.classList.add('opacity-0', 'invisible', 'translate-x-full');
-                menuIcon.classList.remove('hidden');
-                closeIcon.classList.add('hidden');
-                document.body.style.overflow = '';
-            }
-        }
-
-        mobileMenuToggle.addEventListener('click', toggleMenu);
-
-        const mobileMenuBack = document.getElementById('mobile-menu-back');
-        mobileMenuBack?.addEventListener('click', toggleMenu);
-
-        // Close menu on link click
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (isMenuOpen) toggleMenu();
-            });
-        });
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                header.classList.remove('h-20', 'lg:h-24');
-                header.classList.add('h-16', 'shadow-sm');
-                logo.classList.remove('h-10', 'lg:h-12');
-                logo.classList.add('h-8');
-            } else {
-                header.classList.add('h-20', 'lg:h-24');
-                header.classList.remove('h-16', 'shadow-sm');
-                logo.classList.add('h-10', 'lg:h-12');
-                logo.classList.remove('h-8');
-            }
-        });
-    </script>
-
     <main id="main" class="site-main">
         <!-- Hero Section -->
         <section class="hero relative overflow-hidden !pt-12 lg:!pt-16 !pb-10 lg:!pb-20">

@@ -1,87 +1,24 @@
-<!DOCTYPE html>
-<html lang="en-AU">
-
-<head>
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.jotform.com https://*.jotfor.ms https://www.google-analytics.com https://www.googletagmanager.com https://img.youtube.com; frame-src 'self' https://www.youtube.com https://youtube.com https://www.youtube-nocookie.com https://form.jotform.com https://jotform.com https://*.jotform.com https://*.jotfor.ms blob:; connect-src 'self' https://*.powerplatform.com https://*.azure.com https://*.jotform.com https://*.jotfor.ms; object-src 'none'; base-uri 'self'; form-action 'self' https://*.jotform.com; frame-ancestors 'none'; upgrade-insecure-requests;">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Our Policies | Cross Care Group</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="../css/styles.css">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 25px 50px -12px rgba(0, 59, 92, 0.1);
-        }
-
-        .hero-gradient {
-            background: radial-gradient(circle at top right, rgba(0, 150, 161, 0.05), transparent),
-                radial-gradient(circle at bottom left, rgba(255, 171, 64, 0.05), transparent);
-        }
-
-        .prose h3 {
-            color: #003B5C;
-            font-weight: 900;
-            font-size: 1.5rem;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .prose p {
-            color: #475569;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Floating Graphic */
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        .animate-float {
-            animation: float 4s ease-in-out infinite;
-        }
-    </style>
-</head>
-
-<body class="bg-slate-50 min-h-screen hero-gradient">
-    <!-- Header -->
-    <header id="site-header"
+# Standard Header Template (Based on Accessibility Page)
+# We will replace {{PATH}} with the correct relative path
+$headerTemplate = @"
+<header id="site-header"
     class="fixed top-0 left-0 w-full bg-[#003B5C] lg:bg-white z-[1000] border-b border-white/10 lg:border-navy/5 transition-all duration-500 ease-in-out h-24 lg:h-32">
     <div class="max-w-[1500px] mx-auto px-6 h-full flex items-center justify-between transition-all duration-500">
         <!-- Brand -->
-        <a href="../"
+        <a href="{{PATH}}"
             class="shrink-0 transition-transform duration-500 origin-left bg-white px-3 py-1.5 rounded-xl lg:bg-transparent lg:p-0"
             id="header-logo-link">
-            <img src="../images/logo.png" alt="Cross Care Group"
+            <img src="{{PATH}}images/logo.png" alt="Cross Care Group"
                 class="h-12 lg:h-16 w-auto transition-all duration-500" id="header-logo">
         </a>
 
         <!-- Nav Links -->
         <nav class="hidden lg:flex items-center gap-x-8">
-            <a href="../get-support/"
+            <a href="{{PATH}}get-support/"
                 class="text-[17px] lg:text-[16px] font-semibold text-white lg:text-ccg-navy hover:text-ccg-gold px-3 transition-all">Get
                 Support</a>
             <div class="relative group">
-                <a href="../make-a-referral/"
+                <a href="{{PATH}}make-a-referral/"
                     class="text-[17px] lg:text-[16px] font-semibold text-white lg:text-ccg-navy group-hover:text-ccg-gold px-3 transition-all flex items-center gap-1">
                     For Referrers <span
                         class="text-[10px] opacity-70 group-hover:rotate-180 transition-transform">▼</span>
@@ -89,13 +26,13 @@
                 <!-- Dropdown -->
                 <div
                     class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-navy/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-[1100] py-3 overflow-hidden">
-                    <a href="../make-a-referral/#referral-container"
+                    <a href="{{PATH}}make-a-referral/#referral-container"
                         class="block px-6 py-3 text-[14px] font-semibold text-ccg-navy/80 hover:text-white hover:bg-ccg-gold transition-all">Referral
                         Form</a>
                 </div>
             </div>
             <div class="relative group">
-                <a href="../services/community-care/"
+                <a href="{{PATH}}services/community-care/"
                     class="text-[17px] lg:text-[16px] font-semibold text-white lg:text-ccg-navy group-hover:text-ccg-gold px-3 transition-all flex items-center gap-1">
                     Services <span
                         class="text-[10px] opacity-70 group-hover:rotate-180 transition-transform">▼</span>
@@ -103,24 +40,24 @@
                 <!-- Dropdown Menu -->
                 <div
                     class="absolute top-[100%] left-0 w-64 bg-white rounded-2xl shadow-xl border border-navy/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-[1100] py-3 overflow-hidden">
-                    <a href="../services/community-care/"
+                    <a href="{{PATH}}services/community-care/"
                         class="block px-6 py-3 text-[14px] font-semibold text-ccg-navy/80 hover:text-white hover:bg-ccg-gold transition-all">Community
                         Care</a>
-                    <a href="../services/allied-health/"
+                    <a href="{{PATH}}services/allied-health/"
                         class="block px-6 py-3 text-[14px] font-semibold text-ccg-navy/80 hover:text-white hover:bg-ccg-gold transition-all">Allied
                         Health</a>
-                    <a href="../services/hospital-to-home/"
+                    <a href="{{PATH}}services/hospital-to-home/"
                         class="block px-6 py-3 text-[14px] font-semibold text-ccg-navy/80 hover:text-white hover:bg-ccg-gold transition-all">Hospital
                         to Home</a>
-                    <a href="../services/complex-care/"
+                    <a href="{{PATH}}services/complex-care/"
                         class="block px-6 py-3 text-[14px] font-semibold text-ccg-navy/80 hover:text-white hover:bg-ccg-gold transition-all">Complex
                         Care</a>
                 </div>
             </div>
-            <a href="../why-cross-care/"
+            <a href="{{PATH}}why-cross-care/"
                 class="text-[17px] lg:text-[16px] font-semibold text-white lg:text-ccg-navy hover:text-ccg-gold px-3 transition-all">About</a>
             <div class="relative group">
-                <a href="../careers/jobs/"
+                <a href="{{PATH}}careers/jobs/"
                     class="text-[17px] lg:text-[16px] font-semibold text-white lg:text-ccg-navy group-hover:text-ccg-gold px-3 transition-all flex items-center gap-1">
                     Careers <span
                         class="text-[10px] opacity-70 group-hover:rotate-180 transition-transform">▼</span>
@@ -128,17 +65,17 @@
                 <!-- Dropdown -->
                 <div
                     class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-navy/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-[1100] py-3 overflow-hidden">
-                    <a href="../careers/jobs/"
+                    <a href="{{PATH}}careers/jobs/"
                         class="block px-6 py-3 text-[14px] font-semibold text-ccg-navy/80 hover:text-white hover:bg-ccg-gold transition-all">Open
                         Roles</a>
-                    <a href="../careers/expression-of-interest/"
+                    <a href="{{PATH}}careers/expression-of-interest/"
                         class="block px-6 py-3 text-[14px] font-semibold text-ccg-navy/80 hover:text-white hover:bg-ccg-gold transition-all">Expression
                         of Interest</a>
                 </div>
             </div>
 
             <div class="relative group">
-                <a href="../resources/easy-read/"
+                <a href="{{PATH}}resources/easy-read/"
                     class="text-[17px] lg:text-[16px] font-semibold text-white lg:text-ccg-navy group-hover:text-ccg-gold px-3 transition-all flex items-center gap-1">
                     Resources <span
                         class="text-[10px] opacity-70 group-hover:rotate-180 transition-transform">▼</span>
@@ -146,20 +83,20 @@
                 <!-- Resources Dropdown -->
                 <div
                     class="absolute top-[100%] left-1/2 -translate-x-1/2 mt-2 w-64 bg-white rounded-2xl shadow-xl border border-navy/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-[1100] py-3 overflow-hidden">
-                    <a href="../resources/blog/"
+                    <a href="{{PATH}}resources/blog/"
                         class="block px-6 py-3 text-[14px] font-semibold text-ccg-navy/80 hover:text-white hover:bg-ccg-gold transition-all">Blog</a>
-                    <a href="../resources/easy-read/"
+                    <a href="{{PATH}}resources/easy-read/"
                         class="block px-6 py-3 text-[14px] font-semibold text-ccg-navy/80 hover:text-white hover:bg-ccg-gold transition-all">Easy
                         Read</a>
-                    <a href="../resources/faqs/"
+                    <a href="{{PATH}}resources/faqs/"
                         class="block px-6 py-3 text-[14px] font-semibold text-ccg-navy/80 hover:text-white hover:bg-ccg-gold transition-all">FAQs</a>
-                    <a href="../resources/forms/"
+                    <a href="{{PATH}}resources/forms/"
                         class="block px-6 py-3 text-[14px] font-semibold text-ccg-navy/80 hover:text-white hover:bg-ccg-gold transition-all">Forms
                         & Documents</a>
-                    <a href="../resources/guides/"
+                    <a href="{{PATH}}resources/guides/"
                         class="block px-6 py-3 text-[14px] font-semibold text-ccg-navy/80 hover:text-white hover:bg-ccg-gold transition-all">Guides
                         & Checklists</a>
-                    <a href="../stories/"
+                    <a href="{{PATH}}stories/"
                         class="block px-6 py-3 text-[14px] font-semibold text-ccg-navy/80 hover:text-white hover:bg-ccg-gold transition-all">Stories</a>
                 </div>
             </div>
@@ -168,11 +105,11 @@
         <!-- Actions -->
         <div class="flex items-center gap-x-2 lg:gap-x-6">
             <!-- CTA -->
-            <a href="../contact/"
+            <a href="{{PATH}}contact/"
                 class="hidden xl:flex items-center justify-center bg-ccg-gold text-ccg-navy px-8 py-4 rounded-full font-bold text-[16px] hover:bg-white transition-all hover:-translate-y-0.5 shadow-lg whitespace-nowrap">
                 Contact
             </a>
-            <a href="../get-support/#support-form-container"
+            <a href="{{PATH}}get-support/#support-form-container"
                 class="bg-ccg-gold text-ccg-navy px-4 py-2 lg:px-8 lg:py-4 rounded-full font-bold text-sm lg:text-[16px] hover:bg-white transition-all hover:-translate-y-0.5 shadow-lg whitespace-nowrap">
                 Request Support
             </a>
@@ -206,48 +143,48 @@
         </div>
         <div class="flex flex-col h-full pt-20 px-6 pb-10 overflow-y-auto bg-[#003B5C] relative">
             <nav class="flex flex-col gap-y-4 mb-10 items-center">
-                <a href="../"
+                <a href="{{PATH}}"
                     class="text-3xl font-black text-white hover:text-ccg-gold transition-colors py-2">Home</a>
-                <a href="../get-support/"
+                <a href="{{PATH}}get-support/"
                     class="text-3xl font-black text-white hover:text-ccg-gold transition-colors py-2">Get
                     Support</a>
                 <div class="flex flex-col gap-y-3 pt-4 items-center text-center">
                     <span class="text-xs font-black uppercase tracking-widest text-white/40">For Referrers</span>
-                    <a href="../make-a-referral/#referral-container"
+                    <a href="{{PATH}}make-a-referral/#referral-container"
                         class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Referral
                         Form</a>
                 </div>
                 <div class="flex flex-col gap-y-3 pt-8 items-center text-center">
                     <span class="text-xs font-black uppercase tracking-widest text-white/40">Services</span>
-                    <a href="../services/community-care/"
+                    <a href="{{PATH}}services/community-care/"
                         class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Community
                         Care</a>
-                    <a href="../services/allied-health/"
+                    <a href="{{PATH}}services/allied-health/"
                         class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Allied
                         Health</a>
-                    <a href="../services/hospital-to-home/"
+                    <a href="{{PATH}}services/hospital-to-home/"
                         class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Hospital
                         to Home</a>
-                    <a href="../services/complex-care/"
+                    <a href="{{PATH}}services/complex-care/"
                         class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Complex
                         Care</a>
                 </div>
-                <a href="../why-cross-care/"
+                <a href="{{PATH}}why-cross-care/"
                     class="text-3xl font-black text-white hover:text-ccg-gold transition-colors py-2">About</a>
                 <div class="flex flex-col gap-y-3 pt-8 items-center text-center">
                     <span class="text-xs font-black uppercase tracking-widest text-white/40">Careers</span>
-                    <a href="../careers/jobs/"
+                    <a href="{{PATH}}careers/jobs/"
                         class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Open
                         Roles</a>
-                    <a href="../careers/expression-of-interest/"
+                    <a href="{{PATH}}careers/expression-of-interest/"
                         class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Expression
                         of Interest</a>
                 </div>
                 <div class="flex flex-col gap-y-3 pt-8 items-center text-center">
                     <span class="text-xs font-black uppercase tracking-widest text-white/40">Resources</span>
-                    <a href="../resources/blog/"
+                    <a href="{{PATH}}resources/blog/"
                         class="text-xl font-bold text-white hover:text-ccg-gold transition-colors">Blog</a>
-                    <a href="../resources/easy-read/"
+                    <a href="{{PATH}}resources/easy-read/"
                         class="text-white/50 hover:text-ccg-gold transition-colors text-[14px] font-bold uppercase tracking-widest">Easy
                         Read</a>
                 </div>
@@ -256,22 +193,22 @@
                 <div data-reveal>
                     <h3 class="text-white font-black text-xs uppercase tracking-[0.3em] mb-4">Your Rights</h3>
                     <ul class="space-y-3">
-                        <li><a href="../legal/privacy-policy/"
+                        <li><a href="{{PATH}}legal/privacy-policy/"
                                 class="text-white/50 hover:text-ccg-gold transition-colors text-[14px] font-bold uppercase tracking-widest">Our
                                 Privacy Commitment</a></li>
-                        <li><a href="../policies/"
+                        <li><a href="{{PATH}}policies/"
                                 class="text-white/50 hover:text-ccg-gold transition-colors text-[14px] font-bold uppercase tracking-widest">Our
                                 Policies</a></li>
-                        <li><a href="../legal/terms-of-use/"
+                        <li><a href="{{PATH}}legal/terms-of-use/"
                                 class="text-white/50 hover:text-ccg-gold transition-colors text-[14px] font-bold uppercase tracking-widest">Terms
                                 of Use</a></li>
-                        <li><a href="../accessibility/"
+                        <li><a href="{{PATH}}accessibility/"
                                 class="text-white/50 hover:text-ccg-gold transition-colors text-[14px] font-bold uppercase tracking-widest">Accessibility</a>
                         </li>
-                        <li><a href="../rights-feedback-complaints/#rights"
+                        <li><a href="{{PATH}}rights-feedback-complaints/#rights"
                                 class="text-white/50 hover:text-ccg-gold transition-colors text-[14px] font-bold uppercase tracking-widest">Rights</a>
                         </li>
-                        <li><a href="../rights-feedback-complaints/#feedback"
+                        <li><a href="{{PATH}}rights-feedback-complaints/#feedback"
                                 class="text-white/50 hover:text-ccg-gold transition-colors text-[14px] font-bold uppercase tracking-widest">Feedback</a>
                         </li>
                     </ul>
@@ -305,86 +242,80 @@
         </div>
     </div>
 </header>
+"@
 
-    <main class="max-w-4xl mx-auto px-6 py-20">
-        <div class="mb-12 text-center lg:text-left flex flex-col lg:flex-row items-center gap-8">
-            <div class="flex-1">
-                <span class="inline-flex items-center gap-2 bg-ccg-navy/10 px-4 py-2 rounded-full mb-6">
-                    <span class="w-2 h-2 bg-ccg-navy rounded-full"></span>
-                    <span class="text-ccg-navy font-black text-[10px] uppercase tracking-widest">Policy
-                        Documents</span>
-                </span>
-                <h1 class="text-5xl lg:text-6xl font-black text-ccg-navy mb-4 tracking-tight">Our Policies</h1>
-                <p class="text-xl text-slate-500 font-medium leading-relaxed">Comprehensive guidelines ensuring quality,
-                    safety, and transparency in all our services.</p>
-            </div>
+$rootPath = Get-Location
 
-            <!-- Policy Graphic -->
-            <div
-                class="w-48 h-48 bg-white rounded-[2.5rem] shadow-premium flex items-center justify-center border border-navy/5 animate-float">
-                <svg viewBox="0 0 100 100" class="w-24 h-24">
-                    <rect x="25" y="20" width="50" height="60" rx="4" fill="#F1F5F9" stroke="#003B5C"
-                        stroke-width="3" />
-                    <line x1="35" y1="35" x2="65" y2="35" stroke="#003B5C" stroke-width="2.5" stroke-linecap="round" />
-                    <line x1="35" y1="45" x2="65" y2="45" stroke="#003B5C" stroke-width="2.5" stroke-linecap="round" />
-                    <line x1="35" y1="55" x2="55" y2="55" stroke="#003B5C" stroke-width="2.5" stroke-linecap="round" />
-                </svg>
-            </div>
-        </div>
-
-        <div class="glass-card p-10 lg:p-16 rounded-[3.5rem] prose max-w-none text-center">
-            <div class="mb-8">
-                <h3 class="mt-0">Policy Documents</h3>
-                <p>Please find our policy documents below. These documents adhere to the NDIS Practice Standards and
-                    Quality Indicators.</p>
-            </div>
-
-            <div
-                class="p-12 bg-slate-50 rounded-3xl border border-dashed border-navy/20 flex flex-col items-center justify-center">
-                <svg class="w-16 h-16 text-ccg-navy/20 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                        d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 2H7a2 2 0 00-2 2v15a2 2 0 002 2z" />
-                </svg>
-                <p class="text-ccg-navy/60 font-medium">Policy PDF Coming Soon</p>
-                <p class="text-sm text-ccg-navy/40">The updated policy document will be available for download shortly.
-                </p>
-            </div>
-        </div>
-
-        <div class="flex justify-center md:justify-end gap-4 mt-16 pb-8">
-            <a href="https://www.facebook.com/CrossCareGroup"
-                class="w-10 h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center hover:bg-ccg-gold hover:text-white hover:border-ccg-gold transition-all duration-300 group shadow-sm"
-                aria-label="Facebook">
-                <svg class="w-5 h-5 text-ccg-navy group-hover:text-white transition-colors" fill="currentColor"
-                    viewBox="0 0 24 24">
-                    <path
-                        d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
-                </svg>
-            </a>
-            <a href="https://www.youtube.com/@CrossCareGroup"
-                class="w-10 h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center hover:bg-ccg-gold hover:text-white hover:border-ccg-gold transition-all duration-300 group shadow-sm"
-                aria-label="YouTube">
-                <svg class="w-5 h-5 text-ccg-navy group-hover:text-white transition-colors" fill="currentColor"
-                    viewBox="0 0 24 24">
-                    <path
-                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                </svg>
-            </a>
-            <a href="https://www.linkedin.com/company/cross-care-group/"
-                class="w-10 h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center hover:bg-ccg-gold hover:text-white hover:border-ccg-gold transition-all duration-300 group shadow-sm"
-                aria-label="LinkedIn">
-                <svg class="w-5 h-5 text-ccg-navy group-hover:text-white transition-colors" fill="currentColor"
-                    viewBox="0 0 24 24">
-                    <path
-                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                </svg>
-            </a>
-        </div>
-    </main>
-    <script src="../js/script.js" defer></script>
-    <script src="../js/app.js" defer></script>
-    <script src="../js/config.js"></script>
-    <script src="../js/forms.js" defer></script>
+# Function to update file
+function Update-File ($relPath, $depthPath) {
+    $fullPath = Join-Path $rootPath $relPath
+    if (Test-Path $fullPath) {
+        Write-Host "Updating $relPath..."
+        $content = Get-Content -Raw $fullPath
+        
+        # Prepare Header
+        $thisHeader = $headerTemplate -replace '\{\{PATH\}\}', $depthPath
+        
+        # 1. Replace existing <nav> OR <header>...
+        # Legal pages have <nav class="...">...</nav>
+        # Error pages usually have <header>...</header> or something different.
+        
+        # We try to match either:
+        # <nav class="p-6.*?</nav> (Legal pages)
+        # <header.*?</header> (System pages)
+        
+        # Regex for Legal Pages (Simplified Nav)
+        $legalRegex = '(?s)<nav class="p-6.*?</nav>'
+        if ($content -match $legalRegex) {
+             $content = $content -replace $legalRegex, $thisHeader
+        }
+        
+        # Regex for System Pages (Existing Header)
+        # Be careful not to replace the just-inserted header if we run this logic blindly
+        # But since we check match first, it should be ok.
+        # Actually proper System pages like 404 might have <header class="site-header"...>
+        $systemRegex = '(?s)<header.*?</header>'
+        if ($content -match $systemRegex -and -not ($content -match $legalRegex)) { 
+             # Only if we didn't just replace the nav. 
+             # But wait, checking match again on $content might match the NEW header.
+             # So we need to be careful.
+             
+             # Let's simple check if we are targeting legal or system.
+             if ($relPath -like "*legal*" -or $relPath -like "*policies*") {
+                 # Already handled by legalRegex usually, but policies might use header?
+                 # Let's assume standard replacement of <header> is safe for others.
+             } else {
+                 $content = $content -replace $systemRegex, $thisHeader
+             }
+        }
+        
+        # 2. Inject Scripts
+        # Check if script.js is present
+        if (-not ($content -match 'src=".*?js/script\.js"')) {
+            $scripts = @"
+    <script src="${depthPath}js/script.js" defer></script>
+    <script src="${depthPath}js/app.js" defer></script>
+    <script src="${depthPath}js/config.js"></script>
+    <script src="${depthPath}js/forms.js" defer></script>
 </body>
+"@
+            $content = $content -replace '</body>', $scripts
+        }
+        
+        Set-Content -Path $fullPath -Value $content -NoNewline
+    } else {
+        Write-Warning "File not found: $relPath"
+    }
+}
 
-</html>
+# Update Files
+Update-File "legal\privacy-policy\index.html" "../../"
+Update-File "legal\terms-of-use\index.html" "../../"
+Update-File "policies\index.html" "../"
+Update-File "404.html" "./"
+Update-File "500.html" "./"
+Update-File "403.html" "./"
+Update-File "400.html" "./"
+Update-File "503.html" "./"
+
+Write-Host "Header Standardization Complete."
