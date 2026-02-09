@@ -31,6 +31,29 @@ const CONFIG = {
     }
 };
 
+// Deep Freeze Helper
+function deepFreeze(object) {
+    // Retrieve the property names defined on object
+    const propNames = Object.getOwnPropertyNames(object);
+
+    // Freeze properties before freezing self
+    for (const name of propNames) {
+        const value = object[name];
+
+        if (value && typeof value === "object") {
+            deepFreeze(value);
+        }
+    }
+
+    return Object.freeze(object);
+}
+
 // Prevent modification in runtime
-Object.freeze(CONFIG);
-WINDOW_CONFIG = CONFIG; // Expose to global scope as WINDOW_CONFIG to avoid naming conflicts
+deepFreeze(CONFIG);
+
+// Expose to global scope as WINDOW_CONFIG safely
+Object.defineProperty(window, 'WINDOW_CONFIG', {
+    value: CONFIG,
+    writable: false,
+    configurable: false
+});

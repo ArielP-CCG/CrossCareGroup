@@ -27,7 +27,7 @@ class AuthService {
 
     // Base64URL Encode
     base64urlencode(a) {
-        const str = "";
+        let str = "";
         const bytes = new Uint8Array(a);
         const len = bytes.byteLength;
         for (let i = 0; i < len; i++) {

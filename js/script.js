@@ -55,26 +55,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Parallax Orbs
-    window.addEventListener('scroll', () => {
-        const scrolled = window.scrollY;
-        document.querySelectorAll('.glow-orb').forEach((orb, index) => {
-            const speed = (index + 1) * 0.15;
-            orb.style.transform = `translateY(${scrolled * speed}px)`;
-        });
-    });
-
-    // 4. Form Handling moved to forms.js
-    // 5. Sticky Header Resize on Scroll
+    // Optimized Scroll Handler (Throttled & Cached)
+    const glowOrbs = document.querySelectorAll('.glow-orb');
     const header = document.querySelector('.site-header');
-    if (header) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+        lastScrollY = window.scrollY;
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                updateScroll(lastScrollY);
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+
+    function updateScroll(scrollY) {
+        // Parallax Orbs
+        glowOrbs.forEach((orb, index) => {
+            const speed = (index + 1) * 0.15;
+            orb.style.transform = `translateY(${scrollY * speed}px)`;
+        });
+
+        // Sticky Header
+        if (header) {
+            if (scrollY > 50) {
                 header.classList.add('is-scrolled');
             } else {
                 header.classList.remove('is-scrolled');
             }
-        });
+        }
     }
 
     // 6. Navigation Active State Highlight

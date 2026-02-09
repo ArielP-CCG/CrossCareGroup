@@ -278,7 +278,7 @@
       if (attachments.length > 0) payload.attachments = attachments;
 
       // DEBUG: Log payload for verification
-      console.log('Submitting Payload:', JSON.stringify(payload, null, 2));
+      // DEBUG: Log payload for verification - REMOVED for Production Security
 
       // Fetch
       const response = await fetch(config.url, {

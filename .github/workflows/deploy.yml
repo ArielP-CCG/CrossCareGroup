@@ -30,4 +30,5 @@ jobs:
             README*.md
             SECURITY*.md
             POWER_AUTOMATE*.md
+            Documentation/
             **/.DS_Store
