@@ -421,141 +421,7 @@
             </div>
         </section>
 
-        <script>
-            // Job Data Configuration
-            const jobsData = [
-                {
-                    id: "support-worker",
-                    title: "Support Worker (Community Care)",
-                    roleType: "support",
-                    roleLabel: "Support Work",
-                    roleColor: "bg-ccg-teal",
-                    locations: ["Queensland", "New South Wales", "Tasmania"],
-                    locationDisplay: "QLD / NSW / TAS",
-                    type: "Casual / Part-time",
-                    description: "Support people with daily living and community participation while following a clear support plan.",
-                    highlights: [
-                        "Person-centred support",
-                        "Clear documentation"
-                    ],
-                    applyLink: "../../careers/expression-of-interest/?role=Support%20Worker&location=Queensland",
-                    applyText: "Apply via EOI",
-                    aboutLink: "../../services/community-care/",
-                    aboutText: "About Community Care"
-                },
-                {
-                    id: "registered-nurse",
-                    title: "Registered Nurse (In-home)",
-                    roleType: "nursing",
-                    roleLabel: "Nursing",
-                    roleColor: "bg-ccg-gold",
-                    locations: ["Queensland"],
-                    locationDisplay: "Queensland",
-                    type: "Part-time / Casual",
-                    description: "Support safe transitions from hospital to home through clinically governed care and clear communication.",
-                    highlights: [
-                        "Clinical supports",
-                        "Safe escalation"
-                    ],
-                    applyLink: "../../careers/expression-of-interest/?role=Registered%20Nurse&location=Queensland",
-                    applyText: "Apply via EOI",
-                    aboutLink: "../../services/hospital-to-home/",
-                    aboutText: "About Hospital-to-Home"
-                },
-                {
-                    id: "occupational-therapist",
-                    title: "Occupational Therapist",
-                    roleType: "allied",
-                    roleLabel: "Allied Health",
-                    roleColor: "bg-ccg-teal",
-                    locations: ["New South Wales", "Queensland", "Tasmania"],
-                    locationDisplay: "NSW / QLD / TAS",
-                    type: "Contract / Part-time",
-                    description: "Provide OT assessment and interventions that improve safety, function and independence at home.",
-                    highlights: [
-                        "Functional assessments",
-                        "Practical recommendations"
-                    ],
-                    applyLink: "../../careers/expression-of-interest/?role=Occupational%20Therapist&location=New%20South%20Wales",
-                    applyText: "Apply via EOI",
-                    aboutLink: "../../services/allied-health/",
-                    aboutText: "About Allied Health"
-                }
-            ];
 
-            (function () {
-                const grid = document.getElementById('jobsGrid');
-                const filterLoc = document.getElementById('filterLocation');
-                const filterType = document.getElementById('filterRoleType');
-                const filterKey = document.getElementById('filterKeyword');
-                const resultsCount = document.getElementById('resultsCount');
-
-                function render() {
-                    const loc = filterLoc.value;
-                    const type = filterType.value;
-                    const keyword = (filterKey.value || '').toLowerCase().trim();
-
-                    const filtered = jobsData.filter(job => {
-                        const locMatch = loc === 'all' || job.locations.includes(loc);
-                        const typeMatch = type === 'all' || job.roleType === type;
-                        const content = `${job.title} ${job.description} ${job.roleLabel}`.toLowerCase();
-                        const keyMatch = !keyword || content.includes(keyword);
-                        return locMatch && typeMatch && keyMatch;
-                    });
-
-                    const count = filtered.length;
-                    if (resultsCount) {
-                        resultsCount.innerHTML = `
-                            <span class="w-2 h-2 bg-ccg-teal rounded-full animate-pulse"></span>
-                            Showing ${count} role${count === 1 ? '' : 's'}
-                        `;
-                    }
-
-                    if (count === 0) {
-                        grid.innerHTML = `
-                            <div class="col-span-1 md:col-span-2 lg:col-span-3 text-center py-12 opacity-60">
-                                <p class="text-xl font-bold text-ccg-navy">No roles found matching your criteria.</p>
-                            </div>
-                        `;
-                        return;
-                    }
-
-                    grid.innerHTML = filtered.map(job => `
-                        <article class="service-grid-card-premium job-card" data-reveal
-                            data-location="${job.locations.join('|')}" data-role-type="${job.roleType}">
-                            <div class="grid-card-content !p-8">
-                                <div class="flex items-center gap-2 mb-4">
-                                    <span class="w-2 h-2 ${job.roleColor} rounded-full"></span>
-                                    <span class="text-[10px] font-black uppercase tracking-widest text-ccg-navy/40">${job.roleLabel}</span>
-                                </div>
-                                <h3 class="text-2xl font-bold text-ccg-navy mb-2">${job.title}</h3>
-                                <p class="text-ccg-gold font-bold text-sm mb-4">${job.locationDisplay} · ${job.type}</p>
-                                <p class="text-slate-600 mb-6 line-clamp-2">${job.description}</p>
-
-                                <ul class="space-y-3 mb-8">
-                                    ${job.highlights.map(highlight => `
-                                        <li class="flex items-start gap-3 text-sm text-slate-600">
-                                            <svg class="w-5 h-5 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-                                            </svg>
-                                            ${highlight}
-                                        </li>
-                                    `).join('')}
-                                </ul>
-
-                                <div class="flex flex-col gap-3 text-center">
-                                    <a class="btn btn-primary !w-full" href="${job.applyLink}">${job.applyText}</a>
-                                    <a class="btn btn-secondary !w-full" href="${job.aboutLink}">${job.aboutText}</a>
-                                </div>
-                            </div>
-                        </article>
-                    `).join('');
-                }
-
-                [filterLoc, filterType, filterKey].forEach(el => el && el.addEventListener('input', render));
-                render();
-            })();
-        </script>
     </main>
 
     <footer class="bg-ccg-navy pt-12 pb-16 text-white relative overflow-hidden">
@@ -701,6 +567,7 @@
             </div>
         </div>
     </footer>
+    <script src="../../js/jobs.js" defer></script>
     <script src="../../js/script.js" defer></script>
     <script src="../../js/app.js" defer></script>
     <script src="../../js/config.js"></script>
