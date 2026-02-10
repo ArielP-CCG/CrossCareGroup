@@ -47,3 +47,6 @@ desktop.ini
 # Project specific
 .gitignore.bak
 QA_CHECKLIST.md
+
+# Node.js
+node_modules/

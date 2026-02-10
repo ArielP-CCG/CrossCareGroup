@@ -55,14 +55,21 @@ Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=()
 ```
 
 #### CORS Configuration
-- Configurable via `ALLOWED_ORIGIN` environment variable
-- Default: `*` (development)
+- **Static Content**: Enforced via `.htaccess` (Apache)
+  - Production: `https://crosscaregroup.com.au`
+  - Staging: `https://testing.crosscaregroup.com.au`
+  - Development: `localhost`
+  - **Policy**: Strict Allowlist (No `*` wildcard)
+- **API Endpoints**: Managed by Microsoft Power Platform environment settings.
+- **Backend Requirement**: Any custom backend (if implemented) MUST include a startup-time assertion to refuse booting if `ALLOWED_ORIGIN` is set to `*`.
+- **Default**: `None` (Deny by default)
 - Production: Set to specific domain (e.g., `https://crosscaregroup.com.au`)
 
 #### HSTS (Production)
-```python
-# Uncomment in production with HTTPS
-Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+- **Enforced via**: `.htaccess` (Apache)
+- **Status**: Enabled for Production
+```apache
+Strict-Transport-Security: max-age=31536000; includeSubDomains
 ```
 
 ### 4. **PII Protection in Logs**
@@ -236,7 +243,7 @@ fetch(endpoint, {
 - [ ] Verify all API endpoints are configured
 
 ### Backend Configuration
-- [ ] Uncomment HSTS header in `server.py` (line 220)
+- [x] Enable HSTS header in `.htaccess`
 - [ ] Enable HTTPS/SSL certificate
 - [ ] Review and adjust rate limits for production traffic
 - [ ] Set up log rotation for `/logs` directory
