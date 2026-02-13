@@ -297,7 +297,8 @@
                     </div>
 
                     <a href="../why-cross-care/"
-                        class="text-3xl font-black text-white hover:text-ccg-gold transition-colors py-2">Why Cross Care</a>
+                        class="text-3xl font-black text-white hover:text-ccg-gold transition-colors py-2">Why Cross
+                        Care</a>
 
                     <div class="flex flex-col gap-y-3 pt-8 items-center text-center">
                         <span class="text-xs font-black uppercase tracking-widest text-white/40">Resources</span>
@@ -360,88 +361,95 @@
     <main id="main">
         <!-- Hero Section -->
         <section
-            class="section hero relative min-h-[75vh] flex items-center overflow-hidden pt-32 lg:pt-40 pb-8 lg:pb-8">
+            class="section hero relative min-h-[85vh] flex items-center overflow-hidden pt-32 lg:pt-40 pb-20 lg:pb-20">
             <!-- Background Elements -->
-            <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 z-0 select-none pointer-events-none">
                 <div
-                    class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-ccg-gold/5 rounded-full blur-[100px] -translate-y-1/2">
+                    class="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-ccg-teal/5 rounded-full blur-[120px]">
                 </div>
                 <div
-                    class="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-ccg-navy/5 rounded-full blur-[120px] translate-y-1/2">
+                    class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-ccg-gold/5 rounded-full blur-[100px]">
                 </div>
             </div>
 
-            <div class="container max-w-7xl relative z-10 text-center">
-                <div data-reveal>
-                    <div
-                        class="inline-flex items-center gap-2 bg-white/70 backdrop-blur-md px-5 py-2.5 rounded-full mb-10 border border-white shadow-sm transition-all hover:shadow-lg hover:shadow-ccg-teal/5 duration-500">
-                        <span class="clinical-dot animate-pulse shadow-[0_0_10px_rgba(255,171,64,0.5)]"></span>
-                        <span class="text-ccg-navy font-black text-[10px] uppercase tracking-widest">Priority Referral
-                            Gateway</span>
-                    </div>
-                    <h1 class="text-5xl md:text-7xl font-black text-ccg-navy mb-8 leading-[1.1] tracking-tight">
-                        Make a
-                        <span class="text-ccg-gold drop-shadow-[0_4px_10px_rgba(255,171,64,0.2)]">Referral.</span>
-                    </h1>
-                    <p
-                        class="lead max-w-2xl mx-auto mb-14 text-lg text-slate-500 font-medium leading-relaxed max-w-2xl mx-auto">
-                        Streamlining the transition from hospital to home. Our clinical team provides rapid triage and
-                        coordinated intake for premium community support.
-                    </p>
-                    <div class="flex flex-wrap justify-center gap-6 mb-24">
-                        <a href="#referral-container"
-                            class="bg-ccg-navy text-white px-10 py-5 rounded-full font-black text-md hover:bg-ccg-gold hover:text-ccg-navy transition-all shadow-2xl shadow-ccg-navy/20 flex items-center gap-3 group hover:-translate-y-1">
-                            Start Referral Form
-                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
+            <div class="container max-w-7xl relative z-10">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+                    <!-- Left Column: Content -->
+                    <div class="text-center lg:text-left order-2 lg:order-1" data-reveal>
+                        <div
+                            class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-md px-5 py-2.5 rounded-full mb-8 border border-white shadow-sm transition-all hover:shadow-md">
+                            <span class="clinical-dot animate-pulse shadow-[0_0_10px_rgba(0,150,161,0.5)]"></span>
+                            <span class="text-ccg-navy font-black text-[11px] uppercase tracking-widest">Priority
+                                Referral Gateway</span>
+                        </div>
+
+                        <h1
+                            class="text-5xl md:text-7xl lg:text-[5rem] font-black mb-8 tracking-tight leading-[0.95] text-transparent bg-clip-text bg-gradient-to-r from-ccg-navy to-ccg-teal">
+                            Refer a
+                            <span class="text-ccg-gold">Client</span>
+                        </h1>
+
+                        <p
+                            class="text-lg md:text-xl text-slate-500 font-medium leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0">
+                            Streamlining the transition from hospital to home. Our clinical team provides rapid triage
+                            and coordinated intake for premium community support.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+                            <a href="#referral-container"
+                                class="w-full sm:w-auto bg-ccg-navy text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-ccg-gold hover:text-ccg-navy transition-all shadow-xl shadow-ccg-navy/10 flex items-center justify-center gap-3 group hover:-translate-y-1">
+                                Start Referral
+                                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                            <a href="../contact/#enquiry-form"
+                                class="w-full sm:w-auto bg-white text-ccg-navy border border-slate-200 px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-slate-50 transition-all hover:-translate-y-1 flex items-center justify-center">
+                                Patient Enquiry
+                            </a>
+                        </div>
+
 
                     </div>
+
+                    <!-- Right Column: Image -->
+                    <div class="hidden lg:block lg:order-2 relative" data-reveal data-reveal-delay="200">
+                        <div
+                            class="relative rounded-[2.5rem] overflow-hidden shadow-2xl shadow-ccg-navy/20 border-8 border-white">
+                            <img src="../images/referral_hero_new.png" alt="Clinical consultation"
+                                class="w-full h-auto object-cover transform transition-transform duration-700 hover:scale-105">
+
+                            <!-- Floating Card -->
+                            <div
+                                class="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-xl p-6 rounded-2xl shadow-lg border border-white/50 hidden md:block">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-12 h-12 bg-ccg-teal/10 rounded-full flex items-center justify-center text-ccg-teal">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-ccg-navy text-sm">Prompt Intake</div>
+                                        <div class="text-xs text-slate-500">Referrals are reviewed as soon as possible
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Decorative shapes behind image -->
+                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-ccg-gold/20 rounded-full blur-2xl -z-10">
+                        </div>
+                        <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-ccg-navy/10 rounded-full blur-2xl -z-10">
+                        </div>
+                    </div>
+
                 </div>
-
-                <!-- Floating Feature Grid -->
-                <!-- <div class="relative max-w-5xl mx-auto" data-reveal data-reveal-delay="200">
-                    <div
-                        class="absolute -inset-20 bg-gradient-to-b from-ccg-navy/5 to-transparent rounded-full blur-[100px] -z-10">
-                    </div>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-                        <div
-                            class="group bg-white/40 backdrop-blur-xl p-8 rounded-[2.5rem] border border-white/60 shadow-premium hover:bg-white/80 transition-all duration-500 hover:-translate-y-2">
-                            <div
-                                class="text-4xl font-black text-ccg-navy mb-2 italic tracking-tighter group-hover:text-ccg-gold transition-colors">
-                                4hr</div>
-                            <div class="text-[11px] font-black uppercase tracking-[0.15em] text-slate-400">Triage Time
-                            </div>
-                        </div>
-                        <div
-                            class="group bg-white/40 backdrop-blur-xl p-8 rounded-[2.5rem] border border-white/60 shadow-premium hover:bg-white/80 transition-all duration-500 hover:-translate-y-2">
-                            <div
-                                class="text-4xl font-black text-ccg-teal mb-2 italic tracking-tighter group-hover:text-ccg-gold transition-colors">
-                                24/7</div>
-                            <div class="text-[11px] font-black uppercase tracking-[0.15em] text-slate-400">Intake Portal
-                            </div>
-                        </div>
-                        <div
-                            class="group bg-white/40 backdrop-blur-xl p-8 rounded-[2.5rem] border border-white/60 shadow-premium hover:bg-white/80 transition-all duration-500 hover:-translate-y-2">
-                            <div
-                                class="text-4xl font-black text-ccg-gold mb-2 italic tracking-tighter group-hover:text-ccg-navy transition-colors">
-                                100%</div>
-                            <div class="text-[11px] font-black uppercase tracking-[0.15em] text-slate-400">Clinical
-                                Review</div>
-                        </div>
-                        <div
-                            class="group bg-white/40 backdrop-blur-xl p-8 rounded-[2.5rem] border border-white/60 shadow-premium hover:bg-white/80 transition-all duration-500 hover:-translate-y-2">
-                            <div
-                                class="text-4xl font-black text-ccg-navy mb-2 italic tracking-tighter group-hover:text-ccg-gold transition-colors">
-                                Direct</div>
-                            <div class="text-[11px] font-black uppercase tracking-[0.15em] text-slate-400">Handover
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </section>
 
