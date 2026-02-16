@@ -296,65 +296,134 @@
         </section>
 
         <!-- Forms Content -->
-        <section class="py-24 bg-slate-50">
-            <div class="container">
+        <section class="py-24 bg-slate-50 relative overflow-hidden">
+            <!-- Background Decoration -->
+            <div class="absolute top-0 right-0 w-1/3 h-full bg-ccg-teal/5 blur-3xl rounded-full translate-x-1/2"></div>
+            <div class="absolute bottom-0 left-0 w-1/3 h-full bg-ccg-gold/5 blur-3xl rounded-full -translate-x-1/2">
+            </div>
+
+            <div class="container relative z-10">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Form Card 1 -->
+                    <!-- Form Card 1: Referral Form -->
                     <div data-reveal
-                        class="bg-white p-10 rounded-[3rem] border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all">
+                        class="group relative bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-lg shadow-slate-200/50 hover:shadow-xl hover:shadow-ccg-gold/10 hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col h-full">
+                        <!-- Hover Gradient -->
                         <div
-                            class="w-14 h-14 rounded-2xl bg-ccg-gold/10 flex items-center justify-center text-ccg-gold mb-8">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
-                                </path>
-                            </svg>
+                            class="absolute inset-0 bg-gradient-to-br from-white via-white to-ccg-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         </div>
-                        <h3 class="text-2xl font-black text-ccg-navy mb-4">Referral form</h3>
-                        <p class="text-ccg-navy/60 leading-relaxed mb-8">Printable version of our referral form for
-                            healthcare providers.</p>
-                        <a href="#" class="inline-flex items-center gap-2 text-ccg-teal font-bold hover:underline">
-                            Download PDF <span>→</span>
-                        </a>
+
+                        <div class="relative z-10 flex flex-col h-full">
+                            <div
+                                class="w-16 h-16 rounded-2xl bg-ccg-gold/10 flex items-center justify-center text-ccg-gold mb-8 group-hover:scale-110 group-hover:bg-ccg-gold group-hover:text-ccg-navy transition-all duration-300">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                    </path>
+                                </svg>
+                            </div>
+
+                            <h3
+                                class="text-2xl font-black text-ccg-navy mb-4 group-hover:text-ccg-gold transition-colors">
+                                Referral form</h3>
+                            <p class="text-ccg-navy/60 leading-relaxed mb-8 flex-grow">Printable version of our referral
+                                form for healthcare providers.</p>
+
+                            <div class="mt-auto pt-4">
+                                <a href="../../make-a-referral/#referral-container"
+                                    class="inline-flex items-center justify-between w-full px-6 py-4 rounded-xl bg-slate-50 text-ccg-navy font-bold text-sm group-hover:bg-ccg-gold group-hover:text-ccg-navy transition-all duration-300">
+                                    <span>Go to Referral Form</span>
+                                    <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Form Card 2 -->
+                    <!-- Form Card 2: Service Catalogue -->
                     <div data-reveal
-                        class="bg-white p-10 rounded-[3rem] border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all">
+                        class="group relative bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-lg shadow-slate-200/50 hover:shadow-xl hover:shadow-ccg-teal/10 hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col h-full">
+                        <!-- Hover Gradient -->
                         <div
-                            class="w-14 h-14 rounded-2xl bg-ccg-teal/10 flex items-center justify-center text-ccg-teal mb-8">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.168.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
-                                </path>
-                            </svg>
+                            class="absolute inset-0 bg-gradient-to-br from-white via-white to-ccg-teal/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         </div>
-                        <h3 class="text-2xl font-black text-ccg-navy mb-4">Service catalogue</h3>
-                        <p class="text-ccg-navy/60 leading-relaxed mb-8">Detailed overview of our service inclusions and
-                            care pathways.</p>
-                        <a href="../../files/CCG - Service Catalogue 2026 1.pdf" download
-                            class="inline-flex items-center gap-2 text-ccg-teal font-bold hover:underline">
-                            Download PDF <span>→</span>
-                        </a>
+
+                        <!-- Badge -->
+                        <div class="absolute top-10 right-10">
+                            <div
+                                class="px-3 py-1 rounded-full bg-ccg-teal/10 text-ccg-teal text-[10px] font-black uppercase tracking-wider">
+                                PDF
+                            </div>
+                        </div>
+
+                        <div class="relative z-10 flex flex-col h-full">
+                            <div
+                                class="w-16 h-16 rounded-2xl bg-ccg-teal/10 flex items-center justify-center text-ccg-teal mb-8 group-hover:scale-110 group-hover:bg-ccg-teal group-hover:text-white transition-all duration-300">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.168.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                                    </path>
+                                </svg>
+                            </div>
+
+                            <h3
+                                class="text-2xl font-black text-ccg-navy mb-4 group-hover:text-ccg-teal transition-colors">
+                                Service catalogue</h3>
+                            <p class="text-ccg-navy/60 leading-relaxed mb-8 flex-grow">Detailed overview of our service
+                                inclusions and care pathways.</p>
+
+                            <div class="mt-auto pt-4">
+                                <a href="../../files/CCG - Service Catalogue 2026 1.pdf" download
+                                    class="inline-flex items-center justify-between w-full px-6 py-4 rounded-xl bg-slate-50 text-ccg-navy font-bold text-sm group-hover:bg-ccg-teal group-hover:text-white transition-all duration-300">
+                                    <span>Download PDF</span>
+                                    <svg class="w-5 h-5 transform group-hover:translate-y-1 transition-transform"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Form Card 3 -->
+                    <!-- Form Card 3: Privacy & Consent -->
                     <div data-reveal
-                        class="bg-white p-10 rounded-[3rem] border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all">
+                        class="group relative bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-lg shadow-slate-200/50 hover:shadow-xl hover:shadow-ccg-navy/10 hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col h-full">
+                        <!-- Hover Gradient -->
                         <div
-                            class="w-14 h-14 rounded-2xl bg-ccg-navy/5 flex items-center justify-center text-ccg-navy mb-8">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8-8v4">
-                                </path>
-                            </svg>
+                            class="absolute inset-0 bg-gradient-to-br from-white via-white to-ccg-navy/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         </div>
-                        <h3 class="text-2xl font-black text-ccg-navy mb-4">Privacy & Consent</h3>
-                        <p class="text-ccg-navy/60 leading-relaxed mb-8">Information on how we handle your data and your
-                            rights as a participant.</p>
-                        <a href="#" class="inline-flex items-center gap-2 text-ccg-teal font-bold hover:underline">
-                            Download PDF <span>→</span>
-                        </a>
+
+                        <div class="relative z-10 flex flex-col h-full">
+                            <div
+                                class="w-16 h-16 rounded-2xl bg-ccg-navy/5 flex items-center justify-center text-ccg-navy mb-8 group-hover:scale-110 group-hover:bg-ccg-navy group-hover:text-white transition-all duration-300">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8-8v4">
+                                    </path>
+                                </svg>
+                            </div>
+
+                            <h3
+                                class="text-2xl font-black text-ccg-navy mb-4 group-hover:text-ccg-navy/80 transition-colors">
+                                Privacy & Consent</h3>
+                            <p class="text-ccg-navy/60 leading-relaxed mb-8 flex-grow">Information on how we handle your
+                                data and your rights as a participant.</p>
+
+                            <div class="mt-auto pt-4">
+                                <a href="../../legal/privacy-policy"
+                                    class="inline-flex items-center justify-between w-full px-6 py-4 rounded-xl bg-slate-50 text-ccg-navy font-bold text-sm group-hover:bg-ccg-navy group-hover:text-white transition-all duration-300">
+                                    <span>Read Policy</span>
+                                    <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
