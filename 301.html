@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+
+<head>
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.jotform.com https://*.jotfor.ms https://www.google-analytics.com https://www.googletagmanager.com https://img.youtube.com; frame-src 'self' https://www.youtube.com https://youtube.com https://www.youtube-nocookie.com https://form.jotform.com https://jotform.com https://*.jotform.com https://*.jotfor.ms blob:; connect-src 'self' https://*.powerplatform.com https://*.azure.com https://*.jotform.com https://*.jotfor.ms; object-src 'none'; base-uri 'self'; form-action 'self' https://*.jotform.com; frame-ancestors 'none'; upgrade-insecure-requests;">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page Moved | Cross Care Group</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px -12px rgba(0, 59, 92, 0.1);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(0, 150, 161, 0.05), transparent),
+                radial-gradient(circle at bottom left, rgba(255, 171, 64, 0.05), transparent);
+        }
+
+        .error-graphic {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            font-size: 180px;
+            font-weight: 900;
+            color: #003B5C;
+            line-height: 1;
+        }
+
+        .circle-zero {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: #F8FAFC;
+            overflow: hidden;
+            border: 6px solid #003B5C;
+            position: relative;
+        }
+
+        /* Animations */
+        @keyframes search-move {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            25% {
+                transform: translate(10px, -10px);
+            }
+
+            50% {
+                transform: translate(-5px, 15px);
+            }
+
+            75% {
+                transform: translate(-15px, -5px);
+            }
+        }
+
+        .animate-search {
+            animation: search-move 6s ease-in-out infinite;
+        }
+
+        @keyframes pulse-teal {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+        }
+
+        .animate-pulse-teal {
+            animation: pulse-teal 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-white min-h-screen flex items-center justify-center p-6 hero-gradient overflow-hidden">
+
+    <div class="max-w-3xl w-full text-center relative z-10">
+        <div class="mb-16">
+            <a href="/">
+                <img src="./images/logo.png" alt="Cross Care Group" class="h-16 lg:h-20 mx-auto drop-shadow-sm">
+            </a>
+        </div>
+
+        <div class="error-graphic mb-12 select-none">
+            <span>3</span>
+
+            <!-- 1st Zero: Navigation Bot -->
+            <div class="circle-zero">
+                <svg viewBox="0 0 100 100" class="w-full h-full animate-search">
+                    <!-- Head Unit -->
+                    <rect x="28" y="24" width="44" height="52" rx="22" fill="#FFFFFF" stroke="#003B5C"
+                        stroke-width="3" />
+                    <!-- Visual Lens -->
+                    <circle cx="50" cy="45" r="10" fill="#F1F5F9" stroke="#003B5C" stroke-width="2" />
+                    <circle cx="50" cy="45" r="4" fill="#0096A1" class="animate-pulse-teal" />
+                    <!-- Signal Light -->
+                    <circle cx="50" cy="24" r="3" fill="#FFAB40" />
+                </svg>
+            </div>
+
+            <span>1</span>
+        </div>
+
+        <div class="glass-card p-12 rounded-[3.5rem] relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-ccg-navy via-ccg-teal to-ccg-gold"></div>
+
+            <h1 class="text-4xl font-black text-ccg-navy mb-4 tracking-tight uppercase">Page Moved Permanently</h1>
+            <p class="text-slate-500 text-lg leading-relaxed mb-10 font-medium px-4">
+                The content you are looking for has been moved to a new location. Please update your bookmarks.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="./"
+                    class="bg-ccg-navy text-white px-12 py-5 rounded-full font-black text-lg hover:bg-ccg-teal transition-all duration-300 shadow-xl shadow-navy/20 active:scale-95">
+                    Return to Registry
+                </a>
+                <a href="./contact/"
+                    class="bg-white text-ccg-navy border-2 border-ccg-navy/10 px-12 py-5 rounded-full font-black text-lg hover:bg-slate-50 transition-all duration-300">
+                    Get Assistance
+                </a>
+            </div>
+        </div>
+
+        <div class="mt-12 text-[10px] font-black uppercase tracking-[0.4em] text-ccg-navy/30">
+            Network Integrity • Clinical Mapping
+        </div>
+    </div>
+    <script src="./js/script.js" defer></script>
+    <script src="./js/app.js" defer></script>
+    <script src="./js/config.js"></script>
+    <script src="./js/forms.js" defer></script>
+</body>
+
+</html>

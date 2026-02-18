@@ -43,11 +43,9 @@
       }
     }
 
-    /* Fixed Scroll Prevention */
-    html,
-    body {
-      overflow-y: auto !important;
-      height: auto !important;
+    /* Scroll Locking */
+    body.modal-open {
+      overflow: hidden !important;
     }
 
     .site-main {
@@ -59,6 +57,7 @@
 <body class="bg-[#F8FAFC]">
   <a class="skip-link" href="#main">Skip to main content</a>
 
+  <!-- (HEADER unchanged) -->
   <header id="site-header"
     class="fixed top-0 left-0 w-full bg-[#003B5C] lg:bg-white z-[1000] border-b border-white/10 lg:border-navy/5 transition-all duration-500 ease-in-out h-24 lg:h-32">
     <div class="max-w-[1500px] mx-auto px-6 h-full flex items-center justify-between transition-all duration-500">
@@ -249,7 +248,6 @@
       </div>
     </div>
   </header>
-
   <main id="main" class="pt-24 lg:pt-32 pb-24 site-main">
     <!-- Hero Section -->
     <section class="container pt-12 lg:pt-20 mb-20 text-center">
@@ -295,19 +293,24 @@
         <!-- Category Filters -->
         <div class="flex flex-wrap gap-4 items-center justify-center">
           <span class="text-sm font-black text-ccg-navy uppercase tracking-widest mr-2">Filter by:</span>
-          <button
+
+          <button type="button"
             class="filter-btn active bg-ccg-navy text-white px-6 py-2.5 rounded-full font-bold text-sm transition-all hover:shadow-lg"
             data-filter="all">All Articles</button>
-          <button
+
+          <button type="button"
             class="filter-btn bg-white text-ccg-navy/60 px-6 py-2.5 rounded-full font-bold text-sm border border-slate-200 transition-all hover:bg-ccg-gold/10 hover:text-ccg-navy hover:border-ccg-gold"
             data-filter="community-care">Community Care</button>
-          <button
+
+          <button type="button"
             class="filter-btn bg-white text-ccg-navy/60 px-6 py-2.5 rounded-full font-bold text-sm border border-slate-200 transition-all hover:bg-ccg-gold/10 hover:text-ccg-navy hover:border-ccg-gold"
             data-filter="allied-health">Allied Health</button>
-          <button
+
+          <button type="button"
             class="filter-btn bg-white text-ccg-navy/60 px-6 py-2.5 rounded-full font-bold text-sm border border-slate-200 transition-all hover:bg-ccg-gold/10 hover:text-ccg-navy hover:border-ccg-gold"
             data-filter="hospital-to-home">Hospital to Home</button>
-          <button
+
+          <button type="button"
             class="filter-btn bg-white text-ccg-navy/60 px-6 py-2.5 rounded-full font-bold text-sm border border-slate-200 transition-all hover:bg-ccg-gold/10 hover:text-ccg-navy hover:border-ccg-gold"
             data-filter="complex-care">Complex Care</button>
         </div>
@@ -320,6 +323,8 @@
         <!-- Articles injected by JS -->
       </div>
     </section>
+
+
 
     <!-- Next Steps -->
     <section class="container mt-32">
@@ -359,13 +364,16 @@
   </main>
 
   <!-- Modal System -->
-  <div id="article-modal" class="fixed inset-0 z-[2000] invisible opacity-0 transition-all duration-300">
+  <div id="article-modal" class="fixed inset-0 z-[2000] invisible opacity-0 transition-all duration-300"
+    aria-hidden="true">
     <div class="absolute inset-0 bg-ccg-navy/40 backdrop-blur-sm modal-overlay"></div>
     <div class="absolute inset-0 flex items-center justify-center p-4 md:p-8">
       <div id="modal-content"
-        class="bg-white w-full max-w-5xl max-h-[90vh] rounded-[3rem] shadow-2xl overflow-y-auto relative modal-enter">
+        class="bg-white w-full max-w-5xl max-h-[90vh] rounded-[3rem] shadow-2xl overflow-y-auto relative modal-enter"
+        role="dialog" aria-modal="true">
         <button id="close-modal"
-          class="absolute top-8 right-8 p-3 bg-slate-100 text-ccg-navy rounded-full hover:bg-ccg-gold transition-all z-10">
+          class="absolute top-8 right-8 p-3 bg-slate-100 text-ccg-navy rounded-full hover:bg-ccg-gold transition-all z-10"
+          aria-label="Close article">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
           </svg>
@@ -376,6 +384,8 @@
       </div>
     </div>
   </div>
+
+
 
   <!-- Footer -->
   <footer class="bg-ccg-navy pt-12 pb-16 text-white relative overflow-hidden">
@@ -518,7 +528,7 @@
   </footer>
 
   <!-- App Logic -->
-  <script src="../../js/blog.js" defer></script>
+  <script src="../../js/blog.js?v=3" defer></script>
   <script src="../../js/script.js" defer></script>
   <script src="../../js/app.js" defer></script>
   <script src="../../js/config.js"></script>
