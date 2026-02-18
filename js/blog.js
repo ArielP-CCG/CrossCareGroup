@@ -6,252 +6,252 @@
 console.log("Blog script loaded");
 
 const articles = [
-    {
-        id: "article-hospital-to-home-1",
-        category: "hospital-to-home",
-        categoryLabel: "Hospital to Home",
-        title: "Seamless Transitions: From Hospital Ward to Home Comfort",
-        date: "Feb 8, 2024",
-        readTime: "4 min read",
-        image: "../../images/blog-hospital-to-home.png",
-        excerpt:
-            "Explore the critical steps in transitioning from hospital to home, and how dedicated support can reduce readmission risks and speed up recovery.",
-        body: [
-            { type: "heading", content: "The Critical Transition Phase" },
-            {
-                type: "paragraph",
-                content:
-                    "Leaving the hospital is a significant milestone in any recovery journey. It signals a move away from acute care and back towards independence. However, the first few weeks at home are crucial. Without the right support, this transition can be overwhelming and fraught with challenges.",
-            },
-            {
-                type: "paragraph",
-                content:
-                    "At Cross Care Group, we specialise in bridging this gap. We understand that recovery doesn’t stop at the hospital exit doors; it continues in the comfort and familiarity of your own home.",
-            },
-            { type: "heading", content: "Clinical Expertise at Home" },
-            {
-                type: "paragraph",
-                content:
-                    "One of the biggest concerns during this transition is the loss of immediate clinical oversight. Our Hospital to Home service addresses this by brings essential care directly to your living room.",
-            },
-            {
-                type: "paragraph",
-                content:
-                    "From medication management and wound care to monitoring vital signs, our registered nurses and support staff ensure that your medical needs are met with the highest standards of safety and professionalism.",
-            },
-            { type: "heading", content: "Reducing Readmission Risks" },
-            {
-                type: "paragraph",
-                content:
-                    "Studies show that proper post-acute support significantly lowers the chance of hospital readmission. By having a dedicated team to identify early warning signs and manage complications, we help you stay safely at home.",
-            },
-            {
-                type: "paragraph",
-                content:
-                    "Our approach is proactive, not reactive. We work closely with your hospital discharge team to create a seamless care plan that anticipates your needs before you even walk through your front door.",
-            },
-            { type: "heading", content: "Restoring Confidence" },
-            {
-                type: "paragraph",
-                content:
-                    "Beyond the physical aspects, returning home can be emotionally taxing. Our support workers provide the reassurance and companionship needed to rebuild confidence, empowering you to reclaim your daily routine at your own pace.",
-            },
-        ],
-    },
-    {
-        id: "article-community-care-1",
-        category: "community-care",
-        categoryLabel: "Community Care",
-        title: "Empowering Independence: The Heart of Community Care",
-        date: "Feb 5, 2024",
-        readTime: "5 min read",
-        image: "../../images/blog-community-care.png",
-        excerpt:
-            "Discover how community care services support individuals to live independently, stay connected, and thrive in their own homes and neighbourhoods.",
-        body: [
-            { type: "heading", content: "More Than Just Support" },
-            {
-                type: "paragraph",
-                content:
-                    "Community care is fundamentally about fostering a sense of belonging and autonomy. It allows individuals who might otherwise need institutional care to remain in the homes they love, surrounded by the memories and communities they cherish.",
-            },
-            {
-                type: "paragraph",
-                content:
-                    "At Cross Care Group, we believe that support should be an enabler, not a limitation. Our goal is to provide just the right amount of assistance to help you maintain your independence without compromising your dignity.",
-            },
-            { type: "heading", content: "Staying Connected" },
-            {
-                type: "paragraph",
-                content:
-                    "Isolation can be a major challenge for many living with disabilities or age-related conditions. Community care plays a vital role in combating loneliness by facilitating social connections.",
-            },
-            {
-                type: "paragraph",
-                content:
-                    "Whether it’s assistance with grocery shopping, transport to social clubs, or simply a companion for a morning coffee, our support workers are there to ensure you remain an active and valued member of your community.",
-            },
-            { type: "heading", content: "Tailored to You" },
-            {
-                type: "paragraph",
-                content:
-                    "No two individuals are alike, and neither are our care plans. We take a person-centred approach, listening to your preferences, goals, and routines to design a support structure that fits seamlessly into your life.",
-            },
-            {
-                type: "paragraph",
-                content:
-                    "From assistance with daily household tasks and meal preparation to personal care and mobility support, our services are flexible and adaptable, changing as your needs change.",
-            },
-            { type: "heading", content: "A Partnership of Trust" },
-            {
-                type: "paragraph",
-                content:
-                    "Inviting someone into your home requires trust. We pride ourselves on building strong, respectful relationships with our clients. Our support workers are not just service providers; they are partners in your journey towards a fulfilling and independent life.",
-            },
-        ],
-    },
-    {
-        id: "article-1",
-        category: "allied-health",
-        categoryLabel: "Allied Health",
-        title: "Rheumatoid Arthritis and the Role of Physical Exercise",
-        date: "Feb 1, 2024",
-        readTime: "6 min read",
-        image: "../../images/blog-allied-health-article-1.png",
-        excerpt:
-            "A plain-language guide to how tailored, low-impact exercise can help manage rheumatoid arthritis—reducing pain and stiffness, improving strength and mobility, and supporting overall wellbeing.",
-        body: [
-            {
-                type: "paragraph",
-                content:
-                    "Rheumatoid arthritis (RA) is a chronic autoimmune disease impacting not only joints but also significantly affecting overall quality of life. The discomfort and stiffness that accompany RA often lead to reduced physical activity. However, it’s important to understand the beneficial dynamics between rheumatoid arthritis and exercise.",
-            },
-            {
-                type: "paragraph",
-                content:
-                    "Engaging in regular, specifically designed physical activity is crucial for individuals with rheumatoid arthritis. It can notably decrease joint pain, enhance flexibility, boost muscle strength, and improve general wellbeing. Incorporating low-impact exercises such as walking, cycling, aquatic aerobics, swimming, and yoga can be an effective way to integrate exercise into daily life.",
-            },
-            {
-                type: "paragraph",
-                content:
-                    "At the core of managing RA lies a paradox: the need for physical activity despite experiencing pain and discomfort. Contrary to possibly causing more pain, well-chosen and appropriate exercises can actually serve as a valuable tool in managing RA symptoms.",
-            },
-            { type: "heading", content: "The Benefits of Exercise for Rheumatoid Arthritis Management" },
-            {
-                type: "paragraph",
-                content:
-                    "Exercise plays a vital role in managing RA, offering multiple health benefits that might appear counterintuitive initially. Moving joints that are affected by RA pain can actually lead to significant improvements.",
-            },
-            { type: "heading", content: "To find out more, reach out!" },
-        ],
-    },
-    {
-        id: "article-complex-care-24-7",
-        category: "complex-care",
-        categoryLabel: "Complex Care",
-        title: "24/7 Care for Complex Needs: A Cross Care Group Approach",
-        date: "Jan 30, 2024",
-        readTime: "4 min read",
-        image: "../../images/blog-complex-care-article-24-7.png",
-        excerpt:
-            "An overview of Cross Care Group’s 24/7 complex care approach—personalised support plans, continuous staffing, and NDIS-aligned care that adapts as needs change.",
-        body: [
-            { type: "heading", content: "Complexity simplified" },
-            {
-                type: "paragraph",
-                content:
-                    "At Cross Care Group, we understand that each individual with complex needs has a unique story. Our mission is to provide comprehensive 24/7 care that addresses not just the physical aspects of these needs, but the emotional and social ones as well.",
-            },
-            {
-                type: "paragraph",
-                content:
-                    "Because needs can change, we prioritise flexibility in care planning. Our care plans are regularly reviewed and updated to ensure support remains relevant, effective, and aligned to current needs.",
-            },
-        ],
-    },
-    {
-        id: "article-complex-care-needs-aus",
-        category: "complex-care",
-        categoryLabel: "Complex Care",
-        title: "Understanding the Needs of Complex Care Patients in Australia",
-        date: "Jan 23, 2024",
-        readTime: "3 min read",
-        image: "../../images/blog-complex-care-understanding-needs-australia.png",
-        excerpt:
-            "An overview of who complex care patients are in Australia, why their needs are multifaceted, and how a coordinated, multidisciplinary approach supports better outcomes.",
-        body: [
-            {
-                type: "paragraph",
-                content:
-                    "Complex care patients in Australia are individuals who require intensive, multidisciplinary medical care due to multiple, chronic, or severe health conditions.",
-            },
-            {
-                type: "paragraph",
-                content:
-                    "A patient-centred, multidisciplinary approach is essential to help people live fulfilling, as-independent-as-possible lives while managing high or changing support needs.",
-            },
-        ],
-    },
-    {
-        id: "article-tailored-care-plans-complex-care",
-        category: "complex-care",
-        categoryLabel: "Complex Care",
-        title: "Tailored Care Plans: Pioneering Success in Complex Care",
-        date: "Dec 14, 2023",
-        readTime: "5 min read",
-        image: "../../images/blog-complex-care-tailored-care-plans.png",
-        excerpt:
-            "A plain-language look at why personalised NDIS care plans matter—built through collaboration, customised to the individual, and continuously updated to achieve meaningful outcomes.",
-        body: [
-            { type: "heading", content: "Conclusion" },
-            {
-                type: "paragraph",
-                content:
-                    "Cross Care Group’s commitment to crafting tailored care plans aligned with best-practice NDIS provision reflects a personalised approach aimed at transforming lives.",
-            },
-        ],
-    },
+  {
+    id: "article-hospital-to-home-1",
+    category: "hospital-to-home",
+    categoryLabel: "Hospital to Home",
+    title: "Seamless Transitions: From Hospital Ward to Home Comfort",
+    date: "Feb 8, 2024",
+    readTime: "4 min read",
+    image: "../../images/blog-hospital-to-home.png",
+    excerpt:
+      "Explore the critical steps in transitioning from hospital to home, and how dedicated support can reduce readmission risks and speed up recovery.",
+    body: [
+      { type: "heading", content: "The Critical Transition Phase" },
+      {
+        type: "paragraph",
+        content:
+          "Leaving the hospital is a significant milestone in any recovery journey. It signals a move away from acute care and back towards independence. However, the first few weeks at home are crucial. Without the right support, this transition can be overwhelming and fraught with challenges.",
+      },
+      {
+        type: "paragraph",
+        content:
+          "At Cross Care Group, we specialise in bridging this gap. We understand that recovery doesn’t stop at the hospital exit doors; it continues in the comfort and familiarity of your own home.",
+      },
+      { type: "heading", content: "Clinical Expertise at Home" },
+      {
+        type: "paragraph",
+        content:
+          "One of the biggest concerns during this transition is the loss of immediate clinical oversight. Our Hospital to Home service addresses this by brings essential care directly to your living room.",
+      },
+      {
+        type: "paragraph",
+        content:
+          "From medication management and wound care to monitoring vital signs, our registered nurses and support staff ensure that your medical needs are met with the highest standards of safety and professionalism.",
+      },
+      { type: "heading", content: "Reducing Readmission Risks" },
+      {
+        type: "paragraph",
+        content:
+          "Studies show that proper post-acute support significantly lowers the chance of hospital readmission. By having a dedicated team to identify early warning signs and manage complications, we help you stay safely at home.",
+      },
+      {
+        type: "paragraph",
+        content:
+          "Our approach is proactive, not reactive. We work closely with your hospital discharge team to create a seamless care plan that anticipates your needs before you even walk through your front door.",
+      },
+      { type: "heading", content: "Restoring Confidence" },
+      {
+        type: "paragraph",
+        content:
+          "Beyond the physical aspects, returning home can be emotionally taxing. Our support workers provide the reassurance and companionship needed to rebuild confidence, empowering you to reclaim your daily routine at your own pace.",
+      },
+    ],
+  },
+  {
+    id: "article-community-care-1",
+    category: "community-care",
+    categoryLabel: "Community Care",
+    title: "Empowering Independence: The Heart of Community Care",
+    date: "Feb 5, 2024",
+    readTime: "5 min read",
+    image: "../../images/blog-community-care.png",
+    excerpt:
+      "Discover how community care services support individuals to live independently, stay connected, and thrive in their own homes and neighbourhoods.",
+    body: [
+      { type: "heading", content: "More Than Just Support" },
+      {
+        type: "paragraph",
+        content:
+          "Community care is fundamentally about fostering a sense of belonging and autonomy. It allows individuals who might otherwise need institutional care to remain in the homes they love, surrounded by the memories and communities they cherish.",
+      },
+      {
+        type: "paragraph",
+        content:
+          "At Cross Care Group, we believe that support should be an enabler, not a limitation. Our goal is to provide just the right amount of assistance to help you maintain your independence without compromising your dignity.",
+      },
+      { type: "heading", content: "Staying Connected" },
+      {
+        type: "paragraph",
+        content:
+          "Isolation can be a major challenge for many living with disabilities or age-related conditions. Community care plays a vital role in combating loneliness by facilitating social connections.",
+      },
+      {
+        type: "paragraph",
+        content:
+          "Whether it’s assistance with grocery shopping, transport to social clubs, or simply a companion for a morning coffee, our support workers are there to ensure you remain an active and valued member of your community.",
+      },
+      { type: "heading", content: "Tailored to You" },
+      {
+        type: "paragraph",
+        content:
+          "No two individuals are alike, and neither are our care plans. We take a person-centred approach, listening to your preferences, goals, and routines to design a support structure that fits seamlessly into your life.",
+      },
+      {
+        type: "paragraph",
+        content:
+          "From assistance with daily household tasks and meal preparation to personal care and mobility support, our services are flexible and adaptable, changing as your needs change.",
+      },
+      { type: "heading", content: "A Partnership of Trust" },
+      {
+        type: "paragraph",
+        content:
+          "Inviting someone into your home requires trust. We pride ourselves on building strong, respectful relationships with our clients. Our support workers are not just service providers; they are partners in your journey towards a fulfilling and independent life.",
+      },
+    ],
+  },
+  {
+    id: "article-1",
+    category: "allied-health",
+    categoryLabel: "Allied Health",
+    title: "Rheumatoid Arthritis and the Role of Physical Exercise",
+    date: "Feb 1, 2024",
+    readTime: "6 min read",
+    image: "../../images/blog-allied-health-article-1.png",
+    excerpt:
+      "A plain-language guide to how tailored, low-impact exercise can help manage rheumatoid arthritis—reducing pain and stiffness, improving strength and mobility, and supporting overall wellbeing.",
+    body: [
+      {
+        type: "paragraph",
+        content:
+          "Rheumatoid arthritis (RA) is a chronic autoimmune disease impacting not only joints but also significantly affecting overall quality of life. The discomfort and stiffness that accompany RA often lead to reduced physical activity. However, it’s important to understand the beneficial dynamics between rheumatoid arthritis and exercise.",
+      },
+      {
+        type: "paragraph",
+        content:
+          "Engaging in regular, specifically designed physical activity is crucial for individuals with rheumatoid arthritis. It can notably decrease joint pain, enhance flexibility, boost muscle strength, and improve general wellbeing. Incorporating low-impact exercises such as walking, cycling, aquatic aerobics, swimming, and yoga can be an effective way to integrate exercise into daily life.",
+      },
+      {
+        type: "paragraph",
+        content:
+          "At the core of managing RA lies a paradox: the need for physical activity despite experiencing pain and discomfort. Contrary to possibly causing more pain, well-chosen and appropriate exercises can actually serve as a valuable tool in managing RA symptoms.",
+      },
+      { type: "heading", content: "The Benefits of Exercise for Rheumatoid Arthritis Management" },
+      {
+        type: "paragraph",
+        content:
+          "Exercise plays a vital role in managing RA, offering multiple health benefits that might appear counterintuitive initially. Moving joints that are affected by RA pain can actually lead to significant improvements.",
+      },
+      { type: "heading", content: "To find out more, reach out!" },
+    ],
+  },
+  {
+    id: "article-complex-care-24-7",
+    category: "complex-care",
+    categoryLabel: "Complex Care",
+    title: "24/7 Care for Complex Needs: A Cross Care Group Approach",
+    date: "Jan 30, 2024",
+    readTime: "4 min read",
+    image: "../../images/blog-complex-care-article-24-7.png",
+    excerpt:
+      "An overview of Cross Care Group’s 24/7 complex care approach—personalised support plans, continuous staffing, and NDIS-aligned care that adapts as needs change.",
+    body: [
+      { type: "heading", content: "Complexity simplified" },
+      {
+        type: "paragraph",
+        content:
+          "At Cross Care Group, we understand that each individual with complex needs has a unique story. Our mission is to provide comprehensive 24/7 care that addresses not just the physical aspects of these needs, but the emotional and social ones as well.",
+      },
+      {
+        type: "paragraph",
+        content:
+          "Because needs can change, we prioritise flexibility in care planning. Our care plans are regularly reviewed and updated to ensure support remains relevant, effective, and aligned to current needs.",
+      },
+    ],
+  },
+  {
+    id: "article-complex-care-needs-aus",
+    category: "complex-care",
+    categoryLabel: "Complex Care",
+    title: "Understanding the Needs of Complex Care Patients in Australia",
+    date: "Jan 23, 2024",
+    readTime: "3 min read",
+    image: "../../images/blog-complex-care-understanding-needs-australia.png",
+    excerpt:
+      "An overview of who complex care patients are in Australia, why their needs are multifaceted, and how a coordinated, multidisciplinary approach supports better outcomes.",
+    body: [
+      {
+        type: "paragraph",
+        content:
+          "Complex care patients in Australia are individuals who require intensive, multidisciplinary medical care due to multiple, chronic, or severe health conditions.",
+      },
+      {
+        type: "paragraph",
+        content:
+          "A patient-centred, multidisciplinary approach is essential to help people live fulfilling, as-independent-as-possible lives while managing high or changing support needs.",
+      },
+    ],
+  },
+  {
+    id: "article-tailored-care-plans-complex-care",
+    category: "complex-care",
+    categoryLabel: "Complex Care",
+    title: "Tailored Care Plans: Pioneering Success in Complex Care",
+    date: "Dec 14, 2023",
+    readTime: "5 min read",
+    image: "../../images/blog-complex-care-tailored-care-plans.png",
+    excerpt:
+      "A plain-language look at why personalised NDIS care plans matter—built through collaboration, customised to the individual, and continuously updated to achieve meaningful outcomes.",
+    body: [
+      { type: "heading", content: "Conclusion" },
+      {
+        type: "paragraph",
+        content:
+          "Cross Care Group’s commitment to crafting tailored care plans aligned with best-practice NDIS provision reflects a personalised approach aimed at transforming lives.",
+      },
+    ],
+  },
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
-    // DOM Elements
-    const grid = document.getElementById("articles-grid");
-    const filterBtns = document.querySelectorAll(".filter-btn");
-    const searchInput = document.getElementById("blog-search");
+  // DOM Elements
+  const grid = document.getElementById("articles-grid");
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  const searchInput = document.getElementById("blog-search");
 
-    // Modal Elements
-    const modal = document.getElementById("article-modal");
-    const modalContainer = document.getElementById("article-details-container");
-    const modalCloseBtn = document.getElementById("close-modal");
-    const modalContent = document.getElementById("modal-content");
+  // Modal Elements
+  const modal = document.getElementById("article-modal");
+  const modalContainer = document.getElementById("article-details-container");
+  const modalCloseBtn = document.getElementById("close-modal");
+  const modalContent = document.getElementById("modal-content");
 
-    // State
-    let activeFilter = "all";
-    let activeSearch = "";
-    let lastFocusedElement = null;
+  // State
+  let activeFilter = "all";
+  let activeSearch = "";
+  let lastFocusedElement = null;
 
-    if (!grid) return; // Exit if not on blog page
+  if (!grid) return; // Exit if not on blog page
 
-    // ---- Helpers ----
+  // ---- Helpers ----
 
-    function escapeHtml(str) {
-        return String(str)
-            .replaceAll("&", "&amp;")
-            .replaceAll("<", "&lt;")
-            .replaceAll(">", "&gt;")
-            .replaceAll('"', "&quot;")
-            .replaceAll("'", "&#039;");
-    }
+  function escapeHtml(str) {
+    return String(str)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
 
-    function hasAnyContent() {
-        return Array.isArray(articles) && articles.length > 0;
-    }
+  function hasAnyContent() {
+    return Array.isArray(articles) && articles.length > 0;
+  }
 
-    function showLoadingSkeleton() {
-        grid.innerHTML = `
+  function showLoadingSkeleton() {
+    grid.innerHTML = `
       ${Array.from({ length: 6 })
-                .map(
-                    () => `
+        .map(
+          () => `
         <div class="bg-white rounded-[2.5rem] border border-slate-100 shadow-sm overflow-hidden animate-pulse">
           <div class="h-64 bg-slate-100"></div>
           <div class="p-8">
@@ -263,13 +263,13 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
       `
-                )
-                .join("")}
+        )
+        .join("")}
     `;
-    }
+  }
 
-    function showComingSoonState() {
-        grid.innerHTML = `
+  function showComingSoonState() {
+    grid.innerHTML = `
       <div class="col-span-full py-20 text-center flex flex-col items-center">
         <div class="bg-white border border-slate-100 shadow-sm p-10 rounded-[3rem] max-w-2xl w-full">
           <div class="mx-auto w-16 h-16 rounded-2xl bg-ccg-gold/10 flex items-center justify-center mb-6">
@@ -292,10 +292,10 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
     `;
-    }
+  }
 
-    function showNoResultsState() {
-        grid.innerHTML = `
+  function showNoResultsState() {
+    grid.innerHTML = `
       <div class="col-span-full py-20 text-center flex flex-col items-center">
         <div class="bg-slate-50 p-6 rounded-full mb-4">
           <svg class="w-10 h-10 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -311,89 +311,89 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     `;
 
-        const clearBtn = document.getElementById("clear-filters");
-        if (clearBtn) {
-            clearBtn.addEventListener("click", () => {
-                activeFilter = "all";
-                activeSearch = "";
-                if (searchInput) searchInput.value = "";
-                setActiveFilterButton("all");
-                renderArticles();
-            });
-        }
+    const clearBtn = document.getElementById("clear-filters");
+    if (clearBtn) {
+      clearBtn.addEventListener("click", () => {
+        activeFilter = "all";
+        activeSearch = "";
+        if (searchInput) searchInput.value = "";
+        setActiveFilterButton("all");
+        renderArticles();
+      });
+    }
+  }
+
+  function setActiveFilterButton(filterValue) {
+    filterBtns.forEach((b) => {
+      const isActive = b.dataset.filter === filterValue;
+      b.classList.toggle("active", isActive);
+
+      if (isActive) {
+        b.classList.add("bg-ccg-navy", "text-white");
+        b.classList.remove("bg-white", "text-ccg-navy/60", "border-slate-200");
+        b.setAttribute("aria-pressed", "true");
+      } else {
+        // keep their base classes but ensure consistent state
+        b.classList.remove("bg-ccg-navy", "text-white");
+        b.classList.add("bg-white", "text-ccg-navy/60", "border-slate-200");
+        b.setAttribute("aria-pressed", "false");
+      }
+    });
+  }
+
+  function getFilteredArticles() {
+    const search = activeSearch.trim().toLowerCase();
+    return articles.filter((a) => {
+      const matchesFilter = activeFilter === "all" || a.category === activeFilter;
+      const matchesSearch =
+        !search ||
+        a.title.toLowerCase().includes(search) ||
+        a.excerpt.toLowerCase().includes(search) ||
+        (Array.isArray(a.body) &&
+          a.body.some((p) => String(p.content || "").toLowerCase().includes(search)));
+      return matchesFilter && matchesSearch;
+    });
+  }
+
+  // ---- Rendering ----
+
+  function renderArticles() {
+    // If the dataset is empty, don’t pretend it’s a filter hub.
+    if (!hasAnyContent()) {
+      showComingSoonState();
+      return;
     }
 
-    function setActiveFilterButton(filterValue) {
-        filterBtns.forEach((b) => {
-            const isActive = b.dataset.filter === filterValue;
-            b.classList.toggle("active", isActive);
+    const filtered = getFilteredArticles();
 
-            if (isActive) {
-                b.classList.add("bg-ccg-navy", "text-white");
-                b.classList.remove("bg-white", "text-ccg-navy/60", "border-slate-200");
-                b.setAttribute("aria-pressed", "true");
-            } else {
-                // keep their base classes but ensure consistent state
-                b.classList.remove("bg-ccg-navy", "text-white");
-                b.classList.add("bg-white", "text-ccg-navy/60", "border-slate-200");
-                b.setAttribute("aria-pressed", "false");
-            }
-        });
+    if (filtered.length === 0) {
+      showNoResultsState();
+      return;
     }
 
-    function getFilteredArticles() {
-        const search = activeSearch.trim().toLowerCase();
-        return articles.filter((a) => {
-            const matchesFilter = activeFilter === "all" || a.category === activeFilter;
-            const matchesSearch =
-                !search ||
-                a.title.toLowerCase().includes(search) ||
-                a.excerpt.toLowerCase().includes(search) ||
-                (Array.isArray(a.body) &&
-                    a.body.some((p) => String(p.content || "").toLowerCase().includes(search)));
-            return matchesFilter && matchesSearch;
-        });
-    }
+    grid.innerHTML = "";
 
-    // ---- Rendering ----
+    filtered.forEach((article) => {
+      const card = document.createElement("div");
+      card.className =
+        "article-card bg-white rounded-[2.5rem] border border-slate-100 shadow-sm flex flex-col cursor-pointer overflow-hidden group focus-visible:ring-4 focus-visible:ring-ccg-gold focus:outline-none";
+      card.setAttribute("tabindex", "0");
+      card.setAttribute("role", "button");
+      card.setAttribute("aria-label", `Read article: ${article.title}`);
+      card.dataset.articleId = article.id;
 
-    function renderArticles() {
-        // If the dataset is empty, don’t pretend it’s a filter hub.
-        if (!hasAnyContent()) {
-            showComingSoonState();
-            return;
+      // Mouse click
+      card.addEventListener("click", () => openModal(article.id, card));
+
+      // Keyboard Enter/Space
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          openModal(article.id, card);
         }
+      });
 
-        const filtered = getFilteredArticles();
-
-        if (filtered.length === 0) {
-            showNoResultsState();
-            return;
-        }
-
-        grid.innerHTML = "";
-
-        filtered.forEach((article) => {
-            const card = document.createElement("div");
-            card.className =
-                "article-card bg-white rounded-[2.5rem] border border-slate-100 shadow-sm flex flex-col cursor-pointer overflow-hidden group focus-visible:ring-4 focus-visible:ring-ccg-gold focus:outline-none";
-            card.setAttribute("tabindex", "0");
-            card.setAttribute("role", "button");
-            card.setAttribute("aria-label", `Read article: ${article.title}`);
-            card.dataset.articleId = article.id;
-
-            // Mouse click
-            card.addEventListener("click", () => openModal(article.id, card));
-
-            // Keyboard Enter/Space
-            card.addEventListener("keydown", (e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    openModal(article.id, card);
-                }
-            });
-
-            card.innerHTML = `
+      card.innerHTML = `
         <div class="relative h-64 overflow-hidden">
           <img src="${escapeHtml(article.image)}" alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
           <div class="absolute inset-0 bg-gradient-to-t from-ccg-navy/40 to-transparent"></div>
@@ -424,26 +424,26 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       `;
 
-            grid.appendChild(card);
-        });
-    }
+      grid.appendChild(card);
+    });
+  }
 
-    // ---- Modal ----
+  // ---- Modal ----
 
-    function openModal(id, triggerEl) {
-        const article = articles.find((a) => a.id === id);
-        if (!article) return;
+  function openModal(id, triggerEl) {
+    const article = articles.find((a) => a.id === id);
+    if (!article) return;
 
-        lastFocusedElement = triggerEl || document.activeElement;
+    lastFocusedElement = triggerEl || document.activeElement;
 
-        modalContainer.innerHTML = `
+    modalContainer.innerHTML = `
       <div class="p-8 md:p-16 max-w-4xl mx-auto">
         <div class="text-center mb-16">
           <div class="inline-flex items-center gap-2 bg-[#F0F7F9] px-4 py-2 rounded-full mb-8">
             <span class="w-2 h-2 bg-ccg-gold rounded-full"></span>
             <span class="text-ccg-navy font-black text-[10px] uppercase tracking-widest leading-none">${escapeHtml(
-            article.categoryLabel
-        )}</span>
+      article.categoryLabel
+    )}</span>
           </div>
           <h2 class="text-4xl md:text-6xl font-black text-ccg-navy mb-8 leading-[1.1] tracking-tight text-center">
             ${escapeHtml(article.title)}
@@ -461,17 +461,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <div class="prose prose-xl max-w-none text-slate-600 font-medium leading-relaxed">
           ${Array.isArray(article.body)
-                ? article.body
-                    .map((item) => {
-                        if (item.type === "heading") {
-                            return `<h3 class="text-3xl font-black text-ccg-navy mt-12 mb-6">${escapeHtml(
-                                item.content
-                            )}</h3>`;
-                        }
-                        return `<p class="mb-8">${escapeHtml(item.content)}</p>`;
-                    })
-                    .join("")
-                : ""}
+        ? article.body
+          .map((item) => {
+            if (item.type === "heading") {
+              return `<h3 class="text-3xl font-black text-ccg-navy mt-12 mb-6">${escapeHtml(
+                item.content
+              )}</h3>`;
+            }
+            return `<p class="mb-8">${escapeHtml(item.content)}</p>`;
+          })
+          .join("")
+        : ""}
         </div>
 
         <div class="mt-20 pt-12 border-t border-slate-100 italic text-slate-400 text-sm">
@@ -498,70 +498,90 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     `;
 
-        // Show modal
-        modal.classList.remove("invisible", "opacity-0");
-        modal.setAttribute("aria-hidden", "false");
-        document.body.classList.add("modal-open");
+    // Show modal
+    modal.classList.remove("invisible", "opacity-0");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
 
-        // Reset scroll inside modal content
-        if (modalContent) modalContent.scrollTop = 0;
+    // Reset scroll inside modal content
+    if (modalContent) modalContent.scrollTop = 0;
 
-        // Focus close button
-        if (modalCloseBtn) modalCloseBtn.focus();
+    // Focus close button
+    if (modalCloseBtn) modalCloseBtn.focus();
 
-        const innerClose = document.getElementById("close-article-btn");
-        if (innerClose) innerClose.addEventListener("click", closeModal);
+    const innerClose = document.getElementById("close-article-btn");
+    if (innerClose) innerClose.addEventListener("click", closeModal);
+  }
+
+  function closeModal() {
+    modal.classList.add("invisible", "opacity-0");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+
+    if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+      lastFocusedElement.focus();
     }
+  }
 
-    function closeModal() {
-        modal.classList.add("invisible", "opacity-0");
-        modal.setAttribute("aria-hidden", "true");
-        document.body.classList.remove("modal-open");
+  // ---- Event listeners ----
 
-        if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
-            lastFocusedElement.focus();
-        }
-    }
-
-    // ---- Event listeners ----
-
-    // Filters
-    filterBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-            activeFilter = btn.dataset.filter || "all";
-            setActiveFilterButton(activeFilter);
-            renderArticles();
-        });
+  // Filters
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      activeFilter = btn.dataset.filter || "all";
+      setActiveFilterButton(activeFilter);
+      renderArticles();
     });
+  });
 
-    // Search
-    if (searchInput) {
-        searchInput.addEventListener("input", (e) => {
-            activeSearch = e.target.value || "";
-            renderArticles();
-        });
-    }
-
-    // Close button
-    if (modalCloseBtn) modalCloseBtn.addEventListener("click", closeModal);
-
-    // Overlay click
-    const overlay = modal ? modal.querySelector(".modal-overlay") : null;
-    if (overlay) overlay.addEventListener("click", closeModal);
-
-    // Escape key
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && modal && !modal.classList.contains("invisible")) {
-            closeModal();
-        }
+  // Search
+  if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+      activeSearch = e.target.value || "";
+      renderArticles();
     });
+  }
 
-    // ---- Initial paint ----
-    // Prevent “empty hub” perception: show skeleton immediately, then render.
-    showLoadingSkeleton();
-    // next tick so the skeleton paints even on fast loads
-    setTimeout(() => {
-        setActiveFilterButton(activeFilter);
-        renderArticles();
-    }, 0);
+  // Close button
+  if (modalCloseBtn) modalCloseBtn.addEventListener("click", closeModal);
+
+  // Overlay click
+  const overlay = modal ? modal.querySelector(".modal-overlay") : null;
+  if (overlay) overlay.addEventListener("click", closeModal);
+
+  // Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal && !modal.classList.contains("invisible")) {
+      closeModal();
+    }
+  });
+
+  // ---- Initial paint ----
+  // Prevent “empty hub” perception: show skeleton immediately, then render.
+  showLoadingSkeleton();
+  // next tick so the skeleton paints even on fast loads
+  setTimeout(() => {
+    setActiveFilterButton(activeFilter);
+    renderArticles();
+  }, 0);
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const fallback = document.getElementById("blog-fallback");
+  const grid = document.getElementById("articles-grid");
+
+  try {
+    if (!grid) throw new Error("Missing #articles-grid container");
+
+    // render your cards into `grid` here...
+    // grid.innerHTML = ...
+
+    // If we got here, rendering succeeded
+    grid.classList.remove("hidden");
+    if (fallback) fallback.classList.add("hidden");
+  } catch (err) {
+    console.error("Blog render failed:", err);
+    // fallback stays visible
+  }
 });
