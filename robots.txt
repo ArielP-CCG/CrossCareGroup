@@ -3,8 +3,6 @@ Allow: /
 Disallow: /system/
 Disallow: /templates/
 Disallow: /includes/
-Disallow: /js/
-Disallow: /styles/
 Disallow: /404.html
 
 Sitemap: https://crosscaregroup.com.au/sitemap.xml
